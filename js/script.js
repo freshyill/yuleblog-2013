@@ -1,21 +1,21 @@
-/* Yule Blog 2012 Scripts */
+/* Yule Blog 2013 Scripts */
 
 //FitVids
-$('article').fitVids({ 
+jQuery('article').fitVids({ 
   customSelector: "iframe[src^='https://archive.org'], iframe[src^='http://archive.org'], iframe[src^='https://funnyordie.com'], iframe[src^='http://funnyordie.com']" });
 
 
 // Dress up videos a bit to match images
-//$('.fluid-width-video-wrapper').wrap('<div class="video-wrapper" />');
-$('embed:not(.fitvid)').wrap('<div class="video-wrapper inline" />');
+jQuery('.fluid-width-video-wrapper').wrap('<div class="video-wrapper" />');
+jQuery('embed:not(.fitvid)').wrap('<div class="video-wrapper inline" />');
 
 
 
 // Modernizr
 if (Modernizr.input.placeholder) {
-  $('html').addClass('input-placeholder');
+  jQuery('html').addClass('input-placeholder');
 } else {
-  $('html').addClass('no-input-placeholder');
+  jQuery('html').addClass('no-input-placeholder');
 }
 
 
@@ -25,9 +25,9 @@ var snowfallheader = document.getElementById("snowfallheader");
 // Sets the size and position of the snowfall element
 function snowfallSize() {
 
-  if ($('body').is('.post-template-feature-freeform-php, .post-template-columns-php, .post-template-feature-sidebar-header-php, .post-template-feature-sidebar-php, .post-template-feature-2010-visit-from-st-nicholas-php')) {
-   snowfallheader.width = $('.hrail-bar').width();
-   snowfallheader.height = $('.hrail-bar').height();
+  if (jQuery('body').is('.post-template-feature-freeform-php, .post-template-columns-php, .post-template-feature-sidebar-header-php, .post-template-feature-sidebar-php, .post-template-feature-2010-visit-from-st-nicholas-php')) {
+   snowfallheader.width = jQuery('.hrail-bar').width();
+   snowfallheader.height = jQuery('.hrail-bar').height();
    
   }
   
@@ -37,7 +37,7 @@ function snowfallSize() {
   } 
 }
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
   // Resize the canvas
   snowfallSize();
   // Now the emitter
@@ -49,13 +49,13 @@ $(document).ready(function(){
   emitter.start(30);
 });
 
-$('#snowfall-toggle').on('click',
+jQuery('#snowfall-toggle').on('click',
   (function() {
-    if( $(this).is(':checked')) {
-      $("#snowfallheader").fadeIn('slow');
+    if( jQuery(this).is(':checked')) {
+      jQuery("#snowfallheader").fadeIn('slow');
     } 
     else {
-      $("#snowfallheader").fadeOut('slow');
+      jQuery("#snowfallheader").fadeOut('slow');
     }
   })
 );
@@ -71,17 +71,17 @@ var delay = (function(){
   };
 })();
 
-$(function() {
+jQuery(function() {
 
   var pause = 100;
 
-  $(window).resize(function() {
+  jQuery(window).resize(function() {
   
     snowfallSize();
     
     delay(function() {
     
-      var width = $(window).width();
+      var width = jQuery(window).width();
 
              if ( width >= 1140 ) {                   // desktop-wide
 
@@ -95,21 +95,21 @@ $(function() {
 
       } else if ( width >= 568 && width <= 767 ) {    // phone-wide-landscape
 
-        $('#snow-control').insertBefore('.site-title');
+        jQuery('#snow-control').insertBefore('.site-title');
 
       } else if ( width >= 480 && width <= 567 ) {    // phone-landscape
 
-        $('#snow-control').insertBefore('.site-title');
+        jQuery('#snow-control').insertBefore('.site-title');
 
 
       } else if ( width <= 479 ) {                    // phone-portrait
 
-        $('#snow-control').insertBefore('.site-title');
+        jQuery('#snow-control').insertBefore('.site-title');
 
       }
 
     }, pause );
   });
 
-  $(window).resize();
+  jQuery(window).resize();
 });
