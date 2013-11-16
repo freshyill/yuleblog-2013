@@ -1,8 +1,10 @@
 /* Yule Blog 2013 Scripts */
 
+
 //FitVids
-jQuery('article').fitVids({ 
+jQuery('article').fitVids({
   customSelector: "iframe[src^='https://archive.org'], iframe[src^='http://archive.org'], iframe[src^='https://funnyordie.com'], iframe[src^='http://funnyordie.com']" });
+
 
 
 // Dress up videos a bit to match images
@@ -28,13 +30,13 @@ function snowfallSize() {
   if (jQuery('body').is('.post-template-feature-freeform-php, .post-template-columns-php, .post-template-feature-sidebar-header-php, .post-template-feature-sidebar-php, .post-template-feature-2010-visit-from-st-nicholas-php')) {
    snowfallheader.width = jQuery('.hrail-bar').width();
    snowfallheader.height = jQuery('.hrail-bar').height();
-   
+
   }
-  
+
   else {
     snowfallheader.width = window.innerWidth;
     snowfallheader.height = window.innerHeight;
-  } 
+  }
 }
 
 jQuery(document).ready(function(){
@@ -53,7 +55,7 @@ jQuery('#snowfall-toggle').on('click',
   (function() {
     if( jQuery(this).is(':checked')) {
       jQuery("#snowfallheader").fadeIn('slow');
-    } 
+    }
     else {
       jQuery("#snowfallheader").fadeOut('slow');
     }
@@ -76,11 +78,11 @@ jQuery(function() {
   var pause = 100;
 
   jQuery(window).resize(function() {
-  
+
     snowfallSize();
-    
+
     delay(function() {
-    
+
       var width = jQuery(window).width();
 
              if ( width >= 1140 ) {                   // desktop-wide
