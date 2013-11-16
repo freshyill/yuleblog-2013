@@ -16,7 +16,7 @@
     
       <div class="header-wrap">
       
-        <h1 class="site-title"><a href="/" title="The Yule Blog" data-fallback="<?php echo bloginfo(template_directory); ?>/img/logo.png">The Yule Blog</a></h1>
+        <h1 class="site-title"><a href="/" title="The Yule Blog" data-fallback="<?php echo get_template_directory_uri(); ?>/img/logo.png">The Yule Blog</a></h1>
         
         <label class="snow-control" id="snow-control">
           <span for="snowfall-toggle" class="snowfall-toggle">
@@ -27,13 +27,9 @@
         
         <?php get_template_part('content', 'nav'); ?>
       
-      </div>
-      
-   
-      
+      </div> 
     </div>
   </div>
-  
 </div>
 
 

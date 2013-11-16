@@ -6,8 +6,6 @@
 */
 ?>
 
-<?php # <canvas id="snowfall-footer" class="canvas-snowfall"></canvas> ?>
-
 <div class="footer-wrap">
   <footer class="footer-main">
     <div class="footer-content">
@@ -34,7 +32,7 @@
       
       <div class="features">
         <h3>Recent Features</h3>
-        <?php get_template_part('loop', 'features-min'); ?>    
+        <?php get_template_part('loop', 'feature-min'); ?>    
       </div>
       
     </div>

@@ -1,7 +1,7 @@
 <?php
 /*
-  index.php
-  Everything starts here.
+  Template Name: Feature Articles
+  This displays the list of feature articles (on /feature).
 */
 ?>
 
@@ -10,14 +10,12 @@
 <?php get_template_part('content', 'header'); ?>
 
 <div class="wrap">
+
   <div class="main">
     <div class="content">
     
       <div class="primary">
-        <?php get_template_part('loop', 'index'); ?>      
-        <?php if (  $wp_query->max_num_pages > 1 ) : ?>
-          <?php get_template_part('pagination', 'blog'); ?>
-        <?php endif; ?>
+        <?php get_template_part('loop', 'feature'); ?>
       </div>
       
       <?php get_sidebar(); ?>

@@ -27,9 +27,7 @@
 
       </div>
       
-      <div class="secondary">
-        <?php get_sidebar(); ?>
-      </div>
+      <?php get_sidebar(); ?>
       
     </div>
   </div>
