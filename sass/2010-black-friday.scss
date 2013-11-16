@@ -1,0 +1,76 @@
+/* Black Friday */
+
+$feature-class: blackfriday;
+@import 'modules/feature-freeform-setup';
+@import 'fonts/blackout2am';
+
+// Layout
+article.#{$feature-class} {
+
+}
+
+// Display
+body {
+  background: #000;
+}
+
+.main {
+  
+}
+
+article.#{$feature-class} {
+  @include nice-text;
+  
+  margin-top: 4em; margin-bottom: 4em;
+	color: #fff;
+	font-family: $body-copy-font;
+	-webkit-font-smoothing: antialiased;
+  
+  @include at-least(desktop-wide) {
+    @include column-count(3);
+    @include column-gap(7.2%);
+  }
+  
+  @include at-least(tablet-portrait) {
+    @include column-count(2);
+    @include column-gap(7.2%);
+  }
+	
+	.entry-header h1 {
+  	font-family: Blackout2am, sans-serif;
+  	font-size: 8em;
+  	color: #666;
+  	margin: 0;
+  	line-height: 1.2;
+  	text-shadow: 0 1px 0 rgba(255,255,255,.4);
+    @include breakpoint(tablet-portrait) { font-size: 7em; line-height: 1; }
+    @include breakpoint(phone-wide-landscape) { font-size: 5em; }
+    @include breakpoint(phone-landscape) { font-size: 9em; }
+    @include breakpoint(phone-portrait) { font-size: 6em; }
+  }
+  
+  img {
+    @include blockimg;
+    @include at-least(tablet-portrait) {
+      width: 100%;
+      margin: 0 0 1em 0;
+    }
+  }
+	
+	p {line-height: 1.4;}
+	a {color: #666;}
+
+	.article-text p:first-child {
+  	font-size: 1.4em; 
+  	margin: .7em 0 1em 0;
+  	text-align: left;
+  	@include hyphens(none);
+	 }	
+	 
+  .signature a {color: #fff;}
+}
+
+@include breakpoint(phone-wide-landscape) {
+  
+}
+

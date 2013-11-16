@@ -1,0 +1,65 @@
+/* Prep & Landing: Disney's New Classic */
+
+$feature-class: prep;
+@import 'modules/feature-freeform-setup';
+@import 'fonts/hattorihanzolight';
+
+// Layout
+article.#{$feature-class} {
+  @include column(6);
+  @include push(3);
+  
+  @include breakpoint(tablet-portrait) {
+    @include column(8);
+    @include push(2);
+  }
+}
+
+// Display
+body {
+  background: #000 url(#{$imgdir}/prep-landing-bg.jpg) no-repeat center top fixed;
+  background-size: cover;
+}
+
+article.#{$feature-class} {
+  @include box-sizing(border-box);
+  @include nice-text;
+	padding: 0 7.2%;
+	
+	color: #fff;
+	font-family: $body-copy-font;
+	-webkit-font-smoothing: antialiased;
+	
+	@include breakpoint(desktop-small) {
+    padding: 0;
+  }
+	
+	.entry-header h1 {
+  	font-family: 'HattoriHanzoLight';
+  	text-align: center;
+  	font-size: 1.5em;
+  	margin: 20px auto;
+  	text-transform: uppercase;
+  	letter-spacing: 8px;
+  }
+	
+	p {line-height: 1.4;}
+	a {
+ 	  color: #54ac56;
+ 	  &:hover {color: #d01a2a;}
+ 	  @include transition(color .2s ease-in-out);
+ 	}
+ 	
+ 	.signature a {color: #fff;}
+
+	p:nth-child(2) {
+  	font-size: 1.2em; 
+  	margin: 1.5em 0 1em 0;
+  	text-align: left;
+  	@include hyphens(none);
+	 }	
+}
+
+.no-boxsizing {
+  article.#{$feature-class} {padding: 0;}
+}

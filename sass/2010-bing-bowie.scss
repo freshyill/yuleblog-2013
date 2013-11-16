@@ -1,0 +1,131 @@
+/* Bing & Bowie: The Unexpected Classic */
+
+$feature-class: bing-bowie;
+@import 'modules/feature-sidebar-setup';
+@import 'fonts/chunkfiveregular';
+
+// Layout
+.main {
+  @include container;
+  @include clearfix;
+}
+
+.entry-header, .content {
+  @include row;
+}
+
+article {
+  @include column(6);
+  @include breakpoint(tablet-portrait) {@include column(8)}
+}
+
+.feature-sidebar {
+  @include column(6);
+  @include last;
+  @include breakpoint(tablet-portrait) {
+    @include column(4);
+    @include last;
+  }
+}
+
+
+// Display
+body {
+  background: #000 url(#{$imgdir}/bing-bowie-solo.jpg);
+  background-size: cover;
+}
+
+.main { padding: 2em 0; @include box-shadow(none);}
+.wrap { padding: 2em; }
+
+.#{$feature-class}-envelope {
+  @include box-sizing(border-box);
+
+  text-shadow: 0 1px 0 rgba(0,0,0,.3);
+  font-family: $body-copy-font;
+  -webkit-font-smoothing: antialiased;
+
+	.entry-header {
+    margin: 2em 0;    
+	  h1 {
+	    margin: 0;
+  	  text-align: left;
+  	  line-height: 1;
+  	  font-size: 4.9em;
+  	  font-family: 'ChunkFiveRegular', serif;
+  	  
+  	  @include breakpoint(desktop-small)        { font-size: 3.4em; }
+  	  @include breakpoint(tablet-portrait)      { font-size: 3em; }
+  	  @include breakpoint(phone-wide-landscape) { font-size: 3em; }
+  	  @include breakpoint(phone-portrait)       { font-size: 2.6em; }
+
+  	  span {font-size: .3em; display: block;}
+  	  b {font-weight: normal; display: block;}
+    }
+  }
+	
+	article {
+    @include box-shadow($nice-shadow);
+  	@include nice-text;
+  	padding: 3.8%;
+  	text-shadow: 0 1px 0 rgba(255,255,255,.9);
+  	background: rgba(255,255,255,.9);
+  	border-radius: 4px;
+  	color: $body-copy-font;
+  }
+  
+  blockquote {
+    background: rgba(1,1,1,.9);
+    color: #fff;
+    text-shadow: 0 1px 0 #000;
+    font-style: italic;
+    margin: 0 0 1em 0; padding: 1em;
+    border-radius: 3px;
+    text-align: left;
+    @include box-shadow ($nice-shadow);
+    @include at-least(phone-wide-landscape) { width: 120%; left: -13.8%; position: relative; }
+    p {
+      font-size: 1.6em;
+      &:first-child {margin-top: 0;}
+      &:last-child {margin-bottom: 0;}
+    }
+  }
+  
+  p {line-height: 1.4;}
+	a {color: #324412;}
+
+	.article-text > p:first-of-type {
+  	font-size: 1.2em; 
+  	margin: .7em 0 1em 0;
+  	text-align: left;
+  	@include hyphens(none);
+	 }
+}
+
+.signature a {color: $body-default-color;}
+
+.feature-sidebar {
+  margin-bottom: 3.8%;
+  
+  img, iframe {
+    @include breakpoint(phone-wide-landscape) {margin-top: 1em; margin-bottom: 1em;}
+    @include box-shadow($nice-shadow);
+    @include blockimg;
+    margin-top: 5em;
+  }
+  
+ img {width: 100%;}
+}
+
+
+.no-boxsizing {
+  .#{$feature-class}-envelope {
+    article {width: 40%;}
+  }
+}
+
+.no-rgba {
+  .#{$feature-class}-envelope {
+    article {background: #fff;}
+  }
+}

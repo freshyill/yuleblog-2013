@@ -1,0 +1,103 @@
+/* A Brief History of the Christmas Tree */
+
+$feature-class: xmastree;
+@import 'modules/feature-freeform-setup';
+@import 'fonts/leaguegothicregular';
+@import 'fonts/hattorihanzolight';
+
+// Layout
+article.#{$feature-class} {
+  @include column(12);
+  padding: 10%;
+  @include breakpoint(phone-wide-landscape) {padding: 3.8%;}
+}
+
+.no-boxsizing {
+  article.#{$feature-class} {
+    width: 80%;
+  }
+}
+
+// Display
+body {
+  background: #000 url(#{$imgdir}/xmas-tree-bg.jpg) no-repeat center top fixed;
+  background-size: cover;
+}
+
+article.#{$feature-class} {
+  @include box-sizing(border-box);
+	@include nice-text;
+  @include box-shadow($nice-shadow);
+	
+  margin-top: 2em; margin-bottom: 2em;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  font-family: 'HattoriHanzoLight', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	background: rgba(255,255,255,.9);
+	border-radius: 4px;
+	
+	@include at-least(phone-wide-landscape) { font-size: 1.2em; }
+	
+	.entry-header h1 {
+  	font-family: 'LeagueGothicRegular', sans-serif;
+  	font-weight: normal;
+  	font-size: 8em;
+  	margin: 0;
+  	line-height: 1.1; 
+  	display: block;
+  	span { display: block; font-size: .3em; }
+    @include breakpoint (desktop-small) { font-size: 7em; }
+    @include breakpoint (tablet-portrait) { 
+      font-size: 5em; 
+      span {font-size: .5em;}
+    }
+    @include breakpoint (phone-wide-landscape) { font-size: 3.5em; }
+  }
+	
+	p {
+    line-height: 1.4;
+  	&:first-child {
+      font-size: 1.4em; 
+  	  margin: .7em 0 1em 0;
+  	  text-align: left;
+  	  @include hyphens(none);
+	   }
+  	&:last-child {margin-bottom: 0;}
+  }
+  
+	a {color: #324412;}
+
+  .wp-caption {
+    @include blockimg;
+    @include box-shadow($nice-shadow);
+    padding: 10px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 3px;
+    max-width: 100%;
+    img {width: 100%;}
+    @include breakpoint(phone-wide-landscape) {
+      @include box-shadow(none);
+      width: 100%;
+      padding: 0; margin-bottom: 1em;
+      background: none;
+      line-height: 1.2;
+      p {margin-top: 0;}
+    }    
+	  p {
+	    background: transparent;
+	    padding: 0;
+	    width: auto;
+	    font-size: 1em;
+	    &:last-child {margin-bottom: 0;}
+	  }
+  }
+  
+  img {@include blockimg;}
+  
+  .signature a {color: $body-default-color;}
+  .signature p { font-size: 1em; }
+}
+
+.no-rgba {
+  article.#{$feature-class} {background: #fff;}
+}

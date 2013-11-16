@@ -1,0 +1,289 @@
+/*
+  theme.scss
+  Main theme styles for Yule Blog 2012
+  Structure and design for index, posts, archives, etc.
+*/
+
+@import 'modules/bourbon/bourbon';
+@import 'modules/normalize';
+@import 'modules/globals';
+@import 'modules/1140';
+
+@import 'fonts/marcellus';
+@import 'fonts/fontello';
+
+
+img, object,  embed { max-width: 100%; }
+img {	height: auto; }
+
+$body-copy-color: #dbeaff;
+$nice-inset-2012: 0 1px 8px rgba(0,0,0,.3) inset, 0 1px 0 rgba(255,255,255,.075);
+
+html {
+  background: url("../img/background-2012-rev3.jpg") no-repeat center top fixed;
+  background-size: cover;
+}
+
+body {
+  margin: 0;
+  color: $body-copy-color;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin links(
+    $link: #7ab4e5, 
+    $visited: #7ab4e5, 
+    $hover: #e62c25, 
+    $active: lighten($hover, 10%), 
+    $focus: $hover, 
+    $transition: .15s color ease-in-out ) {
+  &:link    { color: $link;    }
+  &:visited { color: $visited; }
+  &:hover   { color: $hover;   }
+  &:active  { color: $active;  }
+  &:focus   { color: $focus;   }
+  @include transition($transition);
+}
+
+/* Page Structure */
+.main { @include container;}
+.content { @include row; @include clearfix; }
+.primary { @include column(8); @include column-killer; }
+.secondary { @include column(4); @include column-killer; @include last; }
+
+.theme-header { @include container; }
+.header-content { @include row; @include clearfix; }
+
+// Design
+.hrail-bar { background: rgba(0,0,0,.3); position: relative; z-index: 1;}
+.no-rgba .hrail-bar { background: #192231 url("../img/hrail-bg.jpg") no-repeat center top fixed;  border-bottom: 1px solid #384762; }
+
+.wrap {
+  padding: 3.8% 0;
+  position: relative;
+  z-index: 1;
+  @include box-shadow($header-drop);
+}
+
+a { @include links; }
+
+// Design
+.primary {
+  font-family: 'Bitter', Georgia, serif;
+  h1 {
+    font-size: 2em;
+    @include breakpoint(phone-wide-landscape) {font-size: 1.5em;}
+  }
+ 
+  .page-header h1 {margin-top: 0;}
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    font-weight: 700;
+  }
+
+  article {
+    @include clearfix;
+    text-shadow: 0 -1px 0 rgba(0,0,0,.2);
+    //padding-top: 3em;
+    padding-top: 1em;
+    padding-bottom: 2em;
+    border-top: 1px solid rgba(255,255,255,.1);
+    border-bottom: 1px solid rgba(0,0,0,.1);
+
+    header {
+      margin-bottom: 2.1em;
+      h1 {margin-bottom: .2em;}
+      a { 
+        @include links(
+           $link: $body-copy-color, 
+        $visited: $body-copy-color);
+      }
+      .posted {
+        font-size: .9em;
+        line-height: 1.2;
+        margin-top: 0;
+      }
+    }
+  
+    &:first-child {
+      border-top: none;
+      margin-top: 0;
+      padding-top: 0;
+      header h1 {margin-top: 0;}
+    }
+  
+    &:first-of-type {border-top: none;}
+    &:last-of-type {border-bottom: none;}
+  
+
+    // Text
+    //.entry-text    { @include bodytext; }
+    //.article-text  { @include bodytext; }
+    //.entry-excerpt { @include bodytext; }
+    
+    p {
+      line-height: 1.6;
+      &:last-child {margin-bottom: 0;}
+    }
+
+    // Images and Media Elements
+    img {
+      @include blockimg;
+      display: block;
+      padding: 1.9%;
+      background: rgba(0,0,0,.1);
+      @include breakpoint(phone-portrait) { padding: 3.8%; }
+    }
+
+    a > img, 
+    .video-wrapper {
+      @include transition(.25s all ease-in-out .1s);
+      &:hover {background: rgba(255,255,255,.1);}
+    }
+
+    img,
+    .video-wrapper {
+      @include box-shadow($nice-inset-2012);
+      padding: 1.9%;
+      background: rgba(0,0,0,.1);
+      @include breakpoint(phone-wide-landscape) {
+        padding: 3.8%;
+      }
+    }
+  }
+}
+
+.no-rgba .primary article {
+  border-top: 1px solid #384762;
+  border-bottom: 1px solid #2c3951;
+  &:first-child {border-top: none;}
+  &:last-child {border-bottom: none;}
+  
+  img,
+  .video-wrapper { @include no-rgba-inset; }
+}
+
+// Blog Pagination
+.blog-pagination {
+  @include box-shadow($nice-inset-2012);
+  background: rgba(0,0,0,.1);
+  font-size: 1.5em;
+  @include breakpoint(tablet-portrait) {font-size: 1.2em;}
+  @include breakpoint(phone-portrait) {font-size: 1em;}
+  ul {
+    @include clearfix;
+    list-style: none;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    &:first-child {
+      float: left;
+      a { padding: 1em 0 1em 1em; }
+    }
+    &:last-child  {
+      float: right;
+      a { padding: 1em 1em 1em 0; }
+    }
+  }
+  a { display: inline-block; }
+}
+.no-rgba .blog-pagination { @include no-rgba-inset;}
+.lt-ie9 .blog-pagination li { display: inline;}
+.lt-ie9 .blog-pagination li a { display: inline; padding: 0 1em;}
+.lt-ie9 .blog-pagination li.nav-next {float: right;}
+
+// Snowfall
+.canvas-snowfall {position: fixed; z-index: 0; pointer-events: none; background: transparent;}
+.no-canvas .canvas-snowfall,
+.ie9 .canvas-snowfall {display: none;}
+
+// Sidebar 
+.secondary {
+  font-family: 'Bitter', Georgia, serif;
+}
+
+// Forms
+
+.searchform {
+  input[type="submit"] {font-family: "Fontello";}
+}
+
+// Searchform
+.input-placeholder {
+  .searchform {
+    @include box-shadow(0 1px 8px rgba(0,0,0,.3) inset, 0 1px 0 rgba(255,255,255,.1));
+    @include border-radius(4px);
+    padding: 0;
+    font-size: 1.5em;
+    border-bottom: 1px solid rgba(0,0,0,.1);
+    background: rgba(0,0,0,.1);
+    position: relative;
+    label {display: none;}
+    input {
+      color: $body-copy-color;
+      font-weight: normal;
+      -webkit-font-smoothing: antialiased;
+    }
+    input[type="search"] {
+      @include clearinput;
+      display: block;
+      width: 100%;     
+      padding: 10px 45px 10px 10px;
+    }
+    input[type="submit"] {
+      @include clearinput;
+      position: absolute;
+      right: 0;
+      top: 0;
+      display: inline;
+      padding: 12px 10px 8px 10px;
+      &:active {
+        @include transform(translateY(2px));
+      }
+    }
+  }
+}
+.no-input-placeholder {
+  .searchform {
+    input { padding: 10px; color: $body-copy-color; }
+    input[type="search"] {
+      @include clearinput;
+      @include box-shadow(0 1px 8px rgba(0,0,0,.3) inset, 0 1px 0 rgba(255,255,255,.1));
+      border-radius: 4px;
+      background: rgba(0,0,0,.1);
+      width: 85%;
+    }
+    input[type="submit"] {
+      @include clearinput;
+      width: 12%;
+    }
+    label { display: block; padding-bottom: 5px;}
+  }
+}
+.no-rgba {
+  .searchform input[type="search"] {
+    @include no-rgba-inset;
+  }
+}
+
+input {
+  &:focus {outline: none;}
+}
+
+
+// Social Sharing
+.social-shares {
+  padding-left: 0;
+  list-style: none;
+  li {
+    font-size: 1.4em;
+    padding: 10px 10px 10px 40px; 
+    background-repeat: no-repeat;
+  }
+  .facebook { background-image: url(../img/facebook.svg); background-size: auto 30px; background-position: 9px 11px;}
+   .twitter { background-image: url(../img/twitter.svg); background-size: auto 25px; background-position: 0 13px; }
+}
+
+.no-svg .social-shares li { padding-left: 0; }

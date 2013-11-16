@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>Snow :: Javascript and Canvas</title>
+
+	<style type="text/css">
+		body {
+			margin:0;
+			padding:0;
+		}
+
+		#snowfall {
+
+background: red;
+		}
+	</style>
+
+	<script>
+		var init = function(){
+			// Resize the canvases)
+			var canvas = document.getElementById("snowfall");
+
+			canvas.width = window.innerWidth;
+			canvas.height = window.innerHeight;
+
+			// Now the emitter
+			var emitter = Object.create(rectangleEmitter);
+			emitter.setCanvas(canvas);
+			emitter.setBlastZone(0, -10, canvas.width, 1);
+			emitter.particle = snow;
+			emitter.runAhead(60);
+			emitter.start(30);
+		};
+	</script>
+
+	<script src="rectangleEmitter.js"></script>
+	<script src="snow.js"></script>
+
+</head>
+<body onLoad="init()">
+	<div id="container">
+		<canvas id="snowfall"></canvas>
+	</div>
+</body>
+</html>
