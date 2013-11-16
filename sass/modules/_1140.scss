@@ -1,0 +1,101 @@
+// Breakpoint Mixin
+@mixin breakpoint($point) {
+  @if $point == desktop-wide {
+    @media (max-width: $desktop-wide) { @content; }
+  }
+  @if $point == desktop-small {
+    @media (max-width: $desktop-small) { @content; }
+  }
+  @if $point == tablet-portrait {
+    @media (max-width: $tablet-portrait) { @content; }
+  }
+  @if $point == phone-wide-landscape {
+    @media (max-width: $phone-wide-landscape) { @content; }
+  }
+  @if $point == phone-landscape {
+    @media (max-width: $phone-landscape) { @content; }
+  }
+  @else if $point == phone-portrait {
+    @media (max-width: $phone-portrait)  { @content; }
+  }
+}
+
+// Column Killer Mixin - All columns go full-width when window hits this breakpoint
+@mixin column-killer {
+  @media (max-width: $column-killer-breakpoint) {
+           width: 100%;
+           float: none;
+     margin-left: 0;
+    margin-right: 0;
+  };
+}
+
+@mixin container {
+     padding-left: 20px;
+    padding-right: 20px;
+         overflow: visible;
+  @include breakpoint($column-killer-breakpoint) {
+            width: 100%;
+        min-width: 0;
+      margin-left: 0;
+     margin-right: 0;
+     padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@mixin row {
+            width: 100%;
+        max-width: $desktop-wide;
+           margin: 0 auto;
+       //overflow: hidden;
+  @include breakpoint($column-killer-breakpoint) {
+            width: 100%;
+        min-width: 0;
+      margin-left: 0;
+     margin-right: 0;
+     padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+// Last-Column Mixin
+@mixin last { margin-right: 0;}
+
+// Column Mixin
+@mixin column($num) {
+  @if $num != 12 { margin-right: 3.8%; float: left; min-height: 1px; }
+  @if $num == 1  { width: 04.85%; }
+  @if $num == 2  { width: 13.45%; }
+  @if $num == 3  { width: 22.05%; }
+  @if $num == 4  { width: 30.75%; }
+  @if $num == 5  { width: 39.45%; }
+  @if $num == 6  { width: 48.00%; }
+  @if $num == 7  { width: 56.75%; }
+  @if $num == 8  { width: 65.40%; }
+  @if $num == 9  { width: 74.05%; }
+  @if $num == 10 { width: 82.70%; }
+  @if $num == 11 { width: 91.35%; }
+  @if $num == 12 { width: 100%; float: left; @include last;}
+      -webkit-box-sizing: border-box;
+         -moz-box-sizing: border-box;
+              box-sizing: border-box;
+  @include column-killer;
+}
+
+// Push Mixin - Use push(0) in a media query to override push(n)
+@mixin push($num) {
+  @if $num == 0  { margin-left: 0; }
+  @if $num == 1  { margin-left: 08.65%; }
+  @if $num == 2  { margin-left: 17.30%; }
+  @if $num == 3  { margin-left: 25.95%; }
+  @if $num == 4  { margin-left: 34.60%; }
+  @if $num == 5  { margin-left: 43.25%; }
+  @if $num == 6  { margin-left: 51.90%; }
+  @if $num == 7  { margin-left: 60.55%; }
+  @if $num == 8  { margin-left: 69.20%; }
+  @if $num == 9  { margin-left: 77.85%; }
+  @if $num == 10 { margin-left: 86.50%; }
+  @if $num == 11 { margin-left: 95.15%; }
+  @include column-killer;
+}

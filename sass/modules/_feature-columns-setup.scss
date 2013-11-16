@@ -1,0 +1,26 @@
+/*
+  _feature_columns_setup.scss
+  Sets up common elements for many feature templates
+*/
+
+@import 'bourbon/bourbon';
+@import 'globals';
+@import '1140';
+
+.main {
+  //@include container;
+  @include clearfix;
+}
+
+.content {
+ // @include row;
+}
+
+header h1 {line-height: 1;}
+
+.additional-information {
+  font-size: .8em;
+  text-align: left;
+}
+
+.signature a {color: inherit;}

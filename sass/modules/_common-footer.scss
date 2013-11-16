@@ -1,0 +1,77 @@
+@import 'bourbon/bourbon';
+@import 'globals';
+@import '1140';
+@import '../modules/toggle';
+
+// Structure
+.footer-main {
+  @include container;
+  background: rgba(0,0,0,.3);
+  padding: 2em 0;
+}
+.footer-content { @include row; @include clearfix; }
+
+.footer-wrap {
+  @include box-shadow($footer-drop);
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,.3);
+}
+
+.no-rgba .footer-wrap { background: #192231 url("../img/hrail-bg.jpg") no-repeat center top fixed;  border-bottom: 1px solid #384762; }
+
+
+.footer-content {
+
+  > div { overflow: hidden; }
+ 
+  .nav      { @include column(4); }
+  .features { @include column(4); @include last; }
+  
+  .nav ul, 
+  .features ul {@extend .footlist;}
+  
+  @include box-sizing(border-box);
+  -webkit-font-smoothing: antialiased;
+  font-family: Bitter, Georgia, serif;
+  position: relative;
+  z-index: 1;
+
+  @include breakpoint(phone-wide-landscape) { 
+    padding: 3.8%;
+    > div:nth-child(2n+0) {margin: 7.2% 0;}
+  }
+ 
+  a {@include theme-links;}
+  time {font-size: .8em; color: #fff;}
+  p {line-height: 1.6;}
+  
+  .social   {
+    @include column(4);
+    .social-shares {
+      padding-bottom: 1em;
+      border-bottom: 1px solid rgba(0,0,0,.1);
+      @include box-shadow(0 1px 0 rgba(255,255,255,.1));
+      a {display: block;}
+    }
+  }
+  
+  .searchform {
+    margin-top: 2em;
+    input[type="search"] {font-size: .8em;}
+  }
+  
+  .footlist { list-style: none; padding: 0; 
+    li {
+      display: block;
+      border-top: 1px solid rgba(255,255,255,.1);
+      border-bottom: 1px solid rgba(0,0,0,.1);
+      &:first-child { border-top: none; }
+      &:last-child  { border-bottom: none;
+        a { padding-bottom: 0; }
+      }
+      a { display: block; padding: 1em 0;}
+    }
+  }
+}

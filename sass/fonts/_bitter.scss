@@ -1,0 +1,25 @@
+// Bitter
+
+@font-face {
+  font-family: 'Bitter';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Bitter-Italic'), 
+  url(http://themes.googleusercontent.com/static/fonts/bitter/v4/eMS0tViDqryBl0EG1pqFZXYhjbSpvc47ee6xR_80Hnw.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Bitter-Regular'), 
+       url(http://themes.googleusercontent.com/static/fonts/bitter/v4/2PcBT6-VmYhQCus-O11S5-vvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Bitter';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Bitter-Bold'), 
+       url(http://themes.googleusercontent.com/static/fonts/bitter/v4/evC1haE-MsorTl_A7_uSGbO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+}

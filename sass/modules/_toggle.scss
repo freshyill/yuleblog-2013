@@ -1,0 +1,73 @@
+@mixin toggle ($control-width: 52, $switch-width: 20, $text-active: 'On', $text-inactive: 'Off') {
+  
+  @include box-shadow(0 2px 2px rgba(0,0,0,.1) inset, 0 0 1px rgba(0,0,0,.1) inset, 0 #{ $switch-width / 2 }px 0 rgba(0,0,0,.05) inset);
+  box-sizing: border-box;
+  font-size: #{$switch-width /2}px;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  height: #{$switch-width + 2}px;
+  width: #{$control-width}px;
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: #{$switch-width / 2}px;
+  margin: 0 1em;
+  color: #fff;
+  
+  input {
+    height: #{$switch-width}px;
+    width: #{$control-width}px;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    opacity: 0;
+    &:checked~.switch {left: #{$control-width - $switch-width - 2 }px;}
+  }
+  
+  .switch {
+    @include transition(.3s all ease);
+    @include box-shadow(0 0 2px rgba(0,0,0,.1), 0 0 1px 1px rgba(255,255,255,.1) inset, 0 0 1px 0 rgba(0,0,0,.5));
+    background: #1b293e;
+    text-transform: uppercase;
+    display: block;
+    height: #{$switch-width}px; 
+    width: #{$switch-width}px;
+    left: -1px;
+    position: absolute;
+    pointer-events: none;
+    border-radius: 50%;
+    
+    &:before,
+    &:after {
+      width: #{$control-width - $switch-width}px;
+      height: #{$switch-width}px;
+      position: absolute; 
+      z-index: -1;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+      white-space: nowrap;
+      line-height: 2;
+    }
+  
+    &:before {
+      color: #fff;
+      background: rgba(0,0,0,.4);
+      text-align: right;
+      padding-right: #{$switch-width * .75}px;
+      content: "#{$text-active}";
+      right: #{$switch-width / 2}px;
+    }
+  
+    &:after {
+      text-align: left;
+      color: #fff;
+      background: rgba(0,0,0,.4);
+      content: "#{$text-inactive}";
+      padding-left: #{$switch-width * .75}px;
+      left: #{$switch-width / 2 }px;
+    }
+  }
+  
+}

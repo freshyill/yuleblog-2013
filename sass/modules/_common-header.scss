@@ -1,0 +1,128 @@
+@import 'bourbon/bourbon';
+@import 'globals';
+@import '1140';
+@import '../modules/toggle';
+
+@import '../fonts/bitter';
+
+$body-copy-color: #dbeaff;
+
+@mixin header-links(
+    $link: #dbeaff, 
+    $visited: #dbeaff, 
+    $hover: #e62c25, 
+    $active: lighten($hover, 10%), 
+    $focus: $hover, 
+    $transition: .15s color ease-in-out ) {
+  &:link    { color: $link;    }
+  &:visited { color: $visited; }
+  &:hover   { color: $hover;   }
+  &:active  { color: $active;  }
+  &:focus   { color: $focus;   }
+  @include transition($transition);
+}
+
+.hrail-container { @include container; -webkit-font-smoothing: antialiased;}
+.hrail-content   { @include row; @include clearfix;}
+
+.header-wrap {
+  width: 100%;
+  display: block;
+  padding: 1em 0;
+  @include breakpoint(phone-wide-landscape) { padding-top: .25em; }
+  @include at-least(phone-wide-landscape) { display: table; }
+  
+  // Common Header Bar Setup
+  @include at-least(phone-wide-landscape) {
+    .site-title,
+    .sitenav,
+    .snow-control {display: table-cell;}
+  }
+
+}
+
+
+
+// Site Title
+.site-title {
+  margin: 0;
+  white-space: nowrap;
+  font-size: 2em;
+  height: 1em;
+  color: transparent;
+  @include breakpoint(desktop-small) { height: .75em;}
+  @include breakpoint(tablet-portrait) {
+    height: 2em;
+    display: block;
+    text-align: center;
+    font-size: 1.4em;
+    margin-bottom: .75em;
+  }
+  @include at-least(tablet-portrait) {max-width: 50%;}
+  img {display: block; margin: 0 auto; max-height: 100%;}
+  a {
+    display: block;
+    height: 100%;
+    background-image: url('../img/logo.svg');
+    background-repeat: no-repeat;
+    background-position: left 50%;
+    background-size: contain;
+    @include breakpoint(tablet-portrait) {background-position: center 50%;}
+    @include header-links(transparent, transparent, transparent, transparent, transparent);
+  }
+}
+
+.no-svg .hrail-content {height: 80px;}
+.no-svg .site-title a {background-image: url('../img/logo-280x35.png'); height: 50px;}
+
+// Navigation Bar
+.header-wrap .sitenav {
+  font-family: 'Bitter', serif;
+  float: right;
+  @include breakpoint(tablet-portrait) {
+    display: block;
+    float: none;
+    clear: both;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    @include breakpoint(tablet-portrait) {text-align: center;}
+  }
+  li {
+    display: inline-block;
+    font-size: 1.2em;
+    @include breakpoint(desktop-small) {font-size: 1em;}
+    //@include breakpoint(tablet-portrait) {font-size: 1em;}
+    @include breakpoint(phone-portrait) {font-size: .8em;}
+    a {
+      @include header-links;
+      display: inline-block;
+      padding: 0 .75em;
+    }
+    //&:first-child a { padding-left: 0; }
+    //&:last-child a  { padding-left: 0; }
+  }
+}
+
+// Snow Controls
+.snow-control {
+  float: right;
+  position: relative;
+  top: 3px;
+  z-index: 1;
+  @include breakpoint(tablet-portrait) {
+    display: block;
+    clear: both;
+    float: none;
+    text-align: right;
+    margin-bottom: .25em;
+    right: -1em;
+  }
+  .snowfall-toggle {
+    @include toggle(65, 15, "Snow On", "Snow Off");
+    border-radius: 8px;
+  }
+}
+
+.no-canvas .snow-control {display: none;}

@@ -1,0 +1,5 @@
+@mixin box-sizing ($box) {
+//  content-box | border-box | inherit
+  @include prefixer(box-sizing, $box);
+  *behavior: url(/wordpress/wp-content/themes/yuleblog-2012/js/boxsizing.htc);
+}

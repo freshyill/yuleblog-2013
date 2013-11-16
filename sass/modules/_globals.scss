@@ -1,0 +1,184 @@
+// Reasonable Breakpoint Values
+// Feel free to use these or create new ones better suited to your site's needs
+$desktop-wide:          71.25em;  // 1140px
+$desktop-small:         64.00em;  // 1024px
+$tablet-portrait:       48.00em;  // 768px
+$phone-wide-landscape:  35.50em;  // 568px
+$phone-landscape:       30.00em;  // 480px
+$phone-portrait:        20.00em;  // 320px
+
+$column-killer-breakpoint: $phone-wide-landscape;  // 640px
+
+// Define more variables and mixins in this file
+
+// Variables
+$nice-shadow: 0 1px 0 rgba(255,255,255,.3) inset, 0 2px 1px rgba(0,0,0,.14), 0 2px 10px rgba(0,0,0,.4);
+$nice-shadow-lighter: 0 1px 0 rgba(255,255,255,.1) inset, 0 2px 1px rgba(0,0,0,.14), 0 2px 10px rgba(0,0,0,.4);
+
+
+$header-drop: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 -2px 2px rgba(0, 0, 0, .1), 0 -5px 10px rgba(0, 0, 0, 0.15);
+
+$footer-drop: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 -2px 2px rgba(0, 0, 0, 0.1) inset, 0 5px 15px rgba(0, 0, 0, 1) inset;
+
+$nice-inset-2012: 0 1px 8px rgba(0,0,0,.3) inset, 0 1px 0 rgba(255,255,255,.075);
+$header-shadow: 0 1px 0 rgba(255,255,255,.2) inset, 0 0 10px rgba(0,0,0,.5);
+$body-copy-font: Georgia, serif;
+$body-default-color: #222;
+$imgdir: 'http://yuleblog.us/images';
+$fontdir: 'http://yuleblog.us/fonts';
+
+body {margin: 0;}
+
+// Hyphens mixin since Bourbon doesn't provide one
+@mixin hyphens($value) {
+  -webkit-hyphens: $value;
+     -moz-hyphens: $value;
+      -ms-hyphens: $value;
+          hyphens: $value;
+}
+
+// Switch text from ragged right to justify
+@mixin nice-text {
+  text-align: left;
+  @include at-least($phone-wide-landscape) {
+    text-align: justify;
+    @include hyphens(auto);
+  }
+}
+
+// Text-stroke mixin since Bourbon doesn't provide one
+@mixin text-stroke($value) {
+  -webkit-text-stroke: $value;
+          text-stroke: $value;
+}
+
+// Keyframe animation mixin since Bourbon doesn't provide one.
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} { @content; }
+     @-moz-keyframes #{$name} { @content; }
+      @-ms-keyframes #{$name} { @content; }
+       @-o-keyframes #{$name} { @content; }
+          @keyframes #{$name} { @content; }
+}
+
+// Min-response breakpoint for mobile-first
+@mixin at-least($point) {
+  @if $point == desktop-wide {
+    @media (min-width: $desktop-wide) { @content; }
+  }
+  @if $point == desktop-small {
+    @media (min-width: $desktop-small) { @content; }
+  }
+  @if $point == tablet-portrait {
+    @media (min-width: $tablet-portrait) { @content; }
+  }
+  @if $point == phone-wide-landscape {
+    @media (min-width: $phone-wide-landscape) { @content; }
+  }
+  @if $point == phone-landscape {
+    @media (min-width: $phone-landscape) { @content; }
+  }
+  @else if $point == phone-portrait {
+    @media (min-width: $phone-portrait) { @content; }
+  }
+}
+
+// Text replacement
+@mixin hide-text {
+  text-indent: 101%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+@mixin dont-hide-text {
+  text-indent: 0;
+  white-space: normal;
+  overflow: auto;
+}
+
+// Some nice defaults
+
+a {
+  &:link {text-decoration: none};
+}
+
+
+
+// Block-level image mixin
+@mixin blockimg {
+  @include breakpoint(phone-wide-landscape) {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    display: block;
+    width: auto;
+    max-width: 100%;
+    @include transform(translateX(0));
+  }
+}
+
+img, .wp-caption {
+@include box-sizing(border-box);
+  max-width: 100%; 
+     height: auto;
+}
+
+.imageright, .alignright, .right {
+      float: right;
+     margin: 0 0 3.8% 3.8%;
+}
+.imageleft,   .alignleft,   .left { 
+      float: left; 
+     margin: 0 3.8% 3.8% 0;
+}
+.imagecenter, .aligncenter, .center  {
+    display: block;
+     margin: 0 auto 3.8% auto;
+}
+
+.halfright {
+  @extend .imageright;
+  width: 50%;
+}
+
+.thirdright {
+  @extend .imageright;
+  width: 33%;
+}
+
+// Some reusable parts
+@mixin clearinput {
+  @include box-sizing(border-box);
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent; 
+}
+
+@mixin no-rgba-inset {
+  background-color: #22324b;
+  border: 1px solid #222d40;
+  border-bottom-color: #384762;
+  &:hover {background-color: #4a5367;}
+}
+
+
+// Theme links
+@mixin theme-links(
+    $link: #7ab4e5, 
+    $visited: #7ab4e5, 
+    $hover: #e62c25, 
+    $active: lighten($hover, 10%), 
+    $focus: $hover, 
+    $transition: .15s color ease-in-out ) {
+  &:link    { color: $link;    }
+  &:visited { color: $visited; }
+  &:hover   { color: $hover;   }
+  &:active  { color: $active;  }
+  &:focus   { color: $focus;   }
+  @include transition($transition);
+}
+
+
+
+
