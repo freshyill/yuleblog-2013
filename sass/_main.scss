@@ -115,6 +115,11 @@ body {
   @include reset-display();  
 }
 
+%meta-ish {
+  font-size: .875rem;
+  line-height: 1.25;
+}
+
 .wrap {
   text-shadow: rgba($black, .2) 0px -1px 0px;
   box-shadow: 0 1px 0 rgba($white, 0.1) inset, 
@@ -122,10 +127,6 @@ body {
               0 -5px 10px rgba($black, .15);
   
   a { @include links;}
-  
-  h1 {
-    a { @include links($link: $link-alt);}
-  }
 }
 
 .primary {
@@ -133,6 +134,28 @@ body {
   @include media($iphone-wide-landscape) {
     @include span-columns(8);
   }
+  
+  article {
+    border-top: 1px solid rgba($white, .1);
+    border-bottom: 1px solid rgba($black, .1);
+    @include pad(2rem 0 2.2rem 0);
+    
+    &:first-of-type {
+      border-top: none;
+      @include pad(0 0 2.2rem 0);
+    }
+    
+    header {
+      a { @include links($link: $link-alt);}
+    }
+    
+    p { line-height: 1.6; }
+    
+    .posted {
+      @extend %meta-ish;
+    }
+  }
+
 }
 
 .secondary {
@@ -147,10 +170,12 @@ body {
   @include outer-container;
 }
 
-
 .category-link-post {
   h1 {
     font-size: 1.5rem;
+  }
+  .via {
+    @extend %meta-ish;
   }
 }
 
