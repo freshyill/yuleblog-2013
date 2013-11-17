@@ -27,15 +27,16 @@ add_action('wp_head', 'yb_favicons');
 ////////////////////////////////////////////////////////////////////
 function yb_scripts_and_styles() {
 	$style_path = get_template_directory_uri() . '/css/';
+	$style_path_features = get_template_directory_uri() . '/css/features/';
 	$script_path = get_template_directory_uri() . '/js/';
 	
-	wp_enqueue_style( 'common', $style_path . 'common.css');
+	wp_enqueue_style( 'style', get_stylesheet_uri());
 	
   if ( (is_single()) && get_field('custom_css'))  {
     $feature_custom = get_field('custom_css');
     
-    wp_enqueue_style( 'feature-common', $style_path . 'feature-common.css', 'common');
-	  wp_enqueue_style( 'feature-custom', $style_path . $feature_custom, 'common');
+    wp_enqueue_style( 'feature-common', $style_path . 'feature-common.css', 'style');
+	  wp_enqueue_style( 'feature-custom', $style_path_features . $feature_custom, 'style');
   }
   else {
     wp_enqueue_style( 'theme', $style_path . 'theme.css', 'common');

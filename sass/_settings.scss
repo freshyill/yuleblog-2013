@@ -1,0 +1,70 @@
+// Colors
+$text: #dbeaff;
+$link: #7ab4e5;
+$link-alt: #dbeaff;
+$contrast: #e62c25;
+
+$white: #fff;
+$black: #000;
+
+$gray-10: lighten($black, 90);
+$gray-20: lighten($black, 80);
+$gray-30: lighten($black, 70);
+$gray-40: lighten($black, 60);
+$gray-50: lighten($black, 50);
+$gray-60: lighten($black, 40);
+$gray-70: lighten($black, 30);
+$gray-80: lighten($black, 20);
+$gray-90: lighten($black, 10);
+
+// Fonts
+$font-standard: 'Bitter', Georgia, serif;
+
+
+// Breakpoints
+$iphone-landscape:       new-breakpoint(481px);
+$iphone-wide-landscape:  new-breakpoint(569px);
+$ipad-portrait:          new-breakpoint(769px);
+$ipad-landscape:         new-breakpoint(1025px);
+$max-width: em(1140);
+
+
+// Universal Mixins
+@mixin omega-reset($nth) {
+  &:nth-child(#{$nth}) { margin-right: flex-gutter(); }
+  &:nth-child(#{$nth}+1) { clear: none }
+}
+
+@mixin links(
+    $link:       $link, 
+    $visited:    $link, 
+    $hover:      $contrast, 
+    $active:     lighten($hover, 10%), 
+    $focus:      $hover, 
+    $transition: .15s color ease-in-out ) {
+  text-decoration: none;
+  &:link    { color: $link;    }
+  &:visited { color: $visited; }
+  &:hover   { color: $hover;   }
+  &:active  { color: $active;  }
+  &:focus   { color: $focus;   }
+  @include transition($transition);
+}
+
+// Universal Extends
+%blockimg {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%pad-for-small-screens {
+  @include pad(0 1rem);
+  @include media($max-width) {
+  }
+  @include media($max-width + em(24)) {
+    @include pad(0 1rem);
+  }
+}

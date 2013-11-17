@@ -6,10 +6,8 @@
 */
 ?>
 
-<nav class="sitenav" role="navigation">
-  <ul>
-    <li><a href="/feature" title="Christmas Articles">Features</a></li>
-    <li><a href="/archive" title="Yule Blog Archive">Archives</a></li>
-    <li><a href="/about" title="About The Yule Blog">About</a></li>
-  </ul>
-</nav>
+<ul>
+  <li><a href="/feature" title="Christmas Articles">Features</a></li>
+  <li><a href="/archive" title="Yule Blog Archive">Archives</a></li>
+  <li><a href="/about" title="About The Yule Blog">About</a></li>
+</ul>

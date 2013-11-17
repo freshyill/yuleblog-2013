@@ -1,0 +1,201 @@
+%test-border { border: 1px solid red; }
+%test-bg { background: transparentize(#f90, .8); }
+
+
+// Site Structure
+html {
+  height: 100%;
+  background: url(img/background-2013.jpg) no-repeat center top fixed;
+  background-size: cover;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  color: $text;
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+  font-family: $font-standard;
+}
+
+#snowfallheader {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  background: transparent;
+}
+
+
+
+
+// Header
+.header-wrap {
+  a { @include links($link: $link-alt);}
+  background: rgba($black, .3);
+}
+
+.header-container {
+  @extend %pad-for-small-screens;
+  position: relative;
+  @include pad(1rem 1rem .75rem 1rem);
+  @include outer-container;
+  @include media($iphone-wide-landscape) {
+    @include row(table);
+  }
+}
+
+.site-logo {
+  text-align: center;
+  margin: 1rem 0;
+  @include media($iphone-wide-landscape) {
+    text-align: left;
+    margin-bottom: 0;
+    @include span-columns(4);
+  }
+  
+  img {
+    width: 300px;
+    max-width: 100%;
+  }
+}
+
+.site-nav {
+  text-align: center;
+  @include media($iphone-landscape) {
+    font-size: golden-ratio(.5em, 2);
+    @include span-columns(10);
+  }  
+  @include media($iphone-wide-landscape) {
+    text-align: right;
+    @include span-columns(7);
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  li {
+    display: inline-block;
+    margin: 0 1rem;
+    @include media($iphone-landscape) {
+      margin: 0 .5rem;
+    }
+  }
+
+}
+
+.site-snow-toggle {
+  position: relative;
+  text-align: right;
+  @include media($iphone-landscape) {
+    @include span-columns(2);
+  }  
+  @include media($iphone-wide-landscape) {
+    @include span-columns(1);
+  }
+  
+  .snowfall-toggle {
+    bottom: -3px;
+    @include toggle(65, 15, "Snow On", "Snow Off");
+    border-radius: 8px;
+  }
+}
+
+
+
+
+
+
+
+// Body
+%content-column {
+  margin-top: 1.5rem;
+  @include reset-display();  
+}
+
+.wrap {
+  text-shadow: rgba($black, .2) 0px -1px 0px;
+  box-shadow: 0 1px 0 rgba($white, 0.1) inset, 
+              0 4px 2px -2px rgba($black, 0.1), 
+              0 -5px 10px rgba($black, .15);
+  
+  a { @include links;}
+  
+  h1 {
+    a { @include links($link: $link-alt);}
+  }
+}
+
+.primary {
+  @extend %content-column;
+  @include media($iphone-wide-landscape) {
+    @include span-columns(8);
+  }
+}
+
+.secondary {
+  @extend %content-column;
+  @include media($iphone-wide-landscape) {
+    @include span-columns(4);
+  }
+}
+
+.main {
+  @extend %pad-for-small-screens;
+  @include outer-container;
+}
+
+
+.category-link-post {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+// Footer
+.footer-wrap {
+  a { @include links;}
+  position: relative;
+  background: rgba($black, .5);
+  box-shadow: 0 1px 0 rgba($white, .2) inset, 
+              0 4px 4px -3px rgba($black, 0.1) inset, 
+              0 10px 10px rgba($black, .5) inset;
+  @include media($ipad-landscape) {
+    &:after {
+      background: rgba($black, .5);
+      position: absolute;
+      width: 100%;
+      height: 500px;
+      content: " ";
+    }
+  }
+}
+
+%footer-section {
+  @include media($iphone-wide-landscape) {
+    @include span-columns(4);
+  } 
+}
+
+.footer-main {
+  @extend %pad-for-small-screens;
+  @include outer-container;
+  
+  .social {
+    @extend %footer-section;
+  }
+  
+  .nav {
+    @extend %footer-section;
+  }
+  
+  .features {
+    @extend %footer-section;
+  }
+}

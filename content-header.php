@@ -8,28 +8,27 @@
 
 <canvas id="snowfallheader" class="canvas-snowfall"></canvas>
 
-<div class="hrail-bar">
-
-  <div class="hrail-container">
-  
-    <div class="hrail-content">
+<header class="header-wrap">
+  <div class="header-container">
     
-      <div class="header-wrap">
-      
-        <h1 class="site-title"><a href="/" title="The Yule Blog" data-fallback="<?php echo get_template_directory_uri(); ?>/img/logo.png">The Yule Blog</a></h1>
-        
-        <label class="snow-control" id="snow-control">
-          <span for="snowfall-toggle" class="snowfall-toggle">
-            <input type="checkbox" id="snowfall-toggle" checked />
-            <span class="switch" />
-          </span>
-        </label>
-        
-        <?php get_template_part('content', 'nav'); ?>
-      
-      </div> 
+    <div class="site-logo">
+      <img src="<?php echo get_template_directory_uri(); ?>/img/yuleblog-logo.svg">
     </div>
+      
+    <nav class="site-nav">
+      <?php get_template_part('content', 'nav'); ?>
+    </nav>
+    
+    <div class="site-snow-toggle">
+      <label class="snow-control" id="snow-control">
+        <span for="snowfall-toggle" class="snowfall-toggle">
+          <input type="checkbox" id="snowfall-toggle" checked />
+          <span class="switch" />
+        </span>
+      </label>
+    </div>
+      
   </div>
-</div>
+</header>
 
 
