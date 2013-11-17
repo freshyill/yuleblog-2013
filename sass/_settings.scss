@@ -20,6 +20,9 @@ $gray-90: lighten($black, 10);
 // Fonts
 $font-standard: 'Bitter', Georgia, serif;
 
+// Reusable things
+$nice-inset-shadow: 0 1px 8px rgba(0,0,0,.3) inset, 0 1px 0 rgba(255,255,255,.075);
+
 
 // Breakpoints
 $iphone-landscape:       new-breakpoint(481px);
@@ -51,10 +54,31 @@ $max-width: em(1140);
   @include transition($transition);
 }
 
+@mixin hyphens($value) {
+  -webkit-hyphens: $value;
+     -moz-hyphens: $value;
+      -ms-hyphens: $value;
+          hyphens: $value;
+}
+
+@mixin text-stroke($value) {
+  -webkit-text-stroke: $value;
+          text-stroke: $value;
+}
+
+@mixin nice-text {
+  text-align: left;
+  @include media($iphone-wide-landscape) {
+    text-align: justify;
+    @include hyphens(auto);
+  }
+}
+
 
 // Universal Extends
 %blockimg {
   width: 100%;
+  height: auto;
   max-width: 100%;
   display: block;
   margin-left: auto;
@@ -80,4 +104,29 @@ $max-width: em(1140);
   text-indent: 0;
   white-space: normal;
   overflow: auto;
+}
+
+%content-module {
+  p {
+    line-height: 1.6;
+  }
+}
+
+%thing-list {
+  border-top: 1px solid rgba($white, .1);
+  border-bottom: 1px solid rgba($black, .1);
+  &:first-of-type {
+    border-top: none;
+  }
+  &:last-of-type {
+    border-bottom: none;
+  }
+}
+
+%bottom-padding-helper {
+  & > *:last-child,
+  & > *:last-child > *:last-child,
+  & > *:last-child > *:last-child > *:last-child {
+    padding-bottom: 0;
+  }
 }

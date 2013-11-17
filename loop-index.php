@@ -19,9 +19,11 @@
       
       <?php if ( 'feature' == get_post_type()) : // If it's a feature  ?>
       
-        <header>
+        <header class="entry-header">
           <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-          <?php yuleblog_posted_on(); ?>
+          <div class="entry-meta">
+            <?php yuleblog_posted_on() ?>
+          </div>
         </header>
       
         <?php if (get_field('745_banner')) :      // 2011 Banner ?>
@@ -38,10 +40,14 @@
       
       <?php else : // Not a feature ?>
       
-        <header>
+        <header class="entry-header">
           <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-          <?php yuleblog_posted_on() ?>
+          <div class="entry-meta">
+            <?php yuleblog_posted_on() ?>
+          </div>
         </header>
+        
+        
       
         <div class="entry-text">
           <?php the_content(); ?>
