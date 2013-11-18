@@ -122,11 +122,6 @@ body {
   @include reset-display();
 }
 
-%meta-ish {
-  font-size: .875rem;
-  line-height: 1.25;
-}
-
 .wrap {
   text-shadow: rgba($black, .2) 0px -1px 0px;
   box-shadow: 0 1px 0 rgba($white, 0.1) inset,
@@ -188,8 +183,20 @@ body {
     font-size: golden-ratio(.5em, 2);
   }
   
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
   li {
     @extend %thing-list;
+    margin: 0;
+    padding: 1rem 0;
+    
+    time {
+      font-size: .8rem;
+      color: $text;
+    }
   }
 
   .social {

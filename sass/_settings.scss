@@ -76,6 +76,12 @@ $max-width: em(1140);
 
 
 // Universal Extends
+
+%meta-ish {
+  font-size: .875rem;
+  line-height: 1.25;
+}
+
 %blockimg {
   width: 100%;
   height: auto;

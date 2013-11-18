@@ -22,6 +22,28 @@ function yb_favicons() {
 add_action('wp_head', 'yb_favicons');
 
 
+
+
+////////////////////////////////////////////////////////////////////
+// Give Link Posts an Inline Headline
+////////////////////////////////////////////////////////////////////
+function yb_link_post() {
+  $link_post_title = '<b class="headline"><a href="' . get_permalink() . '" title="' . get_the_title() . '">' . get_the_title() . '</a></b>';
+  $link_post_content = $link_post_title . ' — ' . get_the_content();
+  
+  remove_filter('the_content', 'wpautop');
+  echo wpautop($link_post_content);
+  
+}
+
+
+
+
+
+
+
+
+
 ////////////////////////////////////////////////////////////////////
 // Scripts and Styles
 ////////////////////////////////////////////////////////////////////

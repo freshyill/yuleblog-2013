@@ -40,19 +40,29 @@
       
       <?php else : // Not a feature ?>
       
-        <header class="entry-header">
-          <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-          <div class="entry-meta">
-            <?php yuleblog_posted_on() ?>
+        <?php if (in_category(444)) : ?>
+        
+          <div class="entry-text">
+            <?php yb_link_post(); ?>
+            <?php yuleblog_linkage(); ?>
           </div>
-        </header>
+          
+        <?php else : ?>
         
-        
+          <header class="entry-header">
+            <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+            <div class="entry-meta">
+              <?php yuleblog_posted_on() ?>
+            </div>
+          </header>
+          <div class="entry-text">
+            <?php the_content(); ?>
+            <?php yuleblog_linkage(); ?>
+          </div>
+          
+        <?php endif; ?>  
       
-        <div class="entry-text">
-          <?php the_content(); ?>
-          <?php yuleblog_linkage(); ?>
-        </div>
+        
         
       <?php endif; ?>
     </article>

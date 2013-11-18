@@ -38,6 +38,7 @@
     img,
     .video-wrapper,
     iframe[src^="http://maps.google.com"] {
+      max-width: 100%;
       padding: .5rem;
       background: rgba(0,0,0,.1);
       @include box-shadow($nice-inset-shadow);
@@ -63,7 +64,7 @@
 }
 
 .category-link-post {
-  .entry-header {
-    h1 { font-size: 1.5rem; }
+  .headline a {
+    @include links($link: $link-alt);
   }
 }
