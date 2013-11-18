@@ -129,10 +129,10 @@ $max-width: em(1140);
   }
 }
 
-%bottom-padding-helper {
+%bottom-margin-helper {
   & > *:last-child,
   & > *:last-child > *:last-child,
   & > *:last-child > *:last-child > *:last-child {
-    padding-bottom: 0;
+    margin-bottom: 0;
   }
 }

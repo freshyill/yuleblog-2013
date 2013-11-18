@@ -6,8 +6,9 @@
     
     @extend %thing-list;
     @extend %margin-remover;
+    @extend %bottom-margin-helper;
     
-    padding-bottom: 2rem;
+    @include pad(1rem 0 3rem 0);
     
     // Images and Media Elements
     img {
@@ -47,16 +48,19 @@
       }
     }
 
-    .entry-meta,
+    .entry-meta p,
     .via { @extend %meta-ish; }
     
   }
 }
 
 .entry-header {
+  margin-bottom: 2rem;
+  
   a { @include links($link: $link-alt); }
   h1 {
    font-size: 1.5rem;
+   margin-bottom: .2em;
    @include media($iphone-wide-landscape) {
       font-size: 2rem;
     }
@@ -64,6 +68,7 @@
 }
 
 .category-link-post {
+  @include pad(1rem 0);
   .headline a {
     @include links($link: $link-alt);
   }
