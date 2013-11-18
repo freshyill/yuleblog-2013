@@ -77,6 +77,14 @@ $max-width: em(1140);
 
 // Universal Extends
 
+%clearinput {
+  @include box-sizing(border-box);
+  appearance: none;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
 %meta-ish {
   font-size: .875rem;
   line-height: 1.25;
@@ -94,9 +102,11 @@ $max-width: em(1140);
 %pad-for-small-screens {
   @include pad(0 1rem);
   @include media($max-width) {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
   @include media($max-width + em(24)) {
-    @include pad(0 1rem);
+    @include pad(0);
   }
 }
 

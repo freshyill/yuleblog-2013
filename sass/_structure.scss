@@ -41,12 +41,23 @@ body {
 }
 
 .header-container {
+
+  // @extend %test-bg;
+  // @extend %test-border;
+  
   @extend %pad-for-small-screens;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+  
   position: relative;
-  @include pad(1rem 1rem .75rem 1rem);
   @include outer-container;
   @include media($iphone-wide-landscape) {
     @include row(table);
+    position: relative;
+    padding-bottom: 1rem;
+  }
+  @include media($max-width + em(24)) {
+//    @include pad(1rem 0);
   }
 }
 
@@ -56,6 +67,8 @@ body {
   @include media($iphone-wide-landscape) {
     text-align: left;
     margin-bottom: 0;
+    position: relative;
+    left: -5px;
     @include span-columns(4);
   }
 
@@ -131,10 +144,22 @@ body {
   a { @include links;}
 }
 
+
+
+.main {
+
+  // @extend %test-bg;
+  // @extend %test-border;
+
+  @extend %pad-for-small-screens;
+  @include outer-container;
+}
+
 .primary {
   @extend %content-column;
   @include media($iphone-wide-landscape) {
     @include span-columns(8);
+    margin-top: 3.5rem;
   }
 }
 
@@ -142,12 +167,8 @@ body {
   @extend %content-column;
   @include media($iphone-wide-landscape) {
     @include span-columns(4);
+    margin-top: 3.5rem;
   }
-}
-
-.main {
-  @extend %pad-for-small-screens;
-  @include outer-container;
 }
 
 
@@ -169,7 +190,9 @@ body {
 
 
 %footer-section {
-  @extend %content-area;
+
+  @extend %content-module;
+  
   @include media($iphone-wide-landscape) {
     @include span-columns(4);
   }

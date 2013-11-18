@@ -51,9 +51,15 @@
         
           <header class="entry-header">
             <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+            
             <div class="entry-meta">
-              <?php yuleblog_posted_on() ?>
+              <?php if ((in_category(504))) : ?>  
+                <p><time class="entry-date" datetime="%1$s" pubdate><?php the_date(); ?></time></p>                  
+              <?php else : ?>
+                <?php yuleblog_posted_on() ?>
+              <?php endif; ?>
             </div>
+            
           </header>
           <div class="entry-text">
             <?php the_content(); ?>

@@ -11,9 +11,7 @@
 <header class="header-wrap">
   <div class="header-container">
     
-    <div class="site-logo">
-      <img src="<?php echo get_template_directory_uri(); ?>/img/yuleblog-logo.svg">
-    </div>
+    <div class="site-logo"><img src="<?php echo get_template_directory_uri(); ?>/img/yuleblog-logo.svg"></div>
       
     <nav class="site-nav">
       <?php get_template_part('content', 'nav'); ?>

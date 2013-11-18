@@ -9,6 +9,7 @@
     @extend %bottom-margin-helper;
     
     @include pad(1rem 0 3rem 0);
+    &:first-child { padding-top: 0;}
     
     // Images and Media Elements
     img {
@@ -60,6 +61,7 @@
   a { @include links($link: $link-alt); }
   h1 {
    font-size: 1.5rem;
+   margin-top: 0;
    margin-bottom: .2em;
    @include media($iphone-wide-landscape) {
       font-size: 2rem;
@@ -73,3 +75,125 @@
     @include links($link: $link-alt);
   }
 }
+
+// Social Sharing Module
+.social-shares {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    border: none;
+    font-size: golden-ratio(.5rem, 2);
+    padding: .25em 0 0 2em;
+    margin: 1rem 0;
+    background-repeat: no-repeat;
+    &.facebook { background-image: url(img/logo-facebook.svg);
+                 background-size: auto 1.4em;
+                 background-position: .4em 50%;
+    }
+    &.twitter  { background-image: url(img/logo-twitter.svg);
+                 background-size: 1.3em auto;
+                 background-position: left 75%;
+    }
+  }
+}
+
+// Search Form Module
+
+.searchform {
+  border-radius: 4px;
+  
+  padding: 0;
+  font-size: 1.5rem;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  background: rgba(0,0,0,.1);
+  position: relative;
+  
+  @include box-shadow(0 1px 8px rgba($black,.3) inset, 0 1px 0 rgba($white,.1));
+  
+  input[type="search"] {
+    @extend %clearinput;
+    display: block;
+    width: 100%;     
+    padding: .4em 2.1em .3em .5em;
+    color: inherit;
+  }
+  
+  input[type="submit"] {
+    @extend %clearinput;
+    color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    width: 2em;
+    padding: 12px 10px 8px 10px;
+    text-overflow: ellipsis;
+    background-image: url(img/icon-search.svg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: 1em auto;
+    &:active {
+      @include transform(translateY(2px));
+    }
+  }
+  
+  .assistive-text { display: none; }
+}
+
+
+
+//  .searchform {
+//    @include box-shadow(0 1px 8px rgba(0,0,0,.3) inset, 0 1px 0 rgba(255,255,255,.1));
+//    @include border-radius(4px);
+//    padding: 0;
+//    font-size: 1.5em;
+//    border-bottom: 1px solid rgba(0,0,0,.1);
+//    background: rgba(0,0,0,.1);
+//    position: relative;
+//    label {display: none;}
+//    input {
+//      color: $body-copy-color;
+//      font-weight: normal;
+//      -webkit-font-smoothing: antialiased;
+//    }
+//    input[type="search"] {
+//      @include clearinput;
+//      display: block;
+//      width: 100%;     
+//      padding: 10px 45px 10px 10px;
+//    }
+//    input[type="submit"] {
+//      @include clearinput;
+//      position: absolute;
+//      right: 0;
+//      top: 0;
+//      display: inline;
+//      padding: 12px 10px 8px 10px;
+//      &:active {
+//        @include transform(translateY(2px));
+//      }
+//    }
+//  }
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
