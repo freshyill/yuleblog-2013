@@ -18,7 +18,7 @@
       width: auto;
       height: auto;
       display: block;
-      margin: 0 auto;
+      margin-bottom: 1rem;
       padding: .5rem;
       background: rgba(0,0,0,.1);
       @include media($iphone-wide-landscape) {
@@ -52,6 +52,39 @@
   }
 }
 
+
+.imageright,
+.alignright,
+.right {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+.imageleft,
+.alignleft,
+.left { 
+  float: left; 
+  margin: 0 1rem 1rem 0;
+}
+
+.imagecenter,
+.aligncenter,
+.center  {
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.halfright {
+  @extend .imageright;
+  width: 50%;
+}
+
+.thirdright {
+  @extend .imageright;
+  width: 33%;
+}
+
+
 .entry-header {
   margin-bottom: 2rem;
   
@@ -75,6 +108,57 @@
     margin-top: 0;
   }
 }
+
+// 404 Page
+
+.notfoundcontent {
+  margin-top: 3.5rem;
+  margin-bottom: 3.5rem;
+  .searchblock { margin-bottom: 2rem; }
+}
+
+@include keyframes(santapop) {
+  from { @include transform(scale(0)); }
+  to   { @include transform(scale(1)); }
+}
+
+@include keyframes(eyes) {
+  from { @include transform(translateX(-1.5%)); }
+  30%  { @include transform(translateX(-1.5%)); }
+  40%  { @include transform(translateX(0)); }
+  90%  { @include transform(translateX(0)); }
+  to   { @include transform(translateX(-1.5%)); }
+}
+  
+.santa-animated {
+  position: relative;
+  @include animation-name(santapop);
+  @include animation-duration(.8s);
+  @include animation-delay(1.2s);
+  @include animation-timing-function(cubic-bezier(.16,.24,.5,1.51));
+  @include animation-iteration-count(1);
+  @include animation-fill-mode(backwards);
+  
+  .face {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .eyes {
+    max-width: 100%;
+    position: relative;
+    z-index: 2;
+    @include animation-name(eyes);
+    @include animation-duration(10s);
+    @include animation-delay(1.2s);
+    @include animation-timing-function(ease);
+    @include animation-iteration-count(infinite);
+  }
+}
+
+
 
 
 

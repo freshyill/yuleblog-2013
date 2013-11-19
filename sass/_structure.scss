@@ -114,12 +114,12 @@ body {
   @include media($iphone-wide-landscape) {
     @include span-columns(1);
   }
+}
 
-  .snowfall-toggle {
-    bottom: -3px;
-    @include toggle(65, 15, "Snow On", "Snow Off");
-    border-radius: 8px;
-  }
+.snowfall-toggle {
+  bottom: -3px;
+  border-radius: 8px;
+  @include toggle(65, 16, "Snow On", "Snow Off");
 }
 
 
@@ -147,10 +147,6 @@ body {
 
 
 .main {
-
-  // @extend %test-bg;
-  // @extend %test-border;
-
   @extend %pad-for-small-screens;
   @include outer-container;
 }
@@ -205,10 +201,45 @@ body {
     @extend %yb-media-link;
     max-width: 100%;
   }
-  
 }
 
 
+
+.notfoundcontent {
+  @include media($ipad-portrait) {
+    @include shift(3);
+    @include span-columns(6);
+  }
+}
+
+
+// Pagination
+
+.blog-pagination {
+  box-shadow: $nice-inset-shadow;
+  background: rgba($black, .1);
+  
+  @include media(ipad-portrait)  { font-size: 1.2rem; }
+  @include media(ipad-landscape) { font-size: 1.5rem; }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    @include clearfix;
+  }
+  
+  li {
+    display: inline-block;
+    &:first-child { float: left; }
+    &:last-child  { float: right; }
+  }
+  
+  a {
+    padding: 1em;
+    display: inline-block;
+    @include links($link: $link-alt);
+  }
+}
 
 
 
