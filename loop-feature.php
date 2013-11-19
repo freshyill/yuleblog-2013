@@ -1,6 +1,6 @@
 <?php
 /*
-  loop-features.php
+  loop-feature.php
   This loop is called by features.php to display the list of features.
 */
 ?>
@@ -20,26 +20,22 @@
 
     <?php while ( $features->have_posts()) : $features->the_post(); ?>
 
-    <article <?php post_class($custom_classes) ?> id="post-<?php the_ID(); ?>" role="article">
-      
-      <header class="entry-header">
-        <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
-        <?php yuleblog_posted_on(); ?>
-      </header>
-      
-      <?php if (get_field('460_badge')) :         // 2011 Badge ?>
-        <a href="<?php the_permalink() ?>"><img src="<?php the_field('460_badge'); ?>" alt="<?php the_title(); ?>"></a>
-      <?php elseif (get_field('small_feature')) : // 2010 Badge ?>
-        <a href="<?php the_permalink() ?>"><img src="<?php the_field('small_feature'); ?>" alt="<?php the_title(); ?>"></a>
-      <?php endif; ?>
-      
-      <div class="entry-excerpt">
-        <?php the_excerpt(); ?>
-        <p>Continue reading &#8220;<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>&#8221;</p>
-        <?php yuleblog_edit_post(); ?>
-      </div>
-      
-    </article>
+    
+      <article <?php post_class($custom_classes) ?> id="post-<?php the_ID(); ?>" role="article">
+        
+        <?php if (get_field('460_badge')) :         // 2011 Badge ?>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php the_field('460_badge'); ?>" alt="<?php the_title(); ?>"></a>
+        <?php elseif (get_field('small_feature')) : // 2010 Badge ?>
+          <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><img src="<?php the_field('small_feature'); ?>" alt="<?php the_title(); ?>"></a>
+        <?php else :                                // Just use the headine ?>
+          <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
+          <div class="excerpt">
+            <?php the_excerpt(); ?>
+          </div>
+        <?php endif; ?>
+        
+      </article>
+    
 
     <?php endwhile; ?>
   </ul>

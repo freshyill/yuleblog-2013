@@ -1,3 +1,5 @@
+// Standard Article List and Single View
+
 .primary {
   
   @extend %content-module;
@@ -8,7 +10,7 @@
     @extend %margin-remover;
     @extend %bottom-margin-helper;
     
-    @include pad(1rem 0 3rem 0);
+    @include pad(3rem 0);
     &:first-child { padding-top: 0;}
     
     // Images and Media Elements
@@ -28,8 +30,7 @@
 
     a > img, 
     .video-wrapper {
-      @include transition(.25s all ease-in-out .1s);
-      &:hover  {background: rgba(255,255,255,.1);}
+      @extend %yb-media-link;
       &.inline {
         display: inline-block;
         margin-left: auto;
@@ -40,14 +41,10 @@
     img,
     .video-wrapper,
     iframe[src^="http://maps.google.com"] {
-      max-width: 100%;
-      padding: .5rem;
-      background: rgba(0,0,0,.1);
-      @include box-shadow($nice-inset-shadow);
-      @include media($iphone-wide-landscape) {
-        padding: .825rem;
-      }
+      @extend %yb-media-module;
     }
+    
+    .posted { margin-top: 0; }
 
     .entry-meta p,
     .via { @extend %meta-ish; }
@@ -74,32 +71,14 @@
   .headline a {
     @include links($link: $link-alt);
   }
-}
-
-// Social Sharing Module
-.social-shares {
-  list-style: none;
-  padding-left: 0;
-  
-  li {
-    border: none;
-    font-size: golden-ratio(.5rem, 2);
-    padding: .25em 0 0 2em;
-    margin: 1rem 0;
-    background-repeat: no-repeat;
-    &.facebook { background-image: url(img/logo-facebook.svg);
-                 background-size: auto 1.4em;
-                 background-position: .4em 50%;
-    }
-    &.twitter  { background-image: url(img/logo-twitter.svg);
-                 background-size: 1.3em auto;
-                 background-position: left 75%;
-    }
+  &:first-child p:first-child {
+    margin-top: 0;
   }
 }
 
-// Search Form Module
 
+
+// Search Form Module
 .searchform {
   border-radius: 4px;
   
@@ -143,57 +122,25 @@
 
 
 
-//  .searchform {
-//    @include box-shadow(0 1px 8px rgba(0,0,0,.3) inset, 0 1px 0 rgba(255,255,255,.1));
-//    @include border-radius(4px);
-//    padding: 0;
-//    font-size: 1.5em;
-//    border-bottom: 1px solid rgba(0,0,0,.1);
-//    background: rgba(0,0,0,.1);
-//    position: relative;
-//    label {display: none;}
-//    input {
-//      color: $body-copy-color;
-//      font-weight: normal;
-//      -webkit-font-smoothing: antialiased;
-//    }
-//    input[type="search"] {
-//      @include clearinput;
-//      display: block;
-//      width: 100%;     
-//      padding: 10px 45px 10px 10px;
-//    }
-//    input[type="submit"] {
-//      @include clearinput;
-//      position: absolute;
-//      right: 0;
-//      top: 0;
-//      display: inline;
-//      padding: 12px 10px 8px 10px;
-//      &:active {
-//        @include transform(translateY(2px));
-//      }
-//    }
-//  }
+// Social Sharing Module
+.social-shares {
+  list-style: none;
+  margin-bottom: 2rem;
+  @include pad(0 0 1rem 0);
   
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  li {
+    border: none;
+    font-size: golden-ratio(.5rem, 2);
+    padding: .25em 0 0 2em;
+    margin: 1rem 0;
+    background-repeat: no-repeat;
+    &.facebook { background-image: url(img/logo-facebook.svg);
+                 background-size: auto 1.4em;
+                 background-position: .4em 50%;
+    }
+    &.twitter  { background-image: url(img/logo-twitter.svg);
+                 background-size: 1.3em auto;
+                 background-position: left 75%;
+    }
+  }
+}

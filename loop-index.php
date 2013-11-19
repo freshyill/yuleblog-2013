@@ -54,7 +54,7 @@
             
             <div class="entry-meta">
               <?php if ((in_category(504))) : ?>  
-                <p><time class="entry-date" datetime="%1$s" pubdate><?php the_date(); ?></time></p>                  
+                <p class="posted"><time class="entry-date" datetime="%1$s" pubdate><?php the_date(); ?></time></p>                  
               <?php else : ?>
                 <?php yuleblog_posted_on() ?>
               <?php endif; ?>

@@ -10,8 +10,9 @@ License: None. Just making the theme checker happy.
 License URI: http://yuleblog.us
 */
 
-@import 'bourbon';
-@import 'neat';
+@import 'bourbon/bourbon';
+@import "grid-settings";
+@import 'neat/neat';
 @import 'normalize';
 @import 'toggle';
 @import 'settings';

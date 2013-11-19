@@ -28,18 +28,13 @@ add_action('wp_head', 'yb_favicons');
 // Give Link Posts an Inline Headline
 ////////////////////////////////////////////////////////////////////
 function yb_link_post() {
-    $link_post_title = '<strong class="headline"><a href="' . get_permalink() . '" title="' . esc_attr(get_the_title()) . '">' . get_the_title() . '</a></strong>';
+    $link_post_title = '<a href="' . get_permalink() . '" title="' . esc_attr(get_the_title()) . '" class="headline">' . get_the_title() . '</a>';
     $link_post_content = $link_post_title . ' — ' . get_the_content();
 
     $content = apply_filters('the_content', $link_post_content);
     $content = str_replace( ']]>', ']]&gt;', $content );
     echo $content;
 }
-
-
-
-
-
 
 
 

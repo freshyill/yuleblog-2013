@@ -12,14 +12,12 @@
 <div class="wrap">
 
   <div class="main">
-    <div class="content">
+    <div class="content the-features">
     
-      <div class="primary">
-        <?php get_template_part('loop', 'feature'); ?>
-      </div>
+      <?php get_template_part('loop', 'feature'); ?>
       
-      <?php get_sidebar(); ?>
-      
+      <p></p>
+         
     </div>
   </div>
   

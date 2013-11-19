@@ -1,0 +1,5 @@
+$column: golden-ratio(1rem, 3) !default; // Column width
+$gutter: golden-ratio(.5rem, 3) !default; // Gutter between each two columns
+
+$fg-column: $column;
+$fg-gutter: $gutter;
