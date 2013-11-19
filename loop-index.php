@@ -13,16 +13,16 @@
 		
 		<?php wp_reset_query(); // This overrides any previous loops ?>
    
-    <?php $custom_classes = get_post_meta($post->ID, 'custom_post_class', false);  ?>
+    <?php $custom_classes = get_post_meta($post->ID, 'custom_post_class', true);  ?>
     
-    <article <?php post_class($custom_classes) ?> id="post-<?php the_ID(); ?>" role="article">
+    <article class="post" <?php /* post_class($custom_classes) ?> id="post-<?php the_ID(); ?>" */ ?> role="article">
       
       <?php if ( 'feature' == get_post_type()) : // If it's a feature  ?>
       
         <header class="entry-header">
           <h1><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h1>
           <div class="entry-meta">
-            <?php yuleblog_posted_on() ?>
+            <?php yuleblog_posted_on(); ?>
           </div>
         </header>
       
@@ -66,11 +66,9 @@
             <?php yuleblog_linkage(); ?>
           </div>
           
-        <?php endif; ?>  
-      
-        
-        
+        <?php endif; ?>
       <?php endif; ?>
+      
     </article>
     
   <?php endwhile; ?>

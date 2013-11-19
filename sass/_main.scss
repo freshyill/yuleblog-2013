@@ -4,7 +4,7 @@
   
   @extend %content-module;
 
-  article {
+  .post {
     
     @extend %thing-list;
     @extend %margin-remover;
@@ -49,6 +49,12 @@
     .entry-meta p,
     .via { @extend %meta-ish; }
     
+  }
+  
+  // Search Results
+  .searchresult {
+    @extend %thing-list;
+    a { @include links($link: $link-alt); }
   }
 }
 
@@ -108,6 +114,7 @@
     margin-top: 0;
   }
 }
+
 
 // 404 Page
 
