@@ -41,11 +41,11 @@ $max-width: em(1140);
 }
 
 @mixin links(
-    $link:       $link, 
-    $visited:    $link, 
-    $hover:      $contrast, 
-    $active:     lighten($hover, 10%), 
-    $focus:      $hover, 
+    $link:       $link,
+    $visited:    $link,
+    $hover:      $contrast,
+    $active:     lighten($hover, 10%),
+    $focus:      $hover,
     $transition: .15s color ease-in-out ) {
   text-decoration: none;
   &:link    { color: $link;    }
@@ -83,7 +83,7 @@ $max-width: em(1140);
   max-width: 100%;
   padding: .5rem;
   background: rgba($black, .1);
-  @include box-shadow($nice-inset-shadow);  
+  box-shadow: $nice-inset-shadow;
   @include media($mobile2) {
     padding: .825rem;
   }

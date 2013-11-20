@@ -49,6 +49,8 @@
   </div>
 </div>
 
+<canvas id="snowfallfooter" class="canvas-snowfall snowfall-footer"></canvas>
+
 <?php get_template_part('content', 'footer'); ?>
 
 <?php get_footer(); ?>

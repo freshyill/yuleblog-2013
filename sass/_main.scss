@@ -1,7 +1,7 @@
 // Standard Article List and Single View
 
 .primary {
-  
+  background: red;
   @extend %content-module;
 
   .post {

@@ -27,16 +27,10 @@ var snowfallheader = document.getElementById("snowfallheader");
 // Sets the size and position of the snowfall element
 function snowfallSize() {
 
-  if (jQuery('body').is('.post-template-feature-freeform-php, .post-template-columns-php, .post-template-feature-sidebar-header-php, .post-template-feature-sidebar-php, .post-template-feature-2010-visit-from-st-nicholas-php')) {
-   snowfallheader.width = jQuery('.header-wrap').width();
-   snowfallheader.height = jQuery('.header-wrap').height();
 
-  }
-
-  else {
     snowfallheader.width = window.innerWidth;
     snowfallheader.height = window.innerHeight;
-  }
+  
 }
 
 jQuery(document).ready(function(){

@@ -1,6 +1,8 @@
 @mixin toggle ($control-width: 52, $switch-width: 20, $text-active: 'On', $text-inactive: 'Off', $color: #fff) {
   
-  @include box-shadow(0 2px 2px rgba(0,0,0,.1) inset, 0 0 1px rgba(0,0,0,.1) inset, 0 #{ $switch-width / 2 }px 0 rgba(0,0,0,.05) inset);
+  box-shadow: 0 2px 2px rgba(0,0,0,.1) inset,
+              0 0 1px rgba(0,0,0,.1) inset, 
+              0 #{ $switch-width / 2 }px 0 rgba(0,0,0,.05) inset;
   box-sizing: border-box;
   font-size: #{$switch-width /2}px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
@@ -29,7 +31,9 @@
   
   .switch {
     @include transition(.3s all ease);
-    @include box-shadow(0 0 2px rgba(0,0,0,.1), 0 0 1px 1px rgba(255,255,255,.1) inset, 0 0 1px 0 rgba(0,0,0,.5));
+    box-shadow: 0 0 2px rgba(0,0,0,.1), 
+                0 0 1px 1px rgba(255,255,255,.1) inset, 
+                0 0 1px 0 rgba(0,0,0,.5);
     background: #1b293e;
     text-transform: uppercase;
     display: block;

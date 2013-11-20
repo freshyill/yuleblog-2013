@@ -6,7 +6,7 @@
 */
 ?>
 
-<canvas id="snowfallheader" class="canvas-snowfall"></canvas>
+<canvas id="snowfallheader" class="canvas-snowfall snowfall-header"></canvas>
 
 <header class="header-wrap">
   <div class="header-container">

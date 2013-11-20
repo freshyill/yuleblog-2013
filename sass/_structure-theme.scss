@@ -21,6 +21,8 @@
 
 
 .main {
+  position: relative;
+	z-index: 3;
   @extend %pad-for-small-screens;
   @include outer-container;
 }
