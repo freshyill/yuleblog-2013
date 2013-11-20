@@ -25,10 +25,12 @@ $nice-inset-shadow: 0 1px 8px rgba(0,0,0,.3) inset, 0 1px 0 rgba(255,255,255,.07
 
 
 // Breakpoints
-$iphone-landscape:       new-breakpoint(481px);
-$iphone-wide-landscape:  new-breakpoint(569px);
-$ipad-portrait:          new-breakpoint(768px);
-$ipad-landscape:         new-breakpoint(1024px);
+
+$mobile1: new-breakpoint(em(480));
+$mobile2: new-breakpoint(em(568));
+$tablet1: new-breakpoint(em(768));
+$tablet2: new-breakpoint(em(1024));
+$desktop: new-breakpoint(em(1024));
 $max-width: em(1140);
 
 
@@ -68,7 +70,7 @@ $max-width: em(1140);
 
 @mixin nice-text {
   text-align: left;
-  @include media($iphone-wide-landscape) {
+  @include media($mobile2) {
     text-align: justify;
     @include hyphens(auto);
   }
@@ -82,7 +84,7 @@ $max-width: em(1140);
   padding: .5rem;
   background: rgba($black, .1);
   @include box-shadow($nice-inset-shadow);  
-  @include media($iphone-wide-landscape) {
+  @include media($mobile2) {
     padding: .825rem;
   }
 }

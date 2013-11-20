@@ -10,7 +10,12 @@
     @extend %margin-remover;
     @extend %bottom-margin-helper;
     
-    @include pad(3rem 0);
+    @include pad(1.5rem 0);
+    
+    @include media($tablet1) {
+      @include pad(3rem 0); 
+    }
+    
     &:first-child { padding-top: 0;}
     
     // Images and Media Elements
@@ -21,7 +26,7 @@
       margin-bottom: 1rem;
       padding: .5rem;
       background: rgba(0,0,0,.1);
-      @include media($iphone-wide-landscape) {
+      @include media($mobile2) {
         padding: .825rem;
       }
     }
@@ -51,7 +56,7 @@
     
   }
   
-  // Search Results
+  // Search Result
   .searchresult {
     @extend %thing-list;
     a { @include links($link: $link-alt); }
@@ -59,47 +64,17 @@
 }
 
 
-.imageright,
-.alignright,
-.right {
-  float: right;
-  margin: 0 0 1rem 1rem;
-}
-
-.imageleft,
-.alignleft,
-.left { 
-  float: left; 
-  margin: 0 1rem 1rem 0;
-}
-
-.imagecenter,
-.aligncenter,
-.center  {
-  display: block;
-  margin: 0 auto 1rem auto;
-}
-
-.halfright {
-  @extend .imageright;
-  width: 50%;
-}
-
-.thirdright {
-  @extend .imageright;
-  width: 33%;
-}
-
-
+// Entry Header
 .entry-header {
   margin-bottom: 2rem;
   
   a { @include links($link: $link-alt); }
+  
   h1 {
    font-size: 1.5rem;
    margin-top: 0;
    margin-bottom: .2em;
-   @include media($iphone-wide-landscape) {
+   @include media($tablet1) {
       font-size: 2rem;
     }
   }
@@ -116,8 +91,7 @@
 }
 
 
-// 404 Page
-
+// 404 Page Animation
 .notfoundcontent {
   margin-top: 3.5rem;
   margin-bottom: 3.5rem;
@@ -166,72 +140,29 @@
 }
 
 
-
-
-
-// Search Form Module
-.searchform {
-  border-radius: 4px;
+// Pagination
+.blog-pagination {
+  box-shadow: $nice-inset-shadow;
+  background: rgba($black, .1);
   
-  padding: 0;
-  font-size: 1.5rem;
-  border-bottom: 1px solid rgba(0,0,0,.1);
-  background: rgba(0,0,0,.1);
-  position: relative;
+  @include media(ipad-portrait)  { font-size: 1.2rem; }
+  @include media(ipad-landscape) { font-size: 1.5rem; }
   
-  @include box-shadow(0 1px 8px rgba($black,.3) inset, 0 1px 0 rgba($white,.1));
-  
-  input[type="search"] {
-    @extend %clearinput;
-    display: block;
-    width: 100%;     
-    padding: .4em 2.1em .3em .5em;
-    color: inherit;
+  ul {
+    list-style: none;
+    padding: 0;
+    @include clearfix;
   }
-  
-  input[type="submit"] {
-    @extend %clearinput;
-    color: transparent;
-    position: absolute;
-    right: 0;
-    top: 0;
-    display: inline-block;
-    width: 2em;
-    padding: 12px 10px 8px 10px;
-    text-overflow: ellipsis;
-    background-image: url(img/icon-search.svg);
-    background-position: center 50%;
-    background-repeat: no-repeat;
-    background-size: 1em auto;
-    &:active {
-      @include transform(translateY(2px));
-    }
-  }
-  
-  .assistive-text { display: none; }
-}
-
-
-
-// Social Sharing Module
-.social-shares {
-  list-style: none;
-  margin-bottom: 2rem;
-  @include pad(0 0 1rem 0);
   
   li {
-    border: none;
-    font-size: golden-ratio(.5rem, 2);
-    padding: .25em 0 0 2em;
-    margin: 1rem 0;
-    background-repeat: no-repeat;
-    &.facebook { background-image: url(img/logo-facebook.svg);
-                 background-size: auto 1.4em;
-                 background-position: .4em 50%;
-    }
-    &.twitter  { background-image: url(img/logo-twitter.svg);
-                 background-size: 1.3em auto;
-                 background-position: left 75%;
-    }
+    display: inline-block;
+    &:first-child { float: left; }
+    &:last-child  { float: right; }
+  }
+  
+  a {
+    padding: 1em;
+    display: inline-block;
+    @include links($link: $link-alt);
   }
 }

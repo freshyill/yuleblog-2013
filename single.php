@@ -18,8 +18,7 @@
 
         <?php while ( have_posts() ) : the_post(); ?>
           <?php get_template_part( 'content', 'single' ); ?>
-          <?php # comments_template( '', true ); // Ugh, no comments, please? ?>
-        <?php endwhile; // end of the loop. ?>
+        <?php endwhile; ?>
           
         <?php if (  $wp_query->max_num_pages > 1 ) : ?>
           <?php get_template_part('pagination', 'blog'); ?>

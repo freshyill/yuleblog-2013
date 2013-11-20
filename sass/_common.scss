@@ -1,0 +1,286 @@
+// Common to Main Theme and Features
+
+// Site Structure
+html {
+  height: 100%;
+  background: url(img/background-2013.jpg) no-repeat center top fixed;
+  background-size: cover;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  color: $text;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-standard;
+  // Todo: Probably get rid of this.
+  @include media($tablet2) {
+    &:after {
+      background: rgba($black, .5);
+      position: fixed;
+      width: 100%;
+      height: 500px;
+      content: " ";
+    }
+  }
+}
+
+
+
+// Header
+.canvas-snowfall {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  background: transparent;
+}
+
+.header-wrap {
+  a { @include links($link: $link-alt);}
+  background: rgba($black, .3);
+}
+
+.header-container {
+  @extend %pad-for-small-screens;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+  
+  position: relative;
+  @include outer-container;
+  @include media($mobile2) {
+    @include row(table);
+    position: relative;
+    padding-bottom: 1rem;
+  }
+}
+
+// Header Logo
+.site-logo {
+  text-align: center;
+  margin: 1rem 0;
+  
+  @include media($mobile2) {
+    text-align: left;
+    margin-bottom: 0;
+    position: relative;
+    left: -5px;
+    @include span-columns(5);
+
+    img {
+      width: 300px;
+      max-width: 100%;
+    }
+  }
+}
+
+// Primary Navigation
+.site-nav {
+  text-align: center;
+  @include media($mobile1) {
+    @include span-columns(10);
+  }
+  @include media($mobile2) {
+    text-align: right;
+    font-size: .875rem;
+    @include span-columns(5);
+  }
+  @include media($tablet1) {
+    font-size: 1.25rem;
+    @include span-columns(6);
+  }
+  @include media($tablet2) {
+    @include span-columns(7);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 1rem;
+    &:last-child { margin-right: 0 }
+    @include media($mobile1) {
+      margin: 0 .5rem;
+    }
+  }
+
+}
+
+// Snowfall Toggle
+.site-snow-toggle {
+  text-align: right;
+  @include media($mobile1) {
+    @include span-columns(2);
+  }
+  @include media($mobile2) {
+    @include span-columns(2);
+  }
+  @include media($tablet1) {
+    @include span-columns(2);
+  }
+  @include media($tablet2) {
+    @include span-columns(1);
+  }
+}
+
+.snowfall-toggle {
+  @include toggle(65, 16, "Snow On", "Snow Off");
+  bottom: -3px;
+  right: -1rem;
+  border-radius: 8px;
+  margin-right: 0;
+  z-index: 1;
+}
+
+
+
+// Footer
+%footer-section {
+  @extend %content-module;
+  @include media($tablet1) {
+    @include span-columns(4);
+  }
+}
+
+.footer-wrap {
+  padding: 2rem 0;
+  position: relative;
+  background: rgba($black, .5);
+  box-shadow: 0 1px 0 rgba($white, .2) inset,
+              0 4px 4px -3px rgba($black, 0.1) inset,
+              0 10px 10px rgba($black, .5) inset;
+
+  a { @include links;}
+}
+
+.footer-main {
+  @extend %pad-for-small-screens;
+  @include outer-container;
+  
+  h3 {
+    font-size: golden-ratio(.5em, 2);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    @extend %thing-list;
+    margin: 0;
+    padding: 1rem 0;
+    
+    time {
+      font-size: .8rem;
+      color: $text;
+    }
+  }
+  
+  .nav,
+  .about,  
+  .features { @extend %footer-section; }
+
+  .about {
+    section { @extend %thing-list; }
+  }
+
+}
+
+
+
+// Search Form Module
+.searchform {
+  padding: 0;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  background: rgba(0,0,0,.1);
+  position: relative;
+  @include box-shadow(0 1px 8px rgba($black,.3) inset, 0 1px 0 rgba($white,.1));
+  
+  input[type="search"] {
+    @extend %clearinput;
+    display: block;
+    width: 100%;     
+    padding: .4em 2.1em .3em .5em;
+    color: inherit;
+  }
+  
+  input[type="submit"] {
+    @extend %clearinput;
+    color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    width: 2em;
+    padding: 12px 10px 8px 10px;
+    text-overflow: ellipsis;
+    background-image: url(img/icon-search.svg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: 1em auto;
+    &:active {
+      @include transform(translateY(2px));
+    }
+  }
+  
+  .assistive-text { display: none; }
+}
+
+
+
+// Social Sharing Module
+.social-shares {
+  list-style: none;
+  margin-bottom: 2rem;
+  @include pad(0 0 1rem 0);
+  
+  li {
+    border: none;
+    font-size: golden-ratio(.5rem, 2);
+    padding: .25em 0 0 2em;
+    margin: 1rem 0;
+    background-repeat: no-repeat;
+    &.facebook { background-image: url(img/logo-facebook.svg);
+                 background-size: auto 1.4em;
+                 background-position: .4em 50%;
+    }
+    &.twitter  { background-image: url(img/logo-twitter.svg);
+                 background-size: 1.3em auto;
+                 background-position: left 75%;
+    }
+  }
+}
+
+
+
+// Image and Media Handling
+.right, .imageright, .alignright {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+.left, .imageleft, .alignleft {
+  float: left; 
+  margin: 0 1rem 1rem 0;
+}
+
+.center, .imagecenter, .aligncenter {
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.halfright {
+  @extend .imageright;
+  width: 50%;
+}
+
+.thirdright {
+  @extend .imageright;
+  width: 33%;
+}

@@ -1,7 +1,7 @@
 /*!
 Theme Name: Yule Blog 2013
 Theme URI: http://yuleblog.us
-Description: WordPress theme for The Yule Blog, 2013 edition. Mostly minor improvements over the 2012 theme.
+Description: WordPress theme for The Yule Blog, 2013 edition. Big structural improvements over 2012 edition.
 Author: Christopher Coleman
 Author URI: http://illtron.net
 Version: 3.5
@@ -17,6 +17,7 @@ License URI: http://yuleblog.us
 @import 'toggle';
 @import 'settings';
 @import 'fonts';
-@import 'structure';
+@import 'common';
+@import 'structure-theme';
 @import 'main';
 @import 'tests';

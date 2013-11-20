@@ -28,12 +28,12 @@ add_action('wp_head', 'yb_favicons');
 // Give Link Posts an Inline Headline
 ////////////////////////////////////////////////////////////////////
 function yb_link_post() {
-    $link_post_title = '<a href="' . get_permalink() . '" title="' . esc_attr(get_the_title()) . '" class="headline">' . get_the_title() . '</a>';
-    $link_post_content = $link_post_title . ' — ' . get_the_content();
-
-    $content = apply_filters('the_content', $link_post_content);
-    $content = str_replace( ']]>', ']]&gt;', $content );
-    echo $content;
+  $link_post_title = '<a href="' . get_permalink() . '" title="' . esc_attr(get_the_title()) . '" class="headline">' . get_the_title() . '</a>';
+  $link_post_content = $link_post_title . ' — ' . get_the_content();
+  
+  $content = apply_filters('the_content', $link_post_content);
+  $content = str_replace( ']]>', ']]&gt;', $content );
+  echo $content;
 }
 
 
@@ -43,21 +43,19 @@ function yb_link_post() {
 // Scripts and Styles
 ////////////////////////////////////////////////////////////////////
 function yb_scripts_and_styles() {
-	$style_path = get_template_directory_uri() . '/css/';
-	$style_path_features = get_template_directory_uri() . '/css/features/';
+	$style_path = get_template_directory_uri() . '/';
+	$style_path_features = get_template_directory_uri() . '/css/';
 	$script_path = get_template_directory_uri() . '/js/';
-	
-	wp_enqueue_style( 'style', get_stylesheet_uri());
 	
   if ( (is_single()) && get_field('custom_css'))  {
     $feature_custom = get_field('custom_css');
     
-    wp_enqueue_style( 'feature-common', $style_path . 'feature-common.css', 'style');
-	  wp_enqueue_style( 'feature-custom', $style_path_features . $feature_custom, 'style');
-  }
-  else {
-    wp_enqueue_style( 'theme', $style_path . 'theme.css', 'common');
+    wp_enqueue_style( 'feature', $style_path . 'feature.css' );
+	  wp_enqueue_style( 'feature-custom', $style_path_features . $feature_custom );
   }	
+  else {
+    wp_enqueue_style( 'style', get_stylesheet_uri() );
+  }
 	
 	wp_enqueue_script( 'modernizr', $script_path . 'modernizr.custom.js', array(), null, false );
 	wp_enqueue_script( 'fitvids', $script_path . 'jquery.fitvids.js', array('jquery'), false, true );
@@ -66,7 +64,6 @@ function yb_scripts_and_styles() {
 	wp_enqueue_script( 'rectangleEmitter', $script_path . 'rectangleEmitter.js', array(), false, true );
 	wp_enqueue_script( 'snow	', $script_path . 'snow.js', array('rectangleEmitter'), false, true );
 }
-
 add_action( 'wp_enqueue_scripts', 'yb_scripts_and_styles' );
 
 

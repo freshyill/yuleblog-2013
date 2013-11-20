@@ -28,8 +28,8 @@ var snowfallheader = document.getElementById("snowfallheader");
 function snowfallSize() {
 
   if (jQuery('body').is('.post-template-feature-freeform-php, .post-template-columns-php, .post-template-feature-sidebar-header-php, .post-template-feature-sidebar-php, .post-template-feature-2010-visit-from-st-nicholas-php')) {
-   snowfallheader.width = jQuery('.hrail-bar').width();
-   snowfallheader.height = jQuery('.hrail-bar').height();
+   snowfallheader.width = jQuery('.header-wrap').width();
+   snowfallheader.height = jQuery('.header-wrap').height();
 
   }
 
