@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: 'fontello';
+  src: url("#{$fontdir}/fontello/fontello.eot");
+  src: url("#{$fontdir}/fontello/fontello.eot?#iefix") format('embedded-opentype'), 
+       url("#{$fontdir}/fontello/fontello.woff") format('woff'), 
+       url("#{$fontdir}/fontello/fontello.ttf") format('truetype'), 
+       url("#{$fontdir}/fontello/fontello.svg#fontello") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: 'fontello';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  opacity: 0.7;
+/* Uncomment for 3D effect */
+/* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+/* fix buttons height */
+  line-height: 1em;
+/* you can be more comfortable with increased icons size */
+/* font-size: 120%; */
+}
+
+.icon-info:before { content: '\2139'; } /* 'ℹ' */
+.icon-left:before { content: '\2190'; } /* '←' */
+.icon-up:before { content: '\2191'; } /* '↑' */
+.icon-right:before { content: '\2192'; } /* '→' */
+.icon-down:before { content: '\2193'; } /* '↓' */
+.icon-home:before { content: '\2302'; } /* '⌂' */
+.icon-glyph78:before { content: '\25b4'; } /* '▴' */
+.icon-right-dir:before { content: '\25b8'; } /* '▸' */
+.icon-down-dir:before { content: '\25be'; } /* '▾' */
+.icon-left-dir:before { content: '\25c2'; } /* '◂' */
+.icon-star:before { content: '\2605'; } /* '★' */
+.icon-star-empty:before { content: '\2606'; } /* '☆' */
+.icon-th-list:before { content: '\2630'; } /* '☰' */
+.icon-heart-empty:before { content: '\2661'; } /* '♡' */
+.icon-heart:before { content: '\2665'; } /* '♥' */
+.icon-th:before { content: '\268f'; } /* '⚏' */
+.icon-info-circle:before { content: '\e705'; } /* '' */
+.icon-export:before { content: '\e715'; } /* '' */
+.icon-retweet:before { content: '\e717'; } /* '' */
+.icon-comment:before { content: '\e718'; } /* '' */
+.icon-tablet:before { content: '\e7b1'; } /* '' */
+.icon-wordpress:before { content: '\f31d'; } /* '' */
+.icon-thumbs-up:before { content: '👍'; } /* '\1f44d' */
+.icon-mobile:before { content: '📱'; } /* '\1f4f1' */
+.icon-search:before { content: '\61'; } /* 'a' */

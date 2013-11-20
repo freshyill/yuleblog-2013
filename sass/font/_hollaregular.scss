@@ -1,0 +1,12 @@
+// HollaRegular
+
+@font-face {
+  font-family: 'HollaRegular';
+  src: url('#{$fontdir}/hollascript/HollaScript-webfont.eot');
+  src: local('☺'), 
+       url('#{$fontdir}/hollascript/HollaScript-webfont.woff') format('woff'), 
+       url('#{$fontdir}/hollascript/HollaScript-webfont.ttf') format('truetype'), 
+       url('#{$fontdir}/hollascript/HollaScript-webfont.svg#webfontG6wnKP5Z') format('svg');
+  font-weight: normal;
+  font-style: normal
+}

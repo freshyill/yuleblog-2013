@@ -47,15 +47,12 @@ function yb_scripts_and_styles() {
 	$style_path_features = get_template_directory_uri() . '/css/';
 	$script_path = get_template_directory_uri() . '/js/';
 	
+	wp_enqueue_style( 'style', get_stylesheet_uri() );
+	
   if ( (is_single()) && get_field('custom_css'))  {
     $feature_custom = get_field('custom_css');
-    
-    wp_enqueue_style( 'feature', $style_path . 'feature.css' );
-	  wp_enqueue_style( 'feature-custom', $style_path_features . $feature_custom );
+	  wp_enqueue_style( 'feature-custom', $style_path_features . $feature_custom, 'style' );
   }	
-  else {
-    wp_enqueue_style( 'style', get_stylesheet_uri() );
-  }
 	
 	wp_enqueue_script( 'modernizr', $script_path . 'modernizr.custom.js', array(), null, false );
 	wp_enqueue_script( 'fitvids', $script_path . 'jquery.fitvids.js', array('jquery'), false, true );

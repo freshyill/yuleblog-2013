@@ -1,0 +1,121 @@
+/*! A Box Office Miracle */
+
+// Setup
+@import 'bourbon/bourbon';    // Bourbon
+@import "grid-settings";      // Bourbon Neat grid settings
+@import 'neat/neat';          // Bourbon Neat
+@import 'normalize';          // Normalize
+@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
+@import 'settings';           // Mostly variables, mixins, and extends and other includes.
+
+// Specific to just this feature
+@import 'font/leaguegothic';  // League Gothic
+
+
+// Display
+.wrap { 
+  background: #444 url(/img/feature/2010-miracle-black-static.png);
+  padding: 1rem 0;
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.content { 
+  border: 1rem solid #fff;
+  background: #fff970;
+  position: relative;
+  box-shadow: $nice-shadow;
+  @include clearfix;
+  @include box-sizing(border-box);
+  @include media($tablet1) { border-width: 2em; }
+  
+  &:before, &:after { 
+    position: absolute;
+    z-index: 3;
+    display: none;
+    @include media($mobile1) { @include transform(scale(.4)); display: block; }
+    @include media($mobile2) { @include transform(scale(.5)); display: block; }
+    @include media($tablet1) { @include transform(scale(.6)); }
+    @include media($tablet2) { @include transform(scale(.9)); }
+    @include media($max-width) { @include transform(scale(1)); }
+  }
+  &:before { 
+    top: -3em; left: 0;
+    content: url(/img/feature/2010-miracle-maureen.png);
+    @include transform-origin(left top);
+  }
+  &:after { 
+    top: -3em; right: 0; 
+    content: url(/img/feature/2010-miracle-john.png);
+    @include transform-origin(right top);
+  }
+
+}
+
+article { 
+  @include box-sizing(border-box);
+  @include nice-text;
+	@include linear-gradient(top, #f9c94a, #fff970 75%, $fallback: #f9c94a);
+	@include media($mobile1)   { padding: 2rem; margin: 0 4rem; }
+	@include media($tablet1)   { padding: 2rem 4rem; }
+	@include media($tablet2)   { margin: 0 10rem; }
+	@include media($max-width) { margin: 0 12rem; }
+	
+	position: relative;
+	padding: 1rem;
+	text-shadow: 0 1px 0 rgba(255,255,255,.5);
+	font-family: $body-copy-font;
+	color: #444;
+	
+	.entry-header { 
+	  @include media($mobile1)    { padding: 0 1rem; }
+	  @include media($mobile2)    { padding: 0 2rem; }
+    @include media($tablet1)    { padding: 1rem 2rem 2rem 2rem; }
+    @include media($tablet2)    { padding: 2rem; }
+    @include media($max-width)  { padding: 2rem; }
+	  h1 { 
+  	  font-family: League Gothic, sans-serif;
+      font-size: 4rem;
+      text-align: center;
+      line-height: 1;
+      color: #af030e;
+      margin: 0;
+      text-shadow: -1px 1px 0 #333, -2px 2px 0 #333, -3px 3px 0 #333, -4px 4px 0 #333, -5px 5px 0 #333;
+      @include media($mobile1)    { font-size: 6rem; }
+      @include media($mobile2)    { font-size: 7rem; }
+      @include media($tablet1)    { }
+      @include media($tablet2)    { font-size: 8rem; }
+      @include media($max-width)  { font-size: 9rem; }
+    }
+  }
+	
+	p { line-height: 1.4; }
+	
+	.signature a { color: #444 ; }
+	
+	.poster { 
+  	@include transform(rotate(2deg));
+  	box-shadow: $nice-shadow;
+    @include media($mobile2) { 
+      float: right;
+      right: -5em;
+      margin-left: -2em;
+      margin-bottom: 2em;
+      position: relative;
+    }
+	 }
+	
+	.kringle { display: block; margin: 0 auto; }
+
+	.article-text p:first-child { 
+  	font-size: 1.2em; 
+  	margin: .7em 0 1em 0;
+  	text-align: left;
+  	@include hyphens(none);
+    @include media($mobile2) { font-size: 1.4em; }
+  }
+}
+
+.supplemental { clear: both; }

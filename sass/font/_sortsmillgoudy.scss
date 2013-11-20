@@ -1,0 +1,25 @@
+// Sorts Mill Goudy
+
+@font-face {
+    font-family: 'SortsMillGoudyRegular';
+    src: url('#{$fontdir}/GoudyStM-webfont.eot');
+    src: url('#{$fontdir}/GoudyStM-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontdir}/GoudyStM-webfont.woff') format('woff'),
+         url('#{$fontdir}/GoudyStM-webfont.ttf') format('truetype'),
+         url('#{$fontdir}/GoudyStM-webfont.svg#SortsMillGoudyRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SortsMillGoudyItalic';
+    src: url('#{$fontdir}/GoudyStM-Italic-webfont.eot');
+    src: url('#{$fontdir}/GoudyStM-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('#{$fontdir}/GoudyStM-Italic-webfont.woff') format('woff'),
+         url('#{$fontdir}/GoudyStM-Italic-webfont.ttf') format('truetype'),
+         url('#{$fontdir}/GoudyStM-Italic-webfont.svg#SortsMillGoudyItalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

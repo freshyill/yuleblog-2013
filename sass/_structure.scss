@@ -1,0 +1,273 @@
+// Common to Main Theme and Features
+
+// Site Structure
+html {
+  height: 100%;
+  background: url(img/background-2013.jpg) no-repeat center top fixed;
+  background-size: cover;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  color: $text;
+  -webkit-font-smoothing: antialiased;
+  font-family: $font-standard;
+  // Todo: Probably get rid of this.
+  @include media($tablet2) {
+    &:after {
+      background: rgba($black, .5);
+      position: fixed;
+      width: 100%;
+      height: 500px;
+      content: " ";
+    }
+  }
+}
+
+
+
+// Header
+.header-wrap {
+  a { @include links($link: $link-alt);}
+  background: rgba($black, .3);
+}
+
+.header-container {
+  @extend %pad-for-small-screens;
+  padding-top: 1rem;
+  padding-bottom: .5rem;
+  
+  position: relative;
+  @include outer-container;
+  @include media($mobile2) {
+    @include row(table);
+    position: relative;
+    padding-bottom: 1rem;
+  }
+}
+
+// Header Logo
+.site-logo {
+  text-align: center;
+  margin: 1rem 0;
+  
+  @include media($mobile2) {
+    text-align: left;
+    margin-bottom: 0;
+    position: relative;
+    left: -5px;
+    @include span-columns(5);
+
+    img {
+      width: 300px;
+      max-width: 100%;
+    }
+  }
+}
+
+// Primary Navigation
+.site-nav {
+  text-align: center;
+  @include media($mobile1) {
+    @include span-columns(10);
+  }
+  @include media($mobile2) {
+    text-align: right;
+    font-size: .875rem;
+    @include span-columns(5);
+  }
+  @include media($tablet1) {
+    font-size: 1.25rem;
+    @include span-columns(6);
+  }
+  @include media($tablet2) {
+    @include span-columns(7);
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin: 0 1rem;
+    &:last-child { margin-right: 0 }
+    @include media($mobile1) {
+      margin: 0 .5rem;
+    }
+  }
+
+}
+
+// Snowfall Toggle
+.site-snow-toggle {
+  text-align: right;
+  @include media($mobile1) {
+    @include span-columns(2);
+  }
+  @include media($tablet2) {
+    @include span-columns(1);
+  }
+}
+
+.snowfall-toggle {
+  @include toggle(65, 16, "Snow On", "Snow Off");
+  bottom: -3px;
+  right: -1rem;
+  border-radius: 8px;
+  margin-right: 0;
+  z-index: 1;
+}
+
+// Snowfall
+.canvas-snowfall {
+  position: fixed;
+  z-index: -1;
+  pointer-events: none;
+  background: transparent;
+}
+
+
+// Footer
+%footer-section {
+  @extend %content-module;
+  @include media($tablet1) {
+    @include span-columns(4);
+  }
+}
+
+.footer-wrap {
+  padding: 2rem 0;
+  position: relative;
+  background: rgba($black, .5);
+  box-shadow: 0 1px 0 rgba($white, .2) inset,
+              0 4px 4px -3px rgba($black, 0.1) inset,
+              0 10px 10px rgba($black, .5) inset;
+
+  a { @include links;}
+}
+
+.footer-main {
+  @extend %pad-for-small-screens;
+  @include outer-container;
+  
+  h3 {
+    font-size: golden-ratio(.5em, 2);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    @extend %thing-list;
+    margin: 0;
+    padding: 1rem 0;
+    
+    time {
+      font-size: .8rem;
+      color: $text;
+    }
+  }
+  
+  .nav,
+  .about,  
+  .features { @extend %footer-section; }
+
+  .about {
+    section { @extend %thing-list; }
+  }
+
+}
+
+
+
+// Body
+%content-column {
+  margin-top: 1.5rem;
+  margin-bottom: 2rem;
+  @include reset-display();
+}
+
+
+.main {
+  position: relative;
+	z-index: 3;
+  @extend %pad-for-small-screens;
+  @include outer-container;
+  
+  a { @include links;}
+}
+
+.wrap {
+  text-shadow: rgba($black, .2) 0px -1px 0px;
+  box-shadow: 0 1px 0 rgba($white, 0.1) inset,
+              0 4px 2px -2px rgba($black, 0.1),
+              0 -5px 10px rgba($black, .15);
+}
+
+.primary {
+  @extend %content-column;
+  @include media($tablet1) {
+    @include span-columns(8);
+    margin-top: 3.5rem;
+  }
+}
+
+.secondary {
+  @extend %content-column;
+  @include media($tablet1) {
+    @include span-columns(4);
+    margin-top: 3.5rem;
+  }
+}
+
+
+
+// Features Grid
+.the-features {
+  margin-top: 3.5rem;
+  a {
+    display: block;
+    @include links($link: $link-alt);
+  }
+  
+  article {
+    margin-bottom: 1rem;
+    
+    @include media($tablet1) {
+      @include span-columns(6);
+      @include omega(2n);
+    }
+    
+    @include media($tablet2) {
+      @include span-columns(4);
+      @include omega-reset(2n);
+      @include omega(3n);
+    }
+    
+    h1 {
+      margin-top: 0;
+      font-size: golden-ratio(.5rem, 2);
+    }
+    .entry-meta,
+    .excerpt { @extend %meta-ish; }
+  }
+  img {
+    @extend %yb-media-module;
+    @extend %yb-media-link;
+    max-width: 100%;
+  }
+}
+
+// 404 Page Structure
+.notfoundcontent {
+  @include media($tablet1) {
+    @include shift(3);
+    @include span-columns(6);
+  }
+}

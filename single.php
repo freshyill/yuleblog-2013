@@ -1,6 +1,5 @@
 <?php
 /*
-  single.php
   Displays a single post. Needs content-single.php to do anything useful.
 */
 ?>
@@ -10,7 +9,6 @@
 <?php get_template_part('content', 'header'); ?>
 
 <div class="wrap">
-
   <div class="main">
     <div class="content">
     
@@ -30,7 +28,6 @@
       
     </div>
   </div>
-  
 </div>
     
 

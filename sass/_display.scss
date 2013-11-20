@@ -1,7 +1,6 @@
 // Standard Article List and Single View
 
 .primary {
-  background: red;
   @extend %content-module;
 
   .post {
@@ -140,6 +139,7 @@
 }
 
 
+
 // Pagination
 .blog-pagination {
   box-shadow: $nice-inset-shadow;
@@ -165,4 +165,99 @@
     display: inline-block;
     @include links($link: $link-alt);
   }
+}
+
+
+
+// Search Form Module
+.searchform {
+  padding: 0;
+  font-size: 1.5rem;
+  border-radius: 4px;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+  background: rgba(0,0,0,.1);
+  position: relative;
+  box-shadow: 0 1px 8px rgba($black,.3) inset, 0 1px 0 rgba($white,.1);
+  
+  input[type="search"] {
+    @extend %clearinput;
+    display: block;
+    width: 100%;     
+    padding: .4em 2.1em .3em .5em;
+    color: inherit;
+  }
+  
+  input[type="submit"] {
+    @extend %clearinput;
+    color: transparent;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+    width: 2em;
+    padding: 12px 10px 8px 10px;
+    text-overflow: ellipsis;
+    background-image: url(img/icon-search.svg);
+    background-position: center 50%;
+    background-repeat: no-repeat;
+    background-size: 1em auto;
+    &:active {
+      @include transform(translateY(2px));
+    }
+  }
+  
+  .assistive-text { display: none; }
+}
+
+
+
+// Social Sharing Module
+.social-shares {
+  list-style: none;
+  margin-bottom: 2rem;
+  @include pad(0 0 1rem 0);
+  
+  li {
+    border: none;
+    font-size: golden-ratio(.5rem, 2);
+    padding: .25em 0 0 2em;
+    margin: 1rem 0;
+    background-repeat: no-repeat;
+    &.facebook { background-image: url(img/logo-facebook.svg);
+                 background-size: auto 1.4em;
+                 background-position: .4em 50%;
+    }
+    &.twitter  { background-image: url(img/logo-twitter.svg);
+                 background-size: 1.3em auto;
+                 background-position: left 75%;
+    }
+  }
+}
+
+
+
+// Image and Media Handling
+.right, .imageright, .alignright {
+  float: right;
+  margin: 0 0 1rem 1rem;
+}
+
+.left, .imageleft, .alignleft {
+  float: left; 
+  margin: 0 1rem 1rem 0;
+}
+
+.center, .imagecenter, .aligncenter {
+  display: block;
+  margin: 0 auto 1rem auto;
+}
+
+.halfright {
+  @extend .imageright;
+  width: 50%;
+}
+
+.thirdright {
+  @extend .imageright;
+  width: 33%;
 }

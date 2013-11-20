@@ -12,7 +12,7 @@
   <div class="header-container">
     
     <div class="site-logo">
-      <a href="<?php site_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/yuleblog-logo.svg"></a>
+      <a href="<?php echo home_url(); ?>"><img src="<?php echo get_template_directory_uri(); ?>/img/yuleblog-logo.svg"></a>
     </div>
       
     <nav class="site-nav">

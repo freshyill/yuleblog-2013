@@ -10,14 +10,16 @@ License: None. Just making the theme checker happy.
 License URI: http://yuleblog.us
 */
 
-@import 'bourbon/bourbon';
-@import "grid-settings";
-@import 'neat/neat';
-@import 'normalize';
-@import 'toggle';
-@import 'settings';
-@import 'fonts';
-@import 'common';
-@import 'structure-theme';
-@import 'main';
-@import 'tests';
+// Setup
+@import 'bourbon/bourbon';    // Bourbon
+@import "grid-settings";      // Bourbon Neat grid settings
+@import 'neat/neat';          // Bourbon Neat
+@import 'normalize';          // Normalize
+@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
+@import 'settings';           // Mostly variables, mixins, and extends and other includes.
+
+// Universal to the entire theme
+@import 'font/bitter';      // It's a font!
+@import 'structure';        // Actual styles, mostly for structure
+@import 'display';          // Actual styles, mostly for display
+
