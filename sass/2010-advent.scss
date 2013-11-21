@@ -14,22 +14,31 @@ $body-copy-font: $body-copy-font;
 
 .wrap {
   padding: 1rem 0;
+  box-shadow: $wrap-shadow-2, $wrap-shadow-3;
   @include background( linear-gradient(rgba($black, .4), transparent), url(/images/pattern_049.png));
-  @include media($mobile1) {
+  @include media($tablet1) {
     padding-top:    4rem;
     padding-bottom: 4rem;
   }
 }
 
 .hero-empty {
-  //@include box-shadow(#{$header-shadow}, 0 0 10px $black, 0 1px 0 rgba($black,.5));
-  background: $black url('/images/advent-header.jpg') center top no-repeat;
+  position: relative;
+  z-index: 2;
+  background: $black;
+  border-bottom: 1px solid #5b200d;
+  box-shadow: $wrap-shadow;
+}
+
+.hero-inner {
+  max-width: $max-width;
+  box-shadow: $wrap-shadow-1;
+  background: url('/images/advent-header.jpg') center top no-repeat;
   background-size: cover;
-  
-  border-bottom: 3px solid #5b200d;
-  
   height: 120px;
+  margin: 0 auto;
   @include media($mobile2) { height: 150px; }
+  @include media($mobile2) { height: 180px; }
   @include media($tablet1) { height: 250px; }
   @include media($tablet2) { height: 350px; }
   @include media($max-width) { height: 400px; }

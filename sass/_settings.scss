@@ -25,15 +25,23 @@ $font-standard: 'Bitter', Georgia, serif;
 $body-copy-font: Georgia, serif;
 
 // Reusable things
-$nice-inset-shadow:   0 1px 8px  rgba($black, .3)    inset,
-                      0 1px 0    rgba($white, .075);
-$nice-shadow:         0 1px 0    rgba($white, .3)    inset,
-                      0 2px 1px  rgba($black, .14),
-                      0 2px 10px rgba($black, .4);
-$nice-shadow-lighter: 0 1px 0    rgba($white, .1)    inset, 
-                      0 2px 1px  rgba($black, .14),
-                      0 2px 10px rgba($black, .4);
+$nice-inset-shadow:     0   1px  8px         rgba($black, .3)     inset,
+                        0   1px   0          rgba($white, .075);
 
+$nice-shadow:           0   1px   0          rgba($white, .3)     inset,
+                        0   2px   1px        rgba($black, .14),
+                        0   2px  10px        rgba($black, .4);
+
+$nice-shadow-lighter:   0   1px   0          rgba($white, .1)     inset,
+                        0   2px   1px        rgba($black, .14),
+                        0   2px  10px        rgba($black, .4);
+
+
+$wrap-shadow-1:         0   1px   0          rgba($white, 0.1)    inset;
+$wrap-shadow-2:         0  -1px   0          rgba($black, 0.3)    inset;
+$wrap-shadow-3:         0   0    10px        rgba($black, .5);
+
+$wrap-shadow: $wrap-shadow-1, $wrap-shadow-2, $wrap-shadow-3;
 
 // Breakpoints
 

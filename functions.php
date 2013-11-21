@@ -201,7 +201,7 @@ function yuleblog_linkage() {
 ////////////////////////////////////////////////////////////////////
 function yuleblog_hero_header() {
   if ( get_field('empty_hero_header') ) {
-    echo '<header class="hero-empty"></header>';
+    echo '<header class="hero-empty"><div class="hero-inner"></div></header>';
   }
 }
 
