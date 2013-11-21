@@ -1,0 +1,94 @@
+//! Oh what fun it is to ride!
+
+// Setup
+@import 'bourbon/bourbon';    // Bourbon
+@import "grid-settings";      // Bourbon Neat grid settings
+@import 'neat/neat';          // Bourbon Neat
+@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
+@import 'settings';           // Mostly variables, mixins, and extends and other includes.
+
+// Specific to just this feature
+
+$featurecolor: #6e5227;
+
+.wrap { 
+  background: #eddec2 url(/images/jingle-bells-bg.png);
+  padding: 1rem 0;
+  overflow-x: hidden;
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.content {
+  @include span-columns(12);
+  @include media($mobile1)   { @include span-columns(10); @include shift(1); }
+  @include media($mobile2)   {  }
+  @include media($tablet1)   {  }
+  @include media($tablet2)   { @include span-columns(8); @include shift(2); }
+  @include media($max-width) {  }
+}
+
+article {
+
+  @extend %content-module;
+
+  font-family: $body-copy-font;
+	color: $featurecolor;
+  text-shadow: 0 1px 0 rgba($white, .8);
+  	
+	.entry-header h1 {
+    @extend %hide-text;
+    
+    margin-top: 0;
+    background: url(/images/jingle-bells-header.png) center 50% no-repeat;
+    background-size: contain;
+    
+    height: 120px;
+    @include media($mobile1)   { height: 130px; }
+    @include media($mobile2)   { height: 160px; }
+    @include media($tablet1)   { height: 220px; }
+    @include media($tablet2)   { height: 240px; }
+    @include media($max-width) { height: 280px; }
+    
+  }
+
+	a { color: #324412; }
+	
+  img {
+    @extend %blockimg;
+    
+    background: #fff9e7;
+    box-shadow: $nice-shadow;
+    padding: 10px;
+    margin: 1rem auto;
+    max-width: 100%;
+    position: relative;
+
+    @include media($mobile2) {  }
+    @include media($tablet1) {
+      float: right;
+      max-width: 60%;
+      margin-left: -4em;
+      @include transform(rotate(2deg) translateX(6em));
+    }
+    @include media($tablet2)   {  }
+    @include media($max-width) { max-width: auto; }
+  }
+
+	.article-text p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}

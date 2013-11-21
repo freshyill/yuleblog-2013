@@ -1,0 +1,61 @@
+/*! Black Friday 2010 */
+
+// Setup
+@import 'bourbon/bourbon';    // Bourbon
+@import "grid-settings";      // Bourbon Neat grid settings
+@import 'neat/neat';          // Bourbon Neat
+@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
+@import 'settings';           // Mostly variables, mixins, and extends and other includes.
+
+// Specific to just this feature
+@import 'font/blackout2am';  // Blackout 2am
+
+.wrap { 
+  background: #c5e7f9 url(/images/macys-bg.png) no-repeat center top fixed;
+  padding: 1rem 0;
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+article {
+  @extend %nice-text;
+  
+	color: $white;
+  
+  @include media($tablet1) {
+    @include column-count(2);
+    @include column-gap(2rem);
+  }
+  
+  @include media($max-width) {
+    @include column-count(3);
+    @include column-gap(2rem);
+  }
+	
+	.entry-header h1 {
+  	font-family: Blackout2AM, sans-serif;
+  	font-size: 6rem;
+    line-height: 1; 
+  	color: #666;
+  	text-shadow: 0 1px 0 rgba($white,.4);
+  	margin: 0;
+    @include media(p$mobile1)  { font-size: 9rem; }
+    @include media($mobile2)   { font-size: 5rem; }
+    @include media($tablet1)   { font-size: 7rem; line-height: 1.2; }
+    @include media($tablet2)   { font-size: 9rem; line-height: 1.2; }
+    @include media($max-width) { font-size: 8rem; line-height: .9; }
+  }
+
+	a { color: #666; }
+
+	.article-text p:first-child {
+  	font-size: 1.4rem; 
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+	 }	
+	 
+  .signature a { color: inherit; }
+}

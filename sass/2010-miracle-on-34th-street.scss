@@ -1,10 +1,9 @@
-/*! A Box Office Miracle */
+/*! A Box Office Miracle 2010 */
 
 // Setup
 @import 'bourbon/bourbon';    // Bourbon
 @import "grid-settings";      // Bourbon Neat grid settings
 @import 'neat/neat';          // Bourbon Neat
-@import 'normalize';          // Normalize
 @import 'toggle';             // Toggle mixin. It's big, so it gets its own file
 @import 'settings';           // Mostly variables, mixins, and extends and other includes.
 
@@ -28,8 +27,10 @@
   position: relative;
   box-shadow: $nice-shadow;
   @include clearfix;
-  @include box-sizing(border-box);
-  @include media($tablet1) { border-width: 2em; }
+  @include span-columns(12);
+  @include media($tablet1) {
+    border-width: 2em;
+  }
   
   &:before, &:after { 
     position: absolute;
@@ -55,8 +56,7 @@
 }
 
 article { 
-  @include box-sizing(border-box);
-  @include nice-text;
+  @extend  %nice-text;
 	@include linear-gradient(top, #f9c94a, #fff970 75%, $fallback: #f9c94a);
 	@include media($mobile1)   { padding: 2rem; margin: 0 4rem; }
 	@include media($tablet1)   { padding: 2rem 4rem; }

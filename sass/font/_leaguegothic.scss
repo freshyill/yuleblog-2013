@@ -15,17 +15,14 @@
 }
 
 
+@font-face {
+    font-family: 'League Gothic';
+    src: url('/font/leaguegothic-italic-webfont.eot');
+    src: url('/font/leaguegothic-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/font/leaguegothic-italic-webfont.woff') format('woff'),
+         url('/font/leaguegothic-italic-webfont.ttf') format('truetype'),
+         url('/font/leaguegothic-italic-webfont.svg#league_gothicitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
 
-// Not in use
-
-// @font-face {
-//     font-family: 'League Gothic';
-//     src: url('/font/leaguegothic-italic-webfont.eot');
-//     src: url('/font/leaguegothic-italic-webfont.eot?#iefix') format('embedded-opentype'),
-//          url('/font/leaguegothic-italic-webfont.woff') format('woff'),
-//          url('/font/leaguegothic-italic-webfont.ttf') format('truetype'),
-//          url('/font/leaguegothic-italic-webfont.svg#league_gothicitalic') format('svg');
-//     font-weight: normal;
-//     font-style: italic;
-// 
-// }
+}

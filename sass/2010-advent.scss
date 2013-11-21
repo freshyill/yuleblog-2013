@@ -1,0 +1,103 @@
+//! Feature Prototype
+
+// Setup
+@import 'bourbon/bourbon';    // Bourbon
+@import "grid-settings";      // Bourbon Neat grid settings
+@import 'neat/neat';          // Bourbon Neat
+@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
+@import 'settings';           // Mostly variables, mixins, and extends and other includes.
+
+// Specific to just this feature
+
+$featurecolor: $white;
+$body-copy-font: $body-copy-font;
+
+.wrap {
+  padding: 1rem 0;
+  @include background( linear-gradient(rgba($black, .4), transparent), url(/images/pattern_049.png));
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.hero-empty {
+  //@include box-shadow(#{$header-shadow}, 0 0 10px $black, 0 1px 0 rgba($black,.5));
+  background: $black url('/images/advent-header.jpg') center top no-repeat;
+  background-size: cover;
+  
+  border-bottom: 3px solid #5b200d;
+  
+  height: 120px;
+  @include media($mobile2) { height: 150px; }
+  @include media($tablet1) { height: 250px; }
+  @include media($tablet2) { height: 350px; }
+  @include media($max-width) { height: 400px; }
+}
+
+.entry-header { display: none; }
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $body-copy-font;
+	color: $featurecolor;
+  text-shadow: 0 1px 0 rgba($black, .3);
+	
+  @include media($mobile1)   {
+    @include shift(1);
+    @include span-columns(10);
+  }
+  @include media($tablet1)   {
+    @include span-columns(5);
+  }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
+  	
+	.entry-header h1 {
+
+    @include media($mobile1)   {  }
+    @include media($mobile2)   {  }
+    @include media($tablet1)   {  }
+    @include media($tablet2)   {  }
+    @include media($max-width) {  }
+  }
+
+	a {  }
+
+	.article-text p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.feature-sidebar {
+  @include media($mobile1)   {
+    @include shift(1);
+    @include span-columns(10);
+  }
+  @include media($tablet1) {
+    @include shift(0);
+    @include span-columns(5);
+  }
+  img {
+    max-width: 100%;
+    box-shadow: $nice-shadow;
+    background: #ffe7e1;
+    padding: 5px;
+    margin-top: 2.3em;
+	 @include media($tablet1) { padding: 10px; }
+  }
+}

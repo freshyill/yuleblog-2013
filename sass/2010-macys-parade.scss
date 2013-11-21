@@ -1,0 +1,89 @@
+//*! Feature Prototype
+
+// Setup
+@import 'bourbon/bourbon';    // Bourbon
+@import "grid-settings";      // Bourbon Neat grid settings
+@import 'neat/neat';          // Bourbon Neat
+@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
+@import 'settings';           // Mostly variables, mixins, and extends and other includes.
+
+// Specific to just this feature
+@import 'font/hattorihanzolight';  // HattoriHanzoLight
+@import 'font/raleway';            // Raleway
+
+.wrap { 
+  background: #c5e7f9 url(/images/macys-bg.png) no-repeat center top fixed;
+  background-size: cover;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  @include media($mobile1) {
+    padding-top:    2rem;
+    padding-bottom: 2rem;
+  }
+  @include media($tablet1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+article {
+  @extend %nice-text;
+  
+  background: rgba($white, .4);
+  box-shadow: $nice-shadow;
+	color: #454646;
+	font-family: HattoriHanzoLight, sans-serif;
+	text-shadow: 0 1px 0 rgba($white, .6);
+	padding: 1rem;
+	line-height: 1.4;
+	
+	@include media($mobile2) { padding: 3rem; }
+	@include media($tablet1) { padding: 3rem 6rem; }
+  @include media($tablet2) {
+    padding: 3rem;
+    @include span-columns(7);
+  }
+	
+	.entry-header h1 {
+    font-family: 'Raleway', sans-serif;
+    font-size: 2em;
+    line-height: .9; 
+    text-align: center;
+    font-weight: 900;
+    color: $white;
+    text-shadow: 0 1px 0 rgba(88,163,173,.9);
+    margin: 0;
+    padding: .6em 0;
+    background: url(/images/macys-star.png) center 50% no-repeat;
+    background-size: contain;
+    @include media($mobile1) { font-size: 3em; }
+    @include media($mobile2) { font-size: 3.5em; }
+   
+    span {
+      display: block;
+      font-size: .5em;
+      font-weight: 800;
+    }
+  }
+
+	a { color: #666; }
+
+	.article-text p:first-child {
+  	font-size: 1.4rem; 
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+	 }	
+	 
+	 img {
+	  display: block;
+	  margin: 0 auto;
+    box-shadow: $nice-shadow;
+    border: 1px solid #c5e7f9;
+    padding: 5px;
+    background: #fff;
+    max-width: 100%;
+	 }
+	 
+  .signature a { color: inherit; }
+}
