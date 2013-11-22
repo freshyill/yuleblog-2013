@@ -1,0 +1,119 @@
+/*! The Other Plants of Christmas */
+
+@import 'setup';              // Setup
+@import 'font/hollaregular';  // HollaRegular
+
+$featurecolor: #3f0300;
+$linkcolor: #324412;
+
+.wrap { 
+  background: #2e3c1f url(/images/plants-background.png);
+  padding: 1rem 0;
+  overflow-x: hidden;
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+  font-family: $georgia;
+  
+  background: #fcfbf1 url(/images/plants-content-bg.png);
+  box-shadow: $darker-shadow;
+  
+  @include pad(1rem);
+
+  @include span-columns(12);
+  
+  @include media($mobile2)   { @include pad(2rem); }
+  @include media($tablet1)   { 
+    @include pad(3rem);
+    @include shift(1);
+    @include span-columns(10);
+  }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h1,
+	h2 {
+	  font-weight: normal;
+	  font-family: HollaRegular;
+    text-shadow: -3px 2px 0 #7e9650;
+	 }
+	 
+	 h2 {
+  	 font-size: 3rem;
+  	 text-align: center;
+	 }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  text-shadow: 0 1px 0 rgba($white,.5);
+	border: double #e6d5ba;
+	
+	@include pad(1rem);
+	
+  @include media($mobile2)   { @include pad(2rem); }
+  @include media($tablet1)   { @include pad(3rem); }
+  	
+	.entry-header h1 {
+	
+	  text-align: center;
+	  font-size: 3.5rem;
+	  
+    @include media($mobile2)   { font-size: 4.5rem; }
+    @include media($tablet1)   { font-size: 4rem; }
+    @include media($max-width) { font-size: 5rem; }
+  }
+  
+  blockquote {
+    color: inherit;
+  }
+  
+  img {
+    max-width: 100%;
+    border: double #e6d5ba;
+    padding: .5rem;
+    @include media($tablet1) {
+      padding: 1rem;
+      margin: 1rem 0 0 2rem;
+      max-width: 50%;
+      float: right;
+    }
+  }
+  
+  .other-plants {
+    @include clearfix;
+    img {
+      @include media($tablet1) { max-width: 33%; }
+    }
+  }
+
+	.article-text > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}

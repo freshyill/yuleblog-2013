@@ -4,11 +4,20 @@
 @import 'font/blackout2am';  // Blackout 2am
 
 .wrap { 
-  background: #c5e7f9 url(/images/macys-bg.png) no-repeat center top fixed;
+  background: $black;
   padding: 1rem 0;
   @include media($mobile1) {
     padding-top:    4rem;
     padding-bottom: 4rem;
+  }
+  font-family: $georgia;
+  h2 { font-weight: normal; }
+}
+  
+.main {
+  a {
+	  &:link,
+    &:visited { color: $white; }
   }
 }
 
@@ -34,21 +43,20 @@ article {
   	color: #666;
   	text-shadow: 0 1px 0 rgba($white,.4);
   	margin: 0;
-    @include media($mobile1)  { font-size: 9rem; }
+    @include media($mobile1)   { font-size: 9rem; }
     @include media($mobile2)   { font-size: 5rem; }
     @include media($tablet1)   { font-size: 7rem; line-height: 1.2; }
     @include media($tablet2)   { font-size: 9rem; line-height: 1.2; }
     @include media($max-width) { font-size: 8rem; line-height: .9; }
   }
 
-	a { color: #666; }
 
-	.article-text p:first-child {
+
+	.article-text > p:first-child {
   	font-size: 1.4rem; 
   	margin: 1rem 0;
   	text-align: left;
   	@include hyphens(none);
 	 }	
 	 
-  .signature a { color: inherit; }
 }

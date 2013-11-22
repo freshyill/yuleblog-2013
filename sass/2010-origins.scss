@@ -1,7 +1,7 @@
 /*! The Ancient Origins of Christmas */
 
 @import 'setup';               // Setup
-@import 'font/CloisterBlack';  // CloisterBlack
+@import 'font/cloisterblack';  // CloisterBlack
 
 $featurecolor: $black;
 
@@ -16,6 +16,9 @@ $featurecolor: $black;
 }
 
 .content {
+  font-family: $georgia;
+
+	color: $featurecolor;
 
   background-color: #dfd1b1;
   background: url(/images/origins-mistletoe-bg.png),
@@ -25,13 +28,8 @@ $featurecolor: $black;
   background-position: center 2em, left top;
   box-shadow: $darker-shadow;
 
-	color: $featurecolor;
-  $body-copy-font: $body-copy-font;
-
   @include span-columns(12);
   
-  @include media($mobile1)   {  }
-  @include media($mobile2)   {  }
   @include media($tablet1) {
     @include shift(1); 
     @include span-columns(10);
@@ -40,7 +38,6 @@ $featurecolor: $black;
     @include shift(2); 
     @include span-columns(8);
   }
-  @include media($max-width) {  }
   
   a {
   	&:link,
@@ -57,15 +54,10 @@ article {
   @extend %nice-text;
   @extend %content-module;
   
-  font-family: $body-copy-font;
   text-shadow: 0 1px 0 rgba($white, .3);
   padding: 1rem;
 	
   @include media($mobile1)   { padding: 2rem; }
-  @include media($mobile2)   {  }
-  @include media($tablet1)   {  }
-  @include media($tablet2)   {  }
-  @include media($max-width) {  }
   	
 	.entry-header h1 {
 	
@@ -121,7 +113,7 @@ article {
   color: $white;
   font-size: 1.2em;
   font-style: italic;
-  font-family: $body-copy-font;
+  font-family: $georgia;
   text-align: left;
   text-shadow: 0 1px 0 rgba($black, .8);
   background: #94231a url(/images/origins-red-static.png);

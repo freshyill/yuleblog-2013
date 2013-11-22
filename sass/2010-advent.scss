@@ -5,7 +5,6 @@
 // Specific to just this feature
 
 $featurecolor: $white;
-$body-copy-font: $body-copy-font;
 
 .wrap {
   padding: 1rem 0;
@@ -45,7 +44,7 @@ article {
   @extend %nice-text;
   @extend %content-module;
   
-  font-family: $body-copy-font;
+  font-family: $georgia;
 	color: $featurecolor;
   text-shadow: 0 1px 0 rgba($black, .3);
 

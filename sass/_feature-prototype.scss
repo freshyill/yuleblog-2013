@@ -1,7 +1,7 @@
 /*! Feature Prototype */
 
 @import 'setup';             // Setup
-@import 'font/Blackout2AM';  // Blackout 2am
+@import 'font/blackout2am';  // Blackout2AM
 
 $featurecolor: red;
 $linkcolor: lime;
@@ -19,7 +19,7 @@ $linkcolor: lime;
 .content {
 
 	color: $featurecolor;
-  $body-copy-font: $body-copy-font;
+	font-family: $georgia;
 
   @include span-columns(12);
   @include media($mobile1)   {  }
@@ -43,7 +43,7 @@ article {
   @extend %nice-text;
   @extend %content-module;
   
-  font-family: Blackout2AM;
+  font-family: $georgia;
   text-shadow: 10px 10px 0 fuchsia;
 	
   @include media($mobile1)   {  }

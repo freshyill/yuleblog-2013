@@ -4,7 +4,6 @@
 @import 'font/chunkfive';    // ChunkFive
 
 $featurecolor: $black;
-$body-copy-font: $body-copy-font;
 
 .wrap { 
   background: $white url(/images/bing-bowie-solo.jpg);
@@ -24,7 +23,7 @@ article {
   @extend %nice-text;
   @extend %content-module;
   
-  font-family: $body-copy-font;
+  font-family: $georgia;
 	color: $featurecolor;
   text-shadow: 0 1px 0 rgba($white,.9);
   background: rgba($white, .9);

@@ -4,7 +4,6 @@
 @import 'font/tanach';       // Tanach
 
 $featurecolor: $white;
-$body-copy-font: $body-copy-font;
 
 .wrap { 
   background: #103146 url(/images/hanukkah-blue-noise.png);
@@ -20,7 +19,7 @@ $body-copy-font: $body-copy-font;
 .content {
 
 	color: $featurecolor;
-  font-family: $body-copy-font;
+  font-family: $georgia;
   border: .5rem solid $white;
   background: url('/images/hanukkah-menorah-bg.png'), url('/images/hanukkah-blue-noise-inner.png');
   background-repeat: no-repeat, repeat;

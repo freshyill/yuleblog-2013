@@ -61,7 +61,7 @@ article {
 
 	a { color: #666; }
 
-	.article-text p:first-child {
+	.article-text > p:first-child {
   	font-size: 1.4rem; 
   	margin: 1rem 0;
   	text-align: left;

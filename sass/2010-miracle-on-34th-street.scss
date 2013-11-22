@@ -6,7 +6,7 @@
 
 // Display
 .wrap { 
-  background: #444 url(/img/feature/2010-miracle-black-static.png);
+  background: #444 url(/images/feature/2010-miracle-black-static.png);
   padding: 1rem 0;
   @include media($mobile1) {
     padding-top:    4rem;
@@ -59,7 +59,7 @@ article {
 	position: relative;
 	padding: 1rem;
 	text-shadow: 0 1px 0 rgba(255,255,255,.5);
-	font-family: $body-copy-font;
+	font-family: $georgia;
 	color: #444;
 	
 	.entry-header { 
@@ -78,7 +78,6 @@ article {
       text-shadow: -1px 1px 0 #333, -2px 2px 0 #333, -3px 3px 0 #333, -4px 4px 0 #333, -5px 5px 0 #333;
       @include media($mobile1)    { font-size: 6rem; }
       @include media($mobile2)    { font-size: 7rem; }
-      @include media($tablet1)    { }
       @include media($tablet2)    { font-size: 8rem; }
       @include media($max-width)  { font-size: 9rem; }
     }
@@ -102,7 +101,7 @@ article {
 	
 	.kringle { display: block; margin: 0 auto; }
 
-	.article-text p:first-child { 
+	.article-text > p:first-child { 
   	font-size: 1.2em; 
   	margin: .7em 0 1em 0;
   	text-align: left;
