@@ -2,7 +2,7 @@
 
 
 //FitVids
-jQuery('article').fitVids({
+jQuery('article, .feature-sidebar').fitVids({
   customSelector: "iframe[src^='https://archive.org'], iframe[src^='http://archive.org'], iframe[src^='https://funnyordie.com'], iframe[src^='http://funnyordie.com']" });
 
 

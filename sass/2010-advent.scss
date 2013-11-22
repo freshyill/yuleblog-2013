@@ -1,11 +1,6 @@
-//! Feature Prototype
+/*! Advent */
 
-// Setup
-@import 'bourbon/bourbon';    // Bourbon
-@import "grid-settings";      // Bourbon Neat grid settings
-@import 'neat/neat';          // Bourbon Neat
-@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
-@import 'settings';           // Mostly variables, mixins, and extends and other includes.
+@import 'setup';
 
 // Specific to just this feature
 
@@ -15,7 +10,7 @@ $body-copy-font: $body-copy-font;
 .wrap {
   padding: 1rem 0;
   box-shadow: $wrap-shadow-2, $wrap-shadow-3;
-  @include background( linear-gradient(rgba($black, .4), transparent), url(/images/pattern_049.png));
+  @include background(linear-gradient(rgba($black, .4), transparent), url(/images/pattern_049.png));
   @include media($tablet1) {
     padding-top:    4rem;
     padding-bottom: 4rem;
@@ -53,29 +48,8 @@ article {
   font-family: $body-copy-font;
 	color: $featurecolor;
   text-shadow: 0 1px 0 rgba($black, .3);
-	
-  @include media($mobile1)   {
-    @include shift(1);
-    @include span-columns(10);
-  }
-  @include media($tablet1)   {
-    @include span-columns(5);
-  }
-  @include media($tablet2)   {  }
-  @include media($max-width) {  }
-  	
-	.entry-header h1 {
 
-    @include media($mobile1)   {  }
-    @include media($mobile2)   {  }
-    @include media($tablet1)   {  }
-    @include media($tablet2)   {  }
-    @include media($max-width) {  }
-  }
-
-	a {  }
-
-	.article-text p:first-child {
+	.article-text > p:first-child {
   	font-size: 1.2rem;
   	margin: 1rem 0;
   	text-align: left;
@@ -90,6 +64,18 @@ article {
     &:active  { color: lighten($featurecolor, 30); }
   }
   
+}
+
+.article-text {
+  @include media($mobile1)   {
+    @include shift(1);
+    @include span-columns(10);
+  }
+  @include media($tablet1)   {
+    @include span-columns(5);
+  }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
 }
 
 .feature-sidebar {

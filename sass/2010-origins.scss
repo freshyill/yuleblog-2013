@@ -1,0 +1,159 @@
+/*! The Ancient Origins of Christmas */
+
+@import 'setup';               // Setup
+@import 'font/CloisterBlack';  // CloisterBlack
+
+$featurecolor: $black;
+
+.wrap { 
+  background: #36290f url(/images/origins-brown-noise.png);
+  padding: 1rem 0;
+  overflow-x: hidden;
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.content {
+
+  background-color: #dfd1b1;
+  background: url(/images/origins-mistletoe-bg.png),
+              url(/images/origins-beige-noise.png);
+  background-size: contain, auto;
+  background-repeat: no-repeat, repeat;
+  background-position: center 2em, left top;
+  box-shadow: $darker-shadow;
+
+	color: $featurecolor;
+  $body-copy-font: $body-copy-font;
+
+  @include span-columns(12);
+  
+  @include media($mobile1)   {  }
+  @include media($mobile2)   {  }
+  @include media($tablet1) {
+    @include shift(1); 
+    @include span-columns(10);
+  }
+  @include media($tablet2)   {
+    @include shift(2); 
+    @include span-columns(8);
+  }
+  @include media($max-width) {  }
+  
+  a {
+  	&:link,
+  	&:visited { color: #324412; }
+  	&:hover   { color: lighten(#324412, 20); }
+  	&:active  { color: lighten(#324412, 30); }
+	}
+	
+  h2 { font-weight: normal; }
+  
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $body-copy-font;
+  text-shadow: 0 1px 0 rgba($white, .3);
+  padding: 1rem;
+	
+  @include media($mobile1)   { padding: 2rem; }
+  @include media($mobile2)   {  }
+  @include media($tablet1)   {  }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
+  	
+	.entry-header h1 {
+	
+    font-family: 'CloisterBlack', serif;
+    font-weight: normal;
+    font-size: 4rem;
+    margin: .1em 0 .3em 0;
+    text-align: center;
+    line-height: .9; 
+    display: block;
+    color: #5a100e;
+    
+    span { font-size: .4em; display: block; }
+
+    @include media($mobile1)   { font-size: 6rem; }
+    @include media($mobile2)   { font-size: 8rem; }
+    @include media($tablet1)   { font-size: 10rem; span { font-size: .35em; } }
+    @include media($tablet2)   { font-size: 8.5rem; }
+    @include media($max-width) { font-size: 10.5rem; }
+  }
+  	
+	figure {
+	  font-size: .825rem;
+	  width: 100%;
+	  @include media($mobile2) { max-width: 50%; }
+  }
+  
+  figcaption { margin-top: .5rem; }
+  
+	img { max-width: 100%; }
+
+	.article-text > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.ribbon {
+  left: -2rem;
+  width: calc(100% + 4rem);
+  position: relative;
+  color: $white;
+  font-size: 1.2em;
+  font-style: italic;
+  font-family: $body-copy-font;
+  text-align: left;
+  text-shadow: 0 1px 0 rgba($black, .8);
+  background: #94231a url(/images/origins-red-static.png);
+  box-shadow: $wrap-shadow-1, $darker-shadow;
+  
+  p {
+    font-size: 1em;
+    margin: 0;
+    padding: 4% 1rem;
+    @include linear-gradient(rgba($black,.1), rgba($black,.55));
+    @include media($tablet1) { padding: 6% 1rem; }
+  }
+  
+  @include media($tablet1) {
+    border-radius: 3px;
+    font-size: 1.4em;
+    left: -3rem;
+    width: calc(100% + 6rem);
+    &:before,
+    &:after {
+      position: absolute;
+      z-index: -1;
+      bottom: -46px;
+    }
+    &:before {
+      left: -33px;
+      content: url(/images/origins-ribbon-left.png);
+    }
+    &:after {
+      right: -28px;
+      content: url(/images/origins-ribbon-right.png);
+    }
+  }
+  
+}

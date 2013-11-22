@@ -1,21 +1,15 @@
-//! Feature Prototype
+/*! Feature Prototype */
 
-// Setup
-@import 'bourbon/bourbon';    // Bourbon
-@import "grid-settings";      // Bourbon Neat grid settings
-@import 'neat/neat';          // Bourbon Neat
-@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
-@import 'settings';           // Mostly variables, mixins, and extends and other includes.
-
-// Specific to just this feature
+@import 'setup';             // Setup
 @import 'font/Blackout2AM';  // Blackout 2am
 
 $featurecolor: red;
-$body-copy-font: $body-copy-font;
+$linkcolor: lime;
 
 .wrap { 
   background: lime;
   padding: 1rem 0;
+  overflow-x: hidden;
   @include media($mobile1) {
     padding-top:    4rem;
     padding-bottom: 4rem;
@@ -24,12 +18,25 @@ $body-copy-font: $body-copy-font;
 
 .content {
 
+	color: $featurecolor;
+  $body-copy-font: $body-copy-font;
+
   @include span-columns(12);
   @include media($mobile1)   {  }
   @include media($mobile2)   {  }
   @include media($tablet1)   {  }
   @include media($tablet2)   {  }
   @include media($max-width) {  }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
 }
 
 article {
@@ -37,7 +44,6 @@ article {
   @extend %content-module;
   
   font-family: Blackout2AM;
-	color: $featurecolor;
   text-shadow: 10px 10px 0 fuchsia;
 	
   @include media($mobile1)   {  }
@@ -57,7 +63,7 @@ article {
 
 	a {  }
 
-	.article-text p:first-child {
+	.article-text > p:first-child {
   	font-size: 1.2rem;
   	margin: 1rem 0;
   	text-align: left;
@@ -70,6 +76,23 @@ article {
     &:visited { color: $featurecolor; }
     &:hover   { color: lighten($featurecolor, 20); }
     &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.feature-sidebar {
+  @extend %content-module;
+
+  padding-bottom: 3rem;
+  
+  @include media($mobile1)   {  }
+  @include media($mobile2)   {  }
+  @include media($tablet1)   {  }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
+  
+  img {
+
   }
   
 }

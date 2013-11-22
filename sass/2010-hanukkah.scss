@@ -1,0 +1,127 @@
+/*! Hanukkah */
+
+@import 'setup';             // Setup
+@import 'font/tanach';       // Tanach
+
+$featurecolor: $white;
+$body-copy-font: $body-copy-font;
+
+.wrap { 
+  background: #103146 url(/images/hanukkah-blue-noise.png);
+  padding: 1rem 0;
+  @include media($mobile1) {
+    padding-top:    2rem;
+    padding-bottom: 2rem;
+  }
+  @include media($tablet1) { @include pad(4rem 1rem); }
+  @include media($tablet2) { @include pad(4rem 2rem); }
+}
+
+.content {
+
+	color: $featurecolor;
+  font-family: $body-copy-font;
+  border: .5rem solid $white;
+  background: url('/images/hanukkah-menorah-bg.png'), url('/images/hanukkah-blue-noise-inner.png');
+  background-repeat: no-repeat, repeat;
+  background-size: contain, auto;
+  box-shadow: $darker-shadow;
+  @include span-columns(12);
+  @include media($mobile1)   {  border-width: 1rem; }
+  
+  h2 {
+    font-family: Tanach;
+    font-weight: normal;
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    line-height: .5;
+    margin-bottom: 1rem;
+  }
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  text-shadow: 0 1px 0 rgba($black, .3);
+  
+  @include pad(1.5rem 1rem);
+	
+  @include media($mobile1)   { @include pad(2rem); }
+  	
+	.entry-header h1 {
+    
+    font-family: Tanach;
+    font-weight: normal;
+    margin-bottom: 1rem;
+    text-align: center;
+    
+    font-size: 2rem;
+    letter-spacing: 3px;
+    line-height: 1;
+    padding-top: 1rem;
+    
+    @include media($mobile1)   { font-size: 3rem; padding-top: 3rem; }
+    @include media($mobile2)   { line-height: .8; padding-top: 4rem; }
+    @include media($tablet1)   { font-size: 3rem; }
+    @include media($tablet2)   { font-size: 7rem; padding-top: 5rem; }
+    
+    b {
+      display: block;
+      font-size: 4rem;
+      @include media($mobile1)   { font-size: 6rem; }
+      @include media($mobile2)   { font-size: 8rem; }
+      @include media($tablet1)   { font-size: 12rem; }
+      @include media($tablet2)   { font-size: 16rem; }
+    }
+    
+  }
+  
+  .article-text {
+    @include media($tablet1)   { 
+      @include span-columns(8);
+    }
+    
+    h3 { font-weight: normal; }
+  }
+
+	a {  }
+
+	.article-text > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+
+.feature-sidebar {
+  @extend %content-module;
+  text-align: left;
+  
+  font-size: .825rem;
+  
+  @include media($tablet1)   { 
+    @include span-columns(4);
+    @include omega;
+    @include pad(5rem 0 3rem 0);
+  }
+  
+  img {
+    max-width: 50%;
+    &.center { display: block; margin: 0 auto;}
+    @include media($tablet1) {
+      display: inline-block;
+      max-width: auto;
+    }
+  }
+}

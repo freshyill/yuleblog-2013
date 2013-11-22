@@ -1,13 +1,6 @@
-//! Oh what fun it is to ride!
+/*! Oh what fun it is to ride! */
 
-// Setup
-@import 'bourbon/bourbon';    // Bourbon
-@import "grid-settings";      // Bourbon Neat grid settings
-@import 'neat/neat';          // Bourbon Neat
-@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
-@import 'settings';           // Mostly variables, mixins, and extends and other includes.
-
-// Specific to just this feature
+@import 'setup';
 
 $featurecolor: #6e5227;
 
@@ -24,10 +17,7 @@ $featurecolor: #6e5227;
 .content {
   @include span-columns(12);
   @include media($mobile1)   { @include span-columns(10); @include shift(1); }
-  @include media($mobile2)   {  }
-  @include media($tablet1)   {  }
   @include media($tablet2)   { @include span-columns(8); @include shift(2); }
-  @include media($max-width) {  }
 }
 
 article {
@@ -66,14 +56,12 @@ article {
     max-width: 100%;
     position: relative;
 
-    @include media($mobile2) {  }
     @include media($tablet1) {
       float: right;
       max-width: 60%;
       margin-left: -4em;
       @include transform(rotate(2deg) translateX(6em));
     }
-    @include media($tablet2)   {  }
     @include media($max-width) { max-width: auto; }
   }
 

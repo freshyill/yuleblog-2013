@@ -1,0 +1,104 @@
+/* Bing & Bowie */
+
+@import 'setup';             // Setup
+@import 'font/chunkfive';    // ChunkFive
+
+$featurecolor: $black;
+$body-copy-font: $body-copy-font;
+
+.wrap { 
+  background: $white url(/images/bing-bowie-solo.jpg);
+  background-size: cover;
+  padding: 1rem 0;
+  @include media($mobile1) {
+    padding-top:    2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.content {
+  @include span-columns(12);
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $body-copy-font;
+	color: $featurecolor;
+  text-shadow: 0 1px 0 rgba($white,.9);
+  background: rgba($white, .9);
+  box-shadow: $wrap-shadow;
+  
+  @include pad(1rem);
+
+  @include media($tablet1)   { @include span-columns(6); }
+  @include media($tablet2)   { @include pad(2rem); }
+  	
+	.entry-header h1 {
+	  font-family: ChunkFive, serif;
+    font-size: 2.8rem;
+    text-align: left;
+    line-height: 1;
+    
+    @include media($mobile1)   { font-size: 4.5rem; }
+    @include media($mobile2)   { font-size: 5rem; }
+    @include media($tablet1)   { font-size: 3.6rem; }
+    @include media($tablet2)   { font-size: 5.5rem; }
+  }
+
+	a {  }
+
+	.article-text > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }
+	 
+    blockquote {
+      background: rgba(1,1,1,.9);
+      color: $white;
+      text-shadow: 0 1px 0 $black;
+      font-style: italic;
+      margin: 0 auto 1em auto;
+      padding: 1em 2em;
+      border-radius: 3px;
+      text-align: left;
+      box-shadow: $nice-shadow;
+      
+      position: relative;
+      width: 116%;
+      left: -8%;
+      
+      @include media($mobile2) {
+        width: 120%;
+        left: -10%;
+      }
+    }
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.feature-sidebar {
+  padding-bottom: 3rem;
+  
+  @include media($tablet1) { @include span-columns(6); }
+  
+  img {
+    @extend %blockimg;
+    box-shadow: $darker-shadow;
+    width: 100%;
+    margin-top: 3rem;
+  }
+  
+  iframe { margin-top: 3rem; }
+  
+}

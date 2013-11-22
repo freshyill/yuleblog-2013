@@ -1,13 +1,6 @@
 /*! Black Friday 2010 */
 
-// Setup
-@import 'bourbon/bourbon';    // Bourbon
-@import "grid-settings";      // Bourbon Neat grid settings
-@import 'neat/neat';          // Bourbon Neat
-@import 'toggle';             // Toggle mixin. It's big, so it gets its own file
-@import 'settings';           // Mostly variables, mixins, and extends and other includes.
-
-// Specific to just this feature
+@import 'setup';
 @import 'font/blackout2am';  // Blackout 2am
 
 .wrap { 
@@ -41,7 +34,7 @@ article {
   	color: #666;
   	text-shadow: 0 1px 0 rgba($white,.4);
   	margin: 0;
-    @include media(p$mobile1)  { font-size: 9rem; }
+    @include media($mobile1)  { font-size: 9rem; }
     @include media($mobile2)   { font-size: 5rem; }
     @include media($tablet1)   { font-size: 7rem; line-height: 1.2; }
     @include media($tablet2)   { font-size: 9rem; line-height: 1.2; }
