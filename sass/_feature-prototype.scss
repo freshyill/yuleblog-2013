@@ -8,11 +8,13 @@ $linkcolor: lime;
 
 .wrap { 
   background: lime;
-  padding: 1rem 0;
+  @include pad(1rem 0);
   overflow-x: hidden;
   @include media($mobile1) {
-    padding-top:    4rem;
-    padding-bottom: 4rem;
+    @include pad(2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
   }
 }
 

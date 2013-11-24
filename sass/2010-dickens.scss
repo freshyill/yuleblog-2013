@@ -1,0 +1,100 @@
+/*! Charlies Dickens: Our Modern Father Christmas */
+
+@import 'setup';             // Setup
+@import 'font/chunkfive';    // ChunkFive
+
+$featurecolor: $gray-90;
+$linkcolor: $featurecolor;
+
+.wrap { 
+  background: $black url(/images/dickens-paper-texture.jpg);
+  @include pad(1rem 0);
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad(2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include shift(2); @include span-columns(8); }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $georgia;
+  text-shadow: 0 1px 0 rgba($white,.5);
+  	
+	.entry-header h1 {
+	
+	  font-family: ChunkFive, sans-serif;
+  	font-weight: normal;
+  	font-size: 2rem;
+  	margin: 0;
+  	text-align: left;
+  	line-height: 1.1; 
+  	display: block;
+
+    @include media($mobile1)   { font-size: 3rem; }
+    @include media($tablet1)   { font-size: 4rem; }
+  }
+
+	a {  }
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; line-height: 1.4; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.spirit {
+  max-width: 100%;
+  
+  @include media($mobile1) {
+    float: left;
+    max-width: 50%;
+    margin-right: 1rem;
+  }
+  
+  @include media($tablet1) {
+    @extend %blockimg;
+    margin-right: -7rem;
+    max-width: 75%;
+    @include transform(translateX(-9rem));
+  }
+  
+  @include media($tablet2) {
+    @extend %blockimg;
+    margin-right: -7rem;
+    max-width: none;
+    @include transform(translateX(-9rem));
+  }
+}

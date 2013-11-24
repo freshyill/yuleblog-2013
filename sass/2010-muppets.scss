@@ -1,0 +1,122 @@
+/*! A Muppets Family Christmas: The Whole Family Together */
+
+@import 'setup';             // Setup
+
+$featurecolor: $white;
+$linkcolor: #6c8e30;
+
+.wrap { 
+  background: #103146 url(/images/muppet-family-bg.jpg) no-repeat center fixed;
+  background-size: cover;
+  @include pad(1rem 0);
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad(2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+
+  background: rgba($black, .8);
+  font-family: $georgia;
+  text-shadow: 0 1px 0 $black;
+  box-shadow: $nice-shadow;
+  border-radius: 4px;
+  
+  @include pad(1rem);
+	
+  @include media($mobile1)   { @include pad(2rem); }
+  @include media($mobile2)   { @include pad(3rem); }
+  @include media($tablet1)   { @include pad(2rem); @include span-columns(8 of 12); }
+  @include media($tablet2)   { @include pad(3rem); }
+  @include media($max-width) {  }
+    	
+	.entry-header h1 {
+	
+	  @extend %hide-text;
+	  background: url(/images/muppet-family-title.png) center top no-repeat;
+	  background-size: contain;
+	  height: 120px;
+    margin: 0;
+
+    @include media($mobile1)   { height: 170px; }
+    @include media($mobile2)   { height: 195px; }
+    @include media($tablet1)   { height: 185px; }
+    @include media($tablet2)   { height: 280px; }
+    @include media($max-width) { height: 293px; }
+  }
+
+  a {
+    &:link,
+    &:visited { color: $linkcolor; }
+    &:hover   { color: lighten($linkcolor, 20); }
+    &:active  { color: lighten($linkcolor, 30); }
+  }
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.feature-sidebar {
+  @extend %content-module;
+
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  text-align: center;
+  
+  @include media($mobile1)   {  }
+  @include media($mobile2)   {  }
+  @include media($tablet1)   { @include span-columns(4 of 12) }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
+  
+  img {
+    box-shadow: $nice-shadow;
+    border: 1px solid #ccc;
+    display: block;
+	  padding: .5rem;
+	  background: $white;
+	  max-width: 100%;
+	  position: relative;
+	  @extend %blockimg;
+	  &:nth-child(odd)  { @include transform(rotate(2deg)); top: -10px; }
+	  &:nth-child(even) { @include transform(rotate(-1deg)); }
+  }
+}
+  

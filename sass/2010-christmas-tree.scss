@@ -1,0 +1,136 @@
+/*! A Brief History of the Christmas Tree */
+
+@import 'setup';             // Setup
+@import 'font/hattorihanzolight';
+@import 'font/leaguegothic';
+
+$featurecolor: $black;
+$linkcolor: $black;
+
+.wrap { 
+  background: $black url(/images/xmas-tree-bg.jpg) no-repeat center top fixed;
+  background-size: cover;
+  
+  @include pad(1rem 0);
+  
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad(2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include span-columns(12); }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  text-shadow: 0 1px 0 rgba($white,.5);
+  background: rgba($white,.9);
+  font-family: HattoriHanzoLight, sans-serif;
+  font-size: 1.2rem;
+  box-shadow: $darker-shadow;
+  
+  @include pad(1rem);
+	
+  @include media($mobile1)   { @include pad(2rem); }
+  @include media($mobile2)   { @include pad(3rem); }
+  @include media($tablet1)   { @include pad(4rem); }
+  @include media($tablet2)   { @include pad(6rem); }
+  @include media($max-width) { @include pad(7rem); }
+  	
+	.entry-header h1 {
+    font-family: 'League Gothic', sans-serif;
+  	font-weight: normal;
+  	margin: 0;
+  	line-height: 1.1; 
+  	display: block;
+  	font-size: 2.5em;
+    
+    span { display: block; font-size: .6em; }
+  	
+    @include media($mobile1)   { font-size: 4.5rem; }
+    @include media($mobile2)   { font-size: 5.5rem; }
+    @include media($tablet1)   { font-size: 7rem; span { font-size: .4em; } }
+    @include media($tablet2)   { font-size: 9rem; }
+  }
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+
+.wp-caption {
+  
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100%; 
+  display: block;
+  float: none;
+
+  img { width: 100%; max-width: 100%; margin: 0 auto 1rem auto; }
+  
+  p {
+    background: transparent;
+    padding: 0;
+    width: auto;
+    font-size: .8em;
+    line-height: 1;
+    &:last-child { margin-bottom: 0; }
+  }
+  
+  @include media($mobile2) {
+    width: 100%;
+    margin-bottom: 1rem;
+    background: none;
+    line-height: 1.2;
+    p { margin-top: 0; }
+  }
+  
+  @include media($tablet1) {
+    &.alignright { padding-left: 2rem; float: right; }
+    &.alignleft  { padding-right: 2rem; float: left; }
+  }
+  
+    @include media($tablet1) {
+    &.alignright { padding-left: 3rem;  }
+    &.alignleft  { padding-right: 3rem; }
+  }
+
+}
+
+img {@extend %blockimg;}
