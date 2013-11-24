@@ -1,0 +1,128 @@
+/*! Charlie Brown */
+
+@import 'setup';             // Setup
+@import 'font/blackout2am';  // Blackout2AM
+
+$featurecolor: #e1effe;
+$linkcolor: $featurecolor;
+
+.wrap { 
+  background: $black url(/images/peanuts-bg-chuck.jpg) center bottom fixed;
+  background-size: cover;
+  
+  padding: 1rem 0;
+  overflow-x: hidden;
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+	box-shadow: $darker-shadow;
+	background: rgba(10,26,44, .8);
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include span-columns(8); @include shift(2); }
+  @include media($tablet2)   { @include span-columns(6); @include shift(3); }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $georgia;
+  text-shadow: 0 1px 0 rgba($black, .5);
+  @include pad(1rem);
+	
+  @include media($mobile1)   { @include pad(2rem); }
+  @include media($mobile2)   { @include pad(3rem); }
+  @include media($tablet1)   { @include pad(4rem 3rem); }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
+  
+  img { 
+    max-width: 50%;
+    height: auto;
+  }
+  
+  img[title="linus-cutout"] {
+    margin-right: -1rem;
+    @include transform(translateX(-1rem));
+    
+    @include media($tablet1) {
+    margin-right: -2rem;
+    @include transform(translateX(-2rem));    }
+  }
+  
+  blockquote {
+    color: #7d9d6b;
+    text-shadow: 0 1px 0 $black;
+    margin: 1rem;
+    @include media($tablet1)   { margin: 1rem 2rem; }
+  }
+  	
+	.entry-header h1 {
+	  
+	  @include hide-text;
+    background: url(/images/charlie-brown-h1.png) center top no-repeat;
+    background-size: contain;
+    height: 140px;
+
+    @include media($mobile1)   { height: 225px; }
+    @include media($mobile2)   {  }
+    @include media($tablet1)   {  }
+    @include media($tablet2)   {  }
+    @include media($max-width) {  }
+  }
+
+	a {  }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+  .utility {
+    & > p:first-child {
+  	  font-size: 1.2rem;
+      margin: 1rem 0;
+      text-align: left;
+      @include hyphens(none);
+      @include media($tablet1) { font-size: 1.4rem; }
+    }
+  }
+  
+}
+
+.feature-sidebar {
+  @extend %content-module;
+
+  padding-bottom: 3rem;
+  
+  @include media($mobile1)   {  }
+  @include media($mobile2)   {  }
+  @include media($tablet1)   {  }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
+  
+  img {
+
+  }
+  
+}

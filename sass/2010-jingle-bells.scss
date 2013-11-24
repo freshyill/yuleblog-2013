@@ -65,7 +65,7 @@ article {
     @include media($max-width) { max-width: auto; }
   }
 
-	.article-text > p:first-child {
+	.utility > p:first-child {
   	font-size: 1.2rem;
   	margin: 1rem 0;
   	text-align: left;

@@ -1,0 +1,141 @@
+/*! Feature Prototype */
+
+@import 'setup';             // Setup
+@import 'font/raleway';     // Raleway
+
+$featurecolor: $gray-80;
+$linkcolor: $gray-80;;
+
+.wrap {
+  background: $black url(/images/stnick-red-bg.png);
+  padding: 1rem 0;
+  overflow-x: hidden;
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+.content.saint-to-santa-envelope {
+  box-shadow: none;
+
+
+  @include span-columns(12);
+  @include media($tablet1) { 
+    @include shift(1);
+    @include span-columns(10);
+  }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  box-shadow: none;
+	color: $featurecolor;
+	font-family: $georgia;
+  text-shadow: 0 1px 0 rgba($white,.5);
+  	
+	.entry-header h1 {
+	  margin: 1rem 0 0 0;
+    color: #eaeaea;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba($black,.4);
+    line-height: .9;
+    font-size: 2.3rem;
+    font-family: Raleway, serif;
+    span {
+      font-size:  .7em;
+      display: block;
+    }
+
+    @include media($mobile1)   {
+      font-size: 3.8rem;
+      span { font-size: .35em; }
+    }
+    @include media($mobile2)   { font-size: 4.8rem; }
+    @include media($tablet1)   { font-size: 5rem; }
+    @include media($tablet2)   { font-size: 7em; }
+  }
+
+	a {  }
+  
+  .article-text {
+    background: url(/images/stnick-content-bg.png);
+    box-shadow: $darker-shadow;
+    @include pad(1rem);
+    
+    @include media($mobile2) {
+      @include pad(2rem);
+    }
+    
+    .utility {
+      @include media($mobile1) { 
+        border: 1px solid #f0e9da;
+        @include pad(1rem);
+      }
+      @include media($mobile2) {
+        @include pad(2rem);
+      }
+    }
+  }
+
+	.utility {
+	
+	  & > p:first-child {
+  	  font-size: 1.2rem;
+      margin: 0 0 1rem 0;
+      text-align: left;
+      @include hyphens(none);
+      @include media($tablet1) { font-size: 1.4rem; }
+    }
+    
+    blockquote {
+      color: $gray-80;
+      font-size: 1.2rem;
+    }
+  
+  	img {
+      box-shadow: $nice-shadow;
+      @extend %blockimg;
+      margin-bottom: 1em;
+      border: 1px solid #f1eee4;
+      padding: 10px;
+      background: $white;
+      @include media($mobile2) {
+        &.portrait-saint,
+        &.santa-roof {
+          @include transform(translateX(-8em));
+          position: relative;
+          margin-right: -6em;
+          float: left;
+          width: 300px;
+        }
+        &.portrait-santa {
+          @include transform(translateX(8em));
+          position: relative;
+          margin-left: -6em;
+          float: right;
+          width: 300px;
+        }
+      }
+    }  
+  }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}

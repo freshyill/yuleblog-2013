@@ -50,9 +50,7 @@ article {
     @include media($max-width) { font-size: 8rem; line-height: .9; }
   }
 
-
-
-	.article-text > p:first-child {
+	.utility  > p:first-child {
   	font-size: 1.4rem; 
   	margin: 1rem 0;
   	text-align: left;

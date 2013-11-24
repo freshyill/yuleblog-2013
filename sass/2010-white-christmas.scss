@@ -1,0 +1,102 @@
+/*! White Christmas */
+
+@import 'setup';             // Setup
+@import 'font/raleway';      // Raleway
+
+$featurecolor: $gray-90;
+$linkcolor: $featurecolor;
+
+.wrap { 
+  background: $black url(/images/white-christmas-bg.jpg) no-repeat center top fixed;
+  background-size: cover;
+  @include pad (1rem 0);
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad (2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad (4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+	background: rgba($white, .9);
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include span-columns(10); @include shift(1); }
+  @include media($tablet2)   { @include span-columns(8); @include shift(2); }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $georgia;
+  text-shadow: 0 1px 0 $white;
+  box-shadow: $darker-shadow;
+	
+	@include pad(1rem);
+	
+  @include media($mobile2)   { @include pad(2rem); }
+  @include media($tablet1)   { @include pad(3rem); }
+  	
+	.entry-header h1 {
+	
+	  font-family: 'Raleway', sans-serif;
+  	font-size: 2em;
+  	margin: 0;
+  	text-align: center;
+  	line-height: 1.1; 
+  	display: block;
+  	color: #990a1e;
+  	span { display: block; font-size: .65em; }
+
+    @include media($mobile1)   { font-size: 3rem; }
+    @include media($mobile2)   { font-size: 3.6rem; }
+    @include media($tablet1)   { font-size: 3.8rem; }
+    @include media($tablet2)   { font-size: 4.3rem; }
+    @include media($max-width) { font-size: 4.9rem; }
+  }
+  
+  img.alignright {
+    @extend %blockimg;
+    box-shadow: $nice-shadow;
+    max-width: 100%;
+    @include media($mobile2) {
+      background: $white;
+      padding: .5rem;
+      margin-left: -3rem;
+      max-width: 80%;
+      @include transform(rotate(3deg) translateX(6rem));
+    }
+  }
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}

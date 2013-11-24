@@ -1,0 +1,80 @@
+/*! Prep & Landing: Disney's New Classic */
+
+@import 'setup';             // Setup
+@import 'font/hattorihanzolight';
+
+$featurecolor: $white;
+$linkcolor: #54ac56;
+
+.wrap {
+
+  @include media($mobile1) {
+    background: $black;
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+  @include media($tablet1) {
+    background: $black url(/images/prep-landing-bg.jpg) no-repeat center top fixed;
+    background-size: cover;
+    padding: 1rem 0;
+    overflow-x: hidden;
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include shift(3); @include span-columns(6); }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
+
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+
+  font-family: $georgia;
+
+  @include media($mobile1)   { @include pad(1rem); }
+  @include media($mobile2)   { @include pad(3rem); }
+  @include media($tablet1)   { @include pad(1rem); }
+
+	.entry-header h1 {
+
+	  font-family: 'HattoriHanzoLight';
+  	text-align: center;
+  	font-size: 1.5rem;
+  	margin: 20px auto;
+  	text-transform: uppercase;
+  	letter-spacing: 8px;
+  }
+
+	.utility img { margin-bottom: 3rem; }
+
+	.utility > p:nth-child(2) {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }
+
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+
+}

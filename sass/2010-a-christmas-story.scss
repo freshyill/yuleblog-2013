@@ -1,0 +1,114 @@
+/*! A Christmas Stroy */
+
+@import 'setup';             // Setup
+
+$featurecolor: $gray-90;
+$linkcolor: $featurecolor;
+
+
+.wrap { 
+  background: $black url(/images/ralphie-bg.jpg) no-repeat center top fixed;
+  background-size: cover;
+  padding: 1rem 0;
+  overflow-x: hidden;
+  @include media($mobile1) {
+    padding-top:    4rem;
+    padding-bottom: 4rem;
+  }
+  @include media($mobile2) {
+    @include pad(4rem 2rem);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+  @include media($mobile1)   {  }
+  @include media($mobile2)   { }
+  @include media($tablet1)   {
+    color: $white;
+    text-shadow: 0 -1px 0 rgba($black,.3);
+    @include span-columns(6);
+    
+  }
+  @include media($tablet2)   {  }
+  @include media($max-width) {  }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  @include pad(1rem);
+  
+  background: rgba($white, .9);
+  
+  font-family: $georgia;
+  text-shadow: 0 1px 0 $white;
+  
+  @include media($mobile2)   { @include pad(2rem); }
+  @include media($tablet1)   { 
+    background: transparent; 
+    text-shadow: 0 -1px 0 rgba($black, .3);
+    @include pad(0);
+  }
+  	
+	.entry-header h1 {
+	
+	  @extend %hide-text;
+	  background: url(/images/ralphie-title.png) center top no-repeat;
+  	background-size: contain;
+  	height: 125px;
+
+    @include media($mobile1)   { height: 125px; }
+    @include media($mobile2)   { height: 195px; }
+    @include media($tablet1)   { height: 165px; }
+    @include media($tablet2)   { height: 225px; }
+    @include media($max-width) { height: 250px; }
+  }
+
+	a {  }
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.5rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { 
+      color: $featurecolor;
+      @include media($tablet1) { color: $white; }
+    }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+  img {
+    @extend %blockimg;
+    box-shadow: $nice-shadow;
+    padding: 15px;
+    background: #fdfef2;
+  	@include media($mobile2) {
+      &.alignright {@include transform(rotate(2deg) translateX(10px));}
+      &.alignleft { @include transform(rotate(-2deg) translateX(-10px));}
+    }
+  }
+  
+}
