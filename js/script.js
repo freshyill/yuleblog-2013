@@ -21,6 +21,19 @@ if (Modernizr.input.placeholder) {
 }
 
 
+// Old-New Toggle
+//jQuery(".postid-1037 .feature-sidebar span").each(function() {
+//  jQuery(this).width( jQuery(this).width() );
+//  
+//});
+
+jQuery(".postid-1037 .feature-sidebar .new").hide();
+
+jQuery('.postid-1037 .feature-sidebar').click(function(){
+  jQuery('.postid-1037 .feature-sidebar .new').fadeToggle('slow', 'linear').setTimeout(
+  jQuery('.postid-1037 .feature-sidebar .old').fadeToggle('slow', 'linear') , 700);
+});
+
 
 // Snowfall
 var snowfallheader = document.getElementById("snowfallheader");
@@ -55,57 +68,3 @@ jQuery('#snowfall-toggle').on('click',
     }
   })
 );
-
-
-
-// Media queries in jQuery
-var delay = (function(){
-  var timer = 0;
-  return function(callback, ms){
-    clearTimeout (timer);
-    timer = setTimeout(callback, ms);
-  };
-})();
-
-jQuery(function() {
-
-  var pause = 100;
-
-  jQuery(window).resize(function() {
-
-    snowfallSize();
-
-    delay(function() {
-
-      var width = jQuery(window).width();
-
-             if ( width >= 1140 ) {                   // desktop-wide
-
-      } else if ( width >= 1024 && width <= 1039 ) {  // desktop-small
-
-
-
-      } else if ( width >= 768 && width <= 1023 ) {   // tablet-portrait
-
-
-
-      } else if ( width >= 568 && width <= 767 ) {    // phone-wide-landscape
-
-        jQuery('#snow-control').insertBefore('.site-title');
-
-      } else if ( width >= 480 && width <= 567 ) {    // phone-landscape
-
-        jQuery('#snow-control').insertBefore('.site-title');
-
-
-      } else if ( width <= 479 ) {                    // phone-portrait
-
-        jQuery('#snow-control').insertBefore('.site-title');
-
-      }
-
-    }, pause );
-  });
-
-  jQuery(window).resize();
-});

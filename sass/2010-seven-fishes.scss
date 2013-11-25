@@ -1,0 +1,87 @@
+/*! Feature Prototype */
+
+@import 'setup';             // Setup
+
+$featurecolor: #54483f;
+$linkcolor: #324412;
+
+.wrap {
+  background: $black url(/images/fishes-family-large.jpg) no-repeat center top fixed;
+  background-size: cover;
+  @include pad(1rem 0);
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad(2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include shift(1); @include span-columns(10); }
+  @include media($tablet2)   { @include shift(2); @include span-columns(8); }
+
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+
+	.entry-header h1 {
+
+	  @extend %hide-text;
+
+	  height: 123px;
+  	margin-bottom: 0;
+  	background: url(/images/fishes-title.png) center top no-repeat;
+  	background-size: contain;
+
+    @include media($mobile1)   { height: 191px; }
+    @include media($mobile2)   { height: 229px; }
+    @include media($tablet1)   { height: 260px; }
+    @include media($tablet2)   { height: 278px; }
+    @include media($max-width) { height: 320px; }
+  }
+
+	h2 { text-align: left; font-weight: normal; }
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }
+
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+
+}
+
+.article-text {
+  font-family: $georgia;
+	text-shadow: 0 1px 0 rgba($white, .5);
+  background: #fcf9f5;
+  box-shadow: $darker-shadow;
+
+  @include pad(1rem);
+  @include media($mobile1)   { @include pad(2rem); }
+  @include media($tablet1)   { @include pad(3rem); }
+}

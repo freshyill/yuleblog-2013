@@ -1,0 +1,216 @@
+/*! Feature Prototype */
+
+@import 'setup';              // Setup
+@import 'font/ralewayheavy';  // Raleway
+@import 'font/leaguegothic';  // League Gothic
+
+$featurecolor: $black;
+$linkcolor: $featurecolor;
+
+.wrap { 
+  background-image: url(/images/modern-xmas-gifts-bg.png), 
+                    url(/images/stnick-red-bg.png);
+  background-position: center 4em, left top;
+  background-attachment: fixed, fixed;
+  background-repeat: no-repeat, repeat;
+  background-size: contain, auto;
+  overflow-x: hidden;
+  
+  @include pad(1rem 0);
+  
+  @include media($mobile1) {
+    @include pad(2rem 1rem);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include shift(1); @include span-columns(10); }
+  @include media($tablet2)   { @include shift(2); @include span-columns(8); }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+}
+
+article {
+
+	.entry-header {
+	  margin-bottom: 1rem;
+	
+    h1 {
+    
+      font-family: Raleway, sans-serif;
+      font-weight: 900;
+      font-size: 4.25rem;
+      color: #fdfbed;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: .8;
+      margin-bottom: 0;
+      text-shadow: -1px -1px 0 rgba($black, .3);
+      
+      span { display: block; font-size: .75em; }
+    
+      @include media($mobile1)   { font-size: 6.5rem; }
+      @include media($mobile2)   { font-size: 7.5rem; }
+      @include media($tablet1)   { font-size: 8.5rem; }
+      @include media($tablet2)   { font-size: 9.5rem; }
+      @include media($max-width) { font-size: 10.6rem; }
+    }    
+  }
+  
+  h2 {
+    font-family: League Gothic, sans-serif;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: normal;
+    line-height: 1;
+    position: relative;
+	  @include media($tablet1) { font-size: 3rem; }
+  }
+    
+	.utility {
+	  position: relative;
+    
+    & > p:first-of-type {
+  	  font-size: 1.2rem;
+      margin: 1rem 0;
+      text-align: left;
+      @include hyphens(none);
+      @include media($tablet1) { font-size: 1.4rem; }
+	  }
+  }
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.ribbon {
+  font-size: 2rem;
+  text-align: left;
+  position: relative;
+  left: -11%;
+  width: 122%;
+ 	@include transform(skew(-5deg) rotate(-5deg) translateY(-.5em));
+ 	
+  .inner {
+    display: block;
+    font-family: Raleway, sans-serif;
+    font-weight: 900;
+    text-align: left;
+    text-shadow: 2px 2px 0 rgba($black,.7);
+    -webkit-text-stroke: 3px rgba($black, .15);
+    color: #fbf9ec;
+    position: relative;
+    z-index: 2;
+    background: url(/images/green-static.png);
+    border: 1px solid rgba($white,.08);
+    border-radius: 3px;  
+  
+    @include pad(1rem);
+    @include box-shadow(0 0 29px rgba($black,.9) inset, 0 0 9px rgba($black,.75));
+    
+    @include media($max-width) { 
+      @include pad(2.2rem 1rem);
+    }
+  }
+  
+  .scrooge {
+    display: block;
+    text-align: right;
+  }
+
+  @include media($mobile1) {
+    font-size: 2.5rem;
+    text-align: center;
+    
+    .inner,
+    .scrooge {
+      text-align: center;
+    } 
+  }
+  @include media($mobile2)   {
+    font-size: 3.5rem;
+  }
+  @include media($tablet1) {
+    .scrooge { text-align: center; display: inline; }
+  }
+  @include media($tablet2)   {
+    font-size: 3.5rem;
+    left: -9%;
+    width: 118%;
+    top: 1rem;
+      
+    &:before,
+    &:after {
+      position: absolute;
+      z-index: 1;
+    }
+    &:before {    
+      left: -40px;
+      bottom: -42px; 
+      content: url(/images/modern-christmas-banner-before.png);
+    }
+    &:after {
+      right: -39px;
+      top: -28px;
+      content: url(/images/modern-christmas-banner-after.png);
+    }
+  }
+  @include media($max-width)   {
+    &:before { left: -38px; }
+    &:after  { right: -37px; }
+  }
+  
+}
+
+.article-text {
+  @extend %nice-text;
+  @extend %content-module;
+  @extend %darker-shadow;
+
+  background: rgba($white, .8);
+  font-family: $georgia;
+  text-shadow: 0 1px 0 rgba($white, .5);
+  color: $gray-90;
+  
+  @include pad(1rem);
+  
+  @include media($mobile1)   {
+    @include pad(2rem);
+  }
+  
+  img {
+    max-width: 100%;
+    box-shadow: $nice-shadow;
+  }
+}
+
+.title-img {
+  margin: 2em auto 10px auto;
+  display: block;
+  position: relative; z-index: 2;
+  @include span-columns(8);
+  @include shift(2);
+  @include media(tablet-portrait) {
+    @include span-columns(10);
+    @include shift(1);
+  }
+}

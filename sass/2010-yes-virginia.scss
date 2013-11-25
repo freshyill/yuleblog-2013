@@ -1,0 +1,100 @@
+/*! Feature Prototype */
+
+@import 'setup';             // Setup
+
+$featurecolor: $gray-90;
+$linkcolor: $featurecolor;
+
+.wrap {
+  background: #e7e7e7 url(/images/virginia-santa-bg-wide.jpg) no-repeat fixed left bottom;
+  background-size: contain;
+  @include pad(1rem 0);
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad(2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
+    background-position: right bottom;
+  }
+  @include media($tablet2) {
+    @include pad(4rem 0);
+    background-position: right bottom;
+    background-size: 50% cover;
+  }
+  
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+
+  @include media($tablet1)   { @include span-columns(6 of 12); }
+  @include media($tablet2)   { @include span-columns(4 of 12); }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $georgia;
+  text-shadow: 0 1px 0 rgba($white, .6);
+  	
+	.entry-header h1 {
+	
+    font-size: 3rem;
+  	font-weight: normal;
+  	margin: 0;
+  	line-height: .9;
+	  text-align: left;
+	  text-shadow: 0 1px 0 $white;
+	  padding-top: 0;
+  	span {
+  	  display: block;
+  	  font-size: .5em;
+  	  font-weight: 800;
+    }
+
+    @include media($mobile1)   {  }
+    @include media($mobile2)   {  }
+    @include media($tablet1)   { font-size: 4rem; }
+    @include media($tablet2)   { font-size: 5rem; }
+  }
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.letter {
+  padding: 1rem;
+  font-size: 1.2em;
+  background: rgba($white,.95);
+  border-radius: 3px;
+  box-shadow: $nice-shadow;
+}

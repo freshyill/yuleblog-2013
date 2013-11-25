@@ -1,0 +1,113 @@
+/*! Feature Prototype */
+
+@import 'setup';             // Setup
+@import 'font/blackout2am';  // Blackout2AM
+
+$featurecolor: $white;
+$linkcolor: #8ab2d9;
+
+.wrap { 
+  background: $black url(/images/twas-bg.png) no-repeat center top fixed;
+  background-size: cover;
+  @include pad(1rem 0);
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad(2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad(4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+
+  @include span-columns(12);
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $georgia;
+  text-shadow: 0 1px 0 $black;
+  	
+	.entry-header h1 {
+	
+    font-family: $body-copy-font;
+    font-size: 3em;
+    font-weight: normal;
+    text-align: center;
+    margin: 0;
+    line-height: 1.1;
+
+    @include media($mobile1)   { font-size: 4em; }
+    @include media($mobile2)   { margin-bottom: 2rem; }
+    @include media($tablet1)   { margin-bottom: 3rem; }
+    @include media($tablet2)   { font-size: 5em; margin-bottom: 4rem;}
+    @include media($max-width) { font-size: 6em; }
+  }
+  
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
+
+.article-text {
+  @extend %nice-text;
+  box-shadow: $nice-shadow;
+  background: rgba($white,0.2);
+  @include pad(1rem);
+  @include media($mobile1)   { @include pad(2rem); }
+    @include media($mobile2)   {  }
+    @include media($tablet1)   { @include span-columns(6 of 12); }
+    @include media($tablet2)   {  }
+    @include media($max-width) {  }
+}
+
+.feature-sidebar {
+
+  @extend %content-module;
+
+  span {
+    @include transition(.2s all ease-in-out);
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .hide { width: 0px !important; }
+
+  @include pad(1rem);
+  
+  @include media($mobile1)   {  }
+  @include media($mobile2)   {  }
+  @include media($tablet1)   { @include span-columns(6 of 12); @include pad(0)}
+  @include media($tablet2)   {  }
+  @include media($max-width) { padding-left: 2rem; }
+    
+}
