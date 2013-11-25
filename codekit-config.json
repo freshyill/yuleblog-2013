@@ -418,15 +418,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/font\/_unifrakturcook.scss" : {
+    "\/sass\/bourbon\/addons\/_retina-image.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/font\/_unifrakturcook.scss",
+      "inputAbbreviatedPath" : "\/sass\/bourbon\/addons\/_retina-image.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_unifrakturcook.css",
+      "outputAbbreviatedPath" : "\/css\/_retina-image.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -442,15 +442,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/bourbon\/addons\/_retina-image.scss" : {
+    "\/sass\/font\/_mexcellent.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/bourbon\/addons\/_retina-image.scss",
+      "inputAbbreviatedPath" : "\/sass\/font\/_mexcellent.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_retina-image.css",
+      "outputAbbreviatedPath" : "\/css\/_mexcellent.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -466,18 +466,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/font\/_mexcellent.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/font\/_mexcellent.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_mexcellent.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/bourbon\/functions\/_transition-property-name.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -487,6 +475,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_transition-property-name.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/font\/_unifrakturcook.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/font\/_unifrakturcook.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_unifrakturcook.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -742,17 +742,16 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
-    "\/font\/_hattorihanzolight.scss" : {
+    "\/img\/feature-header-bg.jpg" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/font\/_hattorihanzolight.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_hattorihanzolight.css",
-      "fileType" : 4,
-      "debugStyle" : 0
+      "inputAbbreviatedPath" : "\/img\/feature-header-bg.jpg",
+      "processed" : 0,
+      "outputAbbreviatedPath" : "\/img\/feature-header-bg.jpg",
+      "initialSize" : 33486,
+      "fileType" : 4096
     },
     "\/sass\/_normalize.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -766,16 +765,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/img\/feature-header-bg.jpg" : {
+    "\/font\/_hattorihanzolight.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/img\/feature-header-bg.jpg",
-      "processed" : 0,
-      "outputAbbreviatedPath" : "\/img\/feature-header-bg.jpg",
-      "initialSize" : 33486,
-      "fileType" : 4096
+      "inputAbbreviatedPath" : "\/font\/_hattorihanzolight.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_hattorihanzolight.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/sass\/2010-yes-virginia.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -834,15 +834,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/css\/2010-miracle-on-34th-street.css" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/css\/2010-miracle-on-34th-street.css",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 16
-    },
     "\/sass\/neat\/grid\/_reset.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -854,6 +845,15 @@
       "outputAbbreviatedPath" : "\/css\/_reset.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/css\/2010-miracle-on-34th-street.css" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/css\/2010-miracle-on-34th-street.css",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 16
     },
     "\/sass\/bourbon\/bourbon\/helpers\/_radial-positions-parser.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -867,18 +867,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/bourbon\/functions\/_px-to-em.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/bourbon\/functions\/_px-to-em.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_px-to-em.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/font\/_bitter.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -888,6 +876,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_bitter.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/bourbon\/functions\/_px-to-em.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/bourbon\/functions\/_px-to-em.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_px-to-em.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -956,18 +956,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/neat\/settings\/_visual-grid.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/neat\/settings\/_visual-grid.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_visual-grid.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/font\/_peanutsregular.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -977,6 +965,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_peanutsregular.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/neat\/settings\/_visual-grid.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/neat\/settings\/_visual-grid.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_visual-grid.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1257,18 +1257,6 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
-    "\/sass\/neat\/grid\/_span-columns.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/neat\/grid\/_span-columns.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_span-columns.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/2010-white-christmas.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1278,6 +1266,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/2010-white-christmas.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/neat\/grid\/_span-columns.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/neat\/grid\/_span-columns.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_span-columns.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1400,15 +1400,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/neat\/grid\/_shift.scss" : {
+    "\/sass\/font\/_hollaregular.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/neat\/grid\/_shift.scss",
+      "inputAbbreviatedPath" : "\/sass\/font\/_hollaregular.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_shift.css",
+      "outputAbbreviatedPath" : "\/css\/_hollaregular.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1424,6 +1424,18 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/sass\/neat\/grid\/_shift.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/neat\/grid\/_shift.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_shift.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/sass\/neat\/functions\/_new-breakpoint.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1433,18 +1445,6 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_new-breakpoint.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/sass\/font\/_hollaregular.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/font\/_hollaregular.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_hollaregular.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1571,6 +1571,18 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 16
     },
+    "\/sass\/2010-macys-parade.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/2010-macys-parade.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/2010-macys-parade.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/sass\/bourbon\/functions\/_flex-grid.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1595,18 +1607,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/2010-macys-parade.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/2010-macys-parade.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/2010-macys-parade.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/font\/_leaguegothic.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1619,6 +1619,18 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/sass\/bourbon\/bourbon\/addons\/_size.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/bourbon\/bourbon\/addons\/_size.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_size.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
     "\/sass\/bourbon\/bourbon\/functions\/_transition-property-name.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -1628,6 +1640,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_transition-property-name.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/2010-saint-to-santa.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/2010-saint-to-santa.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/2010-saint-to-santa.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1655,30 +1679,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/2010-saint-to-santa.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/2010-saint-to-santa.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/2010-saint-to-santa.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/sass\/bourbon\/bourbon\/addons\/_size.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/bourbon\/bourbon\/addons\/_size.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_size.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/2010-seven-fishes.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1700,18 +1700,6 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_placeholder.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
-    "\/sass\/bourbon\/bourbon\/functions\/_modular-scale.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/bourbon\/bourbon\/functions\/_modular-scale.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_modular-scale.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1739,15 +1727,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/font\/_blackoutmidnight.scss" : {
+    "\/sass\/bourbon\/bourbon\/functions\/_modular-scale.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/font\/_blackoutmidnight.scss",
+      "inputAbbreviatedPath" : "\/sass\/bourbon\/bourbon\/functions\/_modular-scale.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_blackoutmidnight.css",
+      "outputAbbreviatedPath" : "\/css\/_modular-scale.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1760,6 +1748,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/20111-xmas.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/font\/_blackoutmidnight.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/font\/_blackoutmidnight.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_blackoutmidnight.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1927,18 +1927,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/2010-charlie-brown.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/2010-charlie-brown.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/2010-charlie-brown.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/2010-black-friday.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -1948,6 +1936,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/2010-black-friday.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/2010-charlie-brown.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/2010-charlie-brown.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/2010-charlie-brown.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -1996,15 +1996,15 @@
       "outputAbbreviatedPath" : "\/js\/snow\/rectangleEmitter-ck.js",
       "fileType" : 64
     },
-    "\/font\/_marcellus.scss" : {
+    "\/sass\/bourbon\/helpers\/_gradient-positions-parser.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/font\/_marcellus.scss",
+      "inputAbbreviatedPath" : "\/sass\/bourbon\/helpers\/_gradient-positions-parser.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_marcellus.css",
+      "outputAbbreviatedPath" : "\/css\/_gradient-positions-parser.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -2020,15 +2020,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/bourbon\/helpers\/_gradient-positions-parser.scss" : {
+    "\/font\/_marcellus.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 1,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/bourbon\/helpers\/_gradient-positions-parser.scss",
+      "inputAbbreviatedPath" : "\/font\/_marcellus.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_gradient-positions-parser.css",
+      "outputAbbreviatedPath" : "\/css\/_marcellus.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -2104,6 +2104,15 @@
       "outputAbbreviatedPath" : "\/js\/snow\/snow-ck.js",
       "fileType" : 64
     },
+    "\/sidebar.php" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sidebar.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/sass\/neat\/functions\/_px-to-em.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -2115,15 +2124,6 @@
       "outputAbbreviatedPath" : "\/css\/_px-to-em.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/sidebar.php" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sidebar.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/sass\/bourbon\/bourbon\/css3\/_columns.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -2397,6 +2397,15 @@
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
     },
+    "\/feature-sidebar.php" : {
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/feature-sidebar.php",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/sass\/_setup.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -2408,15 +2417,6 @@
       "outputAbbreviatedPath" : "\/css\/_setup.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/feature-sidebar.php" : {
-      "ignoreWasSetByUser" : 1,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/feature-sidebar.php",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
     },
     "\/sass\/bourbon\/css3\/_user-select.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -2720,18 +2720,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/font\/_fontello.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/font\/_fontello.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_fontello.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/2011-italy.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2741,6 +2729,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/2011-italy.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/font\/_fontello.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/font\/_fontello.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_fontello.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -2858,18 +2858,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/2010-bing-bowie.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/2010-bing-bowie.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/2010-bing-bowie.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/2010-jingle-bells.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -2882,15 +2870,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/bourbon\/addons\/_button.scss" : {
+    "\/sass\/2010-bing-bowie.scss" : {
       "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
+      "ignore" : 0,
+      "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/bourbon\/addons\/_button.scss",
+      "inputAbbreviatedPath" : "\/sass\/2010-bing-bowie.scss",
       "outputStyle" : 3,
       "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_button.css",
+      "outputAbbreviatedPath" : "\/css\/2010-bing-bowie.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
@@ -2914,6 +2902,18 @@
       "inputAbbreviatedPath" : "\/content-nav.php",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/sass\/2011-eating.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/2011-eating.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/2011-eating.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/content-footer.php" : {
       "ignoreWasSetByUser" : 1,
@@ -2948,18 +2948,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/2011-eating.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/2011-eating.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/2011-eating.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/js\/jquery.fitvids.js" : {
       "ignoreWasSetByUser" : 1,
       "ignore" : 1,
@@ -2970,6 +2958,18 @@
       "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/js\/jquery.fitvids-ck.js",
       "fileType" : 64
+    },
+    "\/sass\/bourbon\/addons\/_button.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/bourbon\/addons\/_button.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_button.css",
+      "fileType" : 4,
+      "debugStyle" : 0
     },
     "\/feature-freeform.php" : {
       "ignoreWasSetByUser" : 0,
@@ -3001,18 +3001,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/sass\/bourbon\/css3\/_linear-gradient.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 1,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/sass\/bourbon\/css3\/_linear-gradient.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 0,
-      "outputAbbreviatedPath" : "\/css\/_linear-gradient.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/sass\/bourbon\/css3\/_transition.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -3022,6 +3010,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 0,
       "outputAbbreviatedPath" : "\/css\/_transition.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/sass\/bourbon\/css3\/_linear-gradient.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 1,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/sass\/bourbon\/css3\/_linear-gradient.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 0,
+      "outputAbbreviatedPath" : "\/css\/_linear-gradient.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
