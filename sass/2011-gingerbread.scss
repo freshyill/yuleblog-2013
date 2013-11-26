@@ -1,0 +1,98 @@
+/*! Gingerbread */
+
+@import 'setup';             // Setup
+@import 'font/ralewayextrabold';      // Raleway
+
+$featurecolor: $gray-90;
+$linkcolor: #324412;
+
+.wrap { 
+  background: $black url(/images/gingerbread-bg.jpg) no-repeat center top fixed;
+  background-size: cover;
+
+  @include pad (1rem 0);
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad (2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad (4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+	background: rgba($white, .9);
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include span-columns(10); @include shift(1); }
+  @include media($tablet2)   { @include span-columns(8); @include shift(2); }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $georgia;
+  text-shadow: 0 1px 0 $white;
+  box-shadow: $darker-shadow;
+	
+	@include pad(1rem);
+	
+  @include media($mobile2)   { @include pad(2rem); }
+  @include media($tablet1)   { @include pad(3rem); }
+  	
+	.entry-header h1 {
+	
+	  font-family: Raleway, sans-serif;
+  	font-size: 2.7rem;
+  	text-align: center;
+  	margin: 0;
+  	line-height: 1; 
+  	display: block;
+  	
+  	span { font-size: .5em; display: block; }
+
+    @include media($mobile1)   { font-size: 4.3rem; }
+    @include media($mobile2)   { font-size: 4.8rem; }
+    @include media($tablet1)   { font-size: 5.5rem; }
+    @include media($tablet2)   { font-size: 5.8rem; }
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+    box-shadow: $nice-shadow;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}

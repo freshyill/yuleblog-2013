@@ -1,0 +1,96 @@
+/*! Eating the Classics */
+
+@import 'setup';             // Setup
+@import 'font/ralewayheavy';      // Raleway
+
+$featurecolor: $gray-90;
+$linkcolor: #922222;
+
+.wrap { 
+  background: #492002 url(/images/eating-bg.jpg) no-repeat center top fixed;
+  background-size: cover;
+  @include pad (1rem 0);
+  overflow-x: hidden;
+  @include media($mobile1) {
+    @include pad (2rem 0);
+  }
+  @include media($tablet1) {
+    @include pad (4rem 0);
+  }
+}
+
+.content {
+
+	color: $featurecolor;
+	font-family: $georgia;
+	background: rgba($white, .9);
+
+  @include span-columns(12);
+  @include media($tablet1)   { @include span-columns(10); @include shift(1); }
+  @include media($tablet2)   { @include span-columns(8); @include shift(2); }
+  
+  a {
+  	&:link,
+  	&:visited { color: $linkcolor; }
+  	&:hover   { color: lighten($linkcolor, 20); }
+  	&:active  { color: lighten($linkcolor, 30); }
+	}
+	
+	h2 { font-weight: normal; }
+	
+}
+
+article {
+  @extend %nice-text;
+  @extend %content-module;
+  
+  font-family: $georgia;
+  text-shadow: 0 1px 0 $white;
+  box-shadow: $darker-shadow;
+	
+	@include pad(1rem);
+	
+  @include media($mobile2)   { @include pad(2rem); }
+  @include media($tablet1)   { @include pad(3rem); }
+  	
+	.entry-header h1 {
+	  
+	  @extend %hide-text;
+    
+    background: url(/images/eating-header.png) center top no-repeat;
+    background-size: contain;
+    height: 100px;
+    
+  	margin: 0;
+  	display: block;
+
+    @include media($mobile1)   { height: 162px; }
+    @include media($mobile2)   { height: 184px; }
+    @include media($tablet1)   { height: 200px; }
+    @include media($tablet2)   { height: 216px; }
+    @include media($max-width) { height: 254px; }
+  }
+  
+
+  h2, h3, h4 {
+    font-family: Raleway;
+  }
+  
+  h3 { border-bottom: 1px solid rgba($black, .2); padding-bottom: 1rem;}
+  
+	.utility > p:first-child {
+  	font-size: 1.2rem;
+  	margin: 1rem 0;
+  	text-align: left;
+  	@include hyphens(none);
+  	@include media($tablet1) { font-size: 1.4rem; }
+	 }	
+	 
+  .signature a {
+    &:link,
+    &:visited { color: $featurecolor; }
+    &:hover   { color: lighten($featurecolor, 20); }
+    &:active  { color: lighten($featurecolor, 30); }
+  }
+  
+}
