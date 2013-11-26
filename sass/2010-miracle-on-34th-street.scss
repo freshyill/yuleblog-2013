@@ -6,7 +6,7 @@
 
 // Display
 .wrap { 
-  background: #444 url(/images/feature/2010-miracle-black-static.png);
+  background: #444 url(/images/2010-miracle-black-static.png);
   padding: 1rem 0;
   @include media($mobile1) {
     padding-top:    4rem;
@@ -37,12 +37,12 @@
   }
   &:before { 
     top: -3em; left: 0;
-    content: url(/img/feature/2010-miracle-maureen.png);
+    content: url(/images/2010-miracle-maureen.png);
     @include transform-origin(left top);
   }
   &:after { 
     top: -3em; right: 0; 
-    content: url(/img/feature/2010-miracle-john.png);
+    content: url(/images/2010-miracle-john.png);
     @include transform-origin(right top);
   }
 
