@@ -20,7 +20,7 @@
   <ul>
 	  <?php while ( $features->have_posts()) : $features->the_post(); ?>
 		  <li>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+        <a href="<?php the_permalink(); ?>" title="<?php get_the_title(); ?>">
           <time><?php the_date('F j, Y'); ?></time>
           <br>
           <?php the_title(); ?>
