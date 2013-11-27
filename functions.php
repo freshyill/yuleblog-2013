@@ -12,9 +12,10 @@
 add_theme_support( 'post-thumbnails' ); 
 
 
-////////////////////////////////////////////////////////////////////
+
+
 // Favorites Icons
-////////////////////////////////////////////////////////////////////
+
 function yb_favicons() {
 	echo '<link rel="shortcut icon" type="image/x-icon" href="' . get_template_directory_uri() . '/img/favicon.ico" />';
 	echo '<link rel="apple-touch-icon" href="' . get_template_directory_uri() . '/img/apple-touch-icon.png">';
@@ -24,9 +25,9 @@ add_action('wp_head', 'yb_favicons');
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Give Link Posts an Inline Headline
-////////////////////////////////////////////////////////////////////
+
 function yb_link_post() {
   $link_post_title = '<a href="' . get_permalink() . '" title="' . esc_attr(get_the_title()) . '" class="headline">' . get_the_title() . '</a>';
   $link_post_content = $link_post_title . ' — ' . get_the_content();
@@ -39,9 +40,8 @@ function yb_link_post() {
 
 
 
-////////////////////////////////////////////////////////////////////
 // Scripts and Styles
-////////////////////////////////////////////////////////////////////
+
 function yb_scripts_and_styles() {
 	$style_path = get_template_directory_uri() . '/';
 	$style_path_features = get_template_directory_uri() . '/css/';
@@ -66,13 +66,7 @@ add_action( 'wp_enqueue_scripts', 'yb_scripts_and_styles' );
 
 
 
-
-
-
-
-
-
-
+// Post Thumbnails
 
 if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( $post->ID ) ) {
   $thumbnail_src = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
@@ -81,9 +75,8 @@ if ( function_exists( 'has_post_thumbnail' ) && has_post_thumbnail( $post->ID ) 
 
 
 
-////////////////////////////////////////////////////////////////////
 // Custom jQuery script for features (2010 mostly)
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_custom_jquery() {
   if (get_field('custom_jquery_include')) {
     echo "<script defer src=" . bloginfo(template_directory) . "/js/" . the_field('custom_jquery_include') . "></script>";
@@ -92,9 +85,9 @@ function yuleblog_custom_jquery() {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Custom inline script for features (2010 mostly)
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_custom_inline_script()  {
   if (get_field('custom_inline_jquery')) {
     echo "<script defer>" . the_field('custom_inline_jquery') . "</script>";
@@ -103,9 +96,9 @@ function yuleblog_custom_inline_script()  {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Posted on
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_posted_on() {
   if ( !(in_category( array( 'Link Post' )))) {
 	  printf( __( '<p class="posted"><span class="author vcard">By <a class="url fn n" href="%3$s" title="%4$s" rel="author"> %5$s</a></span><br> <time class="entry-date" datetime="%1$s" pubdate>%2$s</time></p>' ),
@@ -120,9 +113,9 @@ function yuleblog_posted_on() {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Pagination
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_post_pagination() {
   wp_link_pages( array( 
     'before' => '<div class="page-link"><span>Pages:',
@@ -133,9 +126,9 @@ function yuleblog_post_pagination() {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Feature Signature
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_feature_signature() {
 	printf( __( '<div class="signature"><p class="vcard"><a class="url fn n" href="%3$s" title="%4$s" rel="author">%5$s</a></span><br> <time class="entry-date" datetime="%1$s" pubdate>%2$s</time></p></div>' ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -148,18 +141,18 @@ function yuleblog_feature_signature() {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Edit Post Link
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_edit_post() {
  edit_post_link('Edit this post ✍', '<p>', '</p>');   
 }
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Link Attribution
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_via() {
   if ( get_field('via_url') && get_field('via_site_name')) {
     echo '<p class="via">Via <a href="';
@@ -172,9 +165,9 @@ function yuleblog_via() {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Direct Link
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_linkage() {
   if ( get_field('direct_link_url') && get_field('direct_link_title')) {
     echo '<p class="via"><a href="';
@@ -196,9 +189,9 @@ function yuleblog_linkage() {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Include Hero Header
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_hero_header() {
   if ( get_field('empty_hero_header') ) {
     echo '<header class="hero-empty"><div class="hero-inner"></div></header>';
@@ -208,9 +201,8 @@ function yuleblog_hero_header() {
 
 
 
-////////////////////////////////////////////////////////////////////
 // Feature Title
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_feature_header() {
   if ( get_field('formatted_title') ) {
     echo the_field('formatted_title');
@@ -223,9 +215,8 @@ function yuleblog_feature_header() {
 
 
 
-////////////////////////////////////////////////////////////////////
 // Image Credits
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_image_credits() {
   if (get_field('image_credits')) :
     echo '<section class="credit">';
@@ -237,9 +228,9 @@ function yuleblog_image_credits() {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Article Resources
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_article_resources() {
   if (get_field('resources')) :
     echo '<section class="resources">';
@@ -251,9 +242,8 @@ function yuleblog_article_resources() {
 
 
 
-////////////////////////////////////////////////////////////////////
 // Article Footnotes
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_article_footnotes() {
   if (get_field('footnotes')) :
     echo '<section class="footnotes">';
@@ -265,9 +255,9 @@ function yuleblog_article_footnotes() {
 
 
 
-////////////////////////////////////////////////////////////////////
+
 // Article Footnotes
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_envelope_class() {
   if (get_field('custom_post_class')) :
     the_field('custom_post_class');
@@ -277,9 +267,8 @@ function yuleblog_envelope_class() {
 
 
 
-////////////////////////////////////////////////////////////////////
 // Feature Sidebar
-////////////////////////////////////////////////////////////////////
+
 function yuleblog_html_sidebar() {
   if (get_field('html_sidebar') || get_field('sidebar')) :
 
@@ -298,9 +287,8 @@ function yuleblog_html_sidebar() {
 
 
 
-////////////////////////////////////////////////////////////////////
 // Custom Excerpt Length
-////////////////////////////////////////////////////////////////////
+
 function custom_excerpt_length( $length ) {
 	return 20;
 }
@@ -308,9 +296,8 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
 
-////////////////////////////////////////////////////////////////////
 // Content Nav
-////////////////////////////////////////////////////////////////////
+
 if ( ! function_exists( 'yuleblog_content_nav' ) ) :
   function yuleblog_content_nav( $nav_id ) {
   	global $wp_query;
